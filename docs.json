@@ -5,11 +5,11 @@
   "colors": {
     "primary": "#5A47FF",
     "light": "#8678FF",
-    "dark": "#2B349B"
+    "dark": "#4435BF"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
   "logo": {
-    "light": "/logo/light.svg",
+    "light": "/logo/light.png",
     "dark": "/logo/dark.svg"
   },
   "navigation": {
@@ -34,7 +34,8 @@
           "rynse-web/facilities",
           "rynse-web/vehicles",
           "rynse-web/users",
-          "rynse-web/car-wash-locations"
+          "rynse-web/car-wash-locations",
+          "rynse-web/spend-controls"
         ]
       },
       {
@@ -46,15 +47,25 @@
         ]
       },
       {
-        "group": "Billing & activity",
+        "group": "Visits",
         "pages": [
-          "rynse-web/visits",
-          "rynse-web/incidents",
+          "rynse-web/visits"
+        ]
+      },
+      {
+        "group": "Incidents",
+        "pages": [
+          "rynse-web/incidents"
+        ]
+      },
+      {
+        "group": "Invoices",
+        "pages": [
           "rynse-web/invoices"
         ]
       },
       {
-        "group": "Account",
+        "group": "Settings",
         "pages": [
           "rynse-web/settings"
         ]
@@ -64,14 +75,14 @@
   "navbar": {
     "links": [
       {
-        "label": "Sign in",
-        "href": "https://app.v2.gorynse.com"
+        "label": "gorynse.com",
+        "href": "https://gorynse.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "gorynse.com",
-      "href": "https://gorynse.com"
+      "label": "Sign in",
+      "href": "https://app.v2.gorynse.com"
     }
   },
   "footer": {
