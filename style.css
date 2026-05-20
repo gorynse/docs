@@ -9,6 +9,12 @@
   height: 1.125rem;
 }
 
+/* Center the larger circle vertically with the step title. */
+.step [data-component-part="step-number"] {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
 /* Keep the connector line meeting the bottom of the larger circle. */
 .step > [data-component-part="step-line"] {
   top: 3rem;
