@@ -8,8 +8,12 @@ icon: "car"
 The **Organization → Vehicles** page at [app.v2.gorynse.com](https://app.v2.gorynse.com) is the source of truth for which vehicles are enrolled in your program. This is where you confirm what's in the fleet, surface vehicles missing a card, and check what each vehicle is approved to spend on.
 
 <Info>
-  **The Vehicles list is read-only.** Adding, editing, archiving, swapping cards between vehicles, or changing memberships is handled by the Rynse team — see [Asking us to make changes](#asking-us-to-make-changes) below. The actions you _can_ take from this page (Freeze Card, Close Card, Change Facility) are covered further down.
+  **Most changes go through Rynse.** Adding or archiving a vehicle, swapping a card between vehicles, ordering new cards, and changing memberships are all handled by your CS team — see [Asking us to make changes](#asking-us-to-make-changes) below. **A few fields are editable inline by double-clicking the cell:** Description, VIN, and License Plate. Card status actions (Freeze, Close, Change Facility) are covered further down.
 </Info>
+
+<Tip>
+  Tables default to showing 10 rows. Bump the page size to 50 from the dropdown at the bottom of the table — you'll usually want to see your whole fleet at once.
+</Tip>
 
 ## How it's organized
 
@@ -45,7 +49,7 @@ If any of your vehicles are enrolled in wash memberships (pay-as-you-go or unlim
 | **License Plate** | The plate vendors use to identify the vehicle, especially at LPR locations |
 | **External ID** | Your own asset number — surfaces on tables and invoices so you can reconcile back to your internal records |
 | **Asset Type** | Category of the vehicle (e.g., sedan, van, heavy duty) |
-| **Card** | Last 4 of the Rynse card currently attached. A red card icon means no card is attached; a bank icon means the vehicle is on an on-demand funding account. |
+| **Card** | Last 4 of the Rynse card currently attached. Icons in this column tell you the card's state at a glance: **green check** = active; **snowflake** = frozen (paused, reversible); **red X** = closed (permanent); **red card** = no card attached. |
 | **Name on Card** | The name embossed on the physical card. Many customers use this field as a free-text department or account code. |
 | **Spend Policy** | The rules that govern what this card can be used for. Hover for details — see below. |
 | **Services** | Icons for each membership type enrolled on the vehicle. Hover for the vendor list. |
@@ -57,6 +61,10 @@ If any of your vehicles are enrolled in wash memberships (pay-as-you-go or unlim
 ### Spend Policy column
 
 The Spend Policy column is the most information-dense column on the page. Hover over it to see a tooltip with up to four sections:
+
+<Note>
+  **The padlock icon means merchant rules are configured — not that the card is frozen.** Frozen cards show the snowflake icon in the **Card** column. See [Spend Controls](/rynse-web/spend-controls) for what each rule type does.
+</Note>
 
 <AccordionGroup>
   <Accordion title="Policy">
@@ -145,9 +153,17 @@ Once you've submitted a vehicle addition, deactivation, or any other roster chan
   For urgent activations (e.g., a vehicle that needs to be on the road immediately), call this out explicitly when you email support. The team can escalate to the vendor and prioritize the enrollment.
 </Tip>
 
+## Vehicle history follows the vehicle, not the card
+
+Every wash, fuel stop, and visit is attached to the **vehicle**, not the card that paid for it. So when a card is closed and reissued, the new card inherits the same vehicle history — open any vehicle row and the clock icon shows the full timeline regardless of which physical card was used.
+
+This is why "I closed the card, where did the history go?" is never a real problem in Rynse.
+
 ## Actions you can take from this page
 
-For one-off, time-sensitive card situations, the table offers three bulk actions you can run yourself. Tick the checkbox on one or more rows, then use the buttons below the table:
+For one-off, time-sensitive card situations, the table offers three bulk actions you can run yourself. Tick the checkbox on one or more rows, then use the buttons below the table.
+
+**Quick read on the two card actions:** _freezing_ is reversible — like asking your credit-card company to pause a card. _Closing_ is permanent — a new card has to be issued. Use freeze for misplaced or temporarily out-of-service vehicles; reserve close for cards that are confirmed lost, stolen, or compromised.
 
 <CardGroup cols={3}>
   <Card title="Freeze Card" icon="snowflake">
@@ -169,4 +185,27 @@ For one-off, time-sensitive card situations, the table offers three bulk actions
 
 ## A note on timing
 
-Transactions and visits on the Vehicles page reflect what vendors have reported to us. Vendor usage reports typically arrive in the first week of each month for the previous month's activity — so a brand-new vehicle won't show usage immediately, even if drivers are washing. If you've made a change and don't see it within a few business days, email .
+Transactions and visits on the Vehicles page reflect what vendors have reported to us. Vendor usage reports typically arrive in the first week of each month for the previous month's activity — so a brand-new vehicle won't show usage immediately, even if drivers are washing. If you've made a change and don't see it within a few business days, email `support@gorynse.com`.
+
+## Common card questions
+
+<AccordionGroup>
+  <Accordion title="Do drivers need to activate the cards?">
+    No — cards arrive ready to use. The activation slip that ships in the envelope is for a different program; you can throw it away.
+  </Accordion>
+  <Accordion title="Do drivers need to sign the back of the card?">
+    No signature required. The card is tied to a vehicle, not a person.
+  </Accordion>
+  <Accordion title="The last 4 of the card doesn't match my asset number — how do I match a card to a vehicle?">
+    The card numbers are random and not sequential by vehicle. Use the **External ID** column (your own asset number) or the **Name on Card** field — many fleets put the unit number or department there so the card is identifiable at a glance.
+  </Accordion>
+  <Accordion title="Can I get driver-level attribution (e.g., who washed using this vehicle's card)?">
+    Not today. Rynse attributes every transaction to the vehicle, not the driver. If you need to control timing or limit usage, ask your CSM about schedule and per-transaction caps in [Spend Controls](/rynse-web/spend-controls).
+  </Accordion>
+  <Accordion title="Can I order more cards from the portal?">
+    Not today. New cards are ordered by your CSM — email `support@gorynse.com` with the vehicles that need cards and we'll handle production and shipping.
+  </Accordion>
+  <Accordion title="The name on the card is wrong — can it be changed?">
+    No. The name on the card is physically embossed and can't be changed after production. If you need a different label, request a re-issue and we'll print a new card.
+  </Accordion>
+</AccordionGroup>

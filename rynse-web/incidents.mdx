@@ -11,6 +11,10 @@ icon: "triangle-exclamation"
 
 **Incidents** is the page you open when a driver says *"my card got rejected."* Every time a Rynse card swipe is blocked at a terminal, a row lands here with the date, merchant, vehicle, reason, and which card was used. It turns "the card didn't work" into a specific, fixable story.
 
+<Note>
+  **Incidents only captures declines that reached the payment processor.** If a terminal can't accept the card at all — communication errors, the merchant doesn't accept the card type, or the swipe was rejected before it left the terminal — the attempt never makes it here. If a driver says they were declined and you can't find the row, that's why.
+</Note>
+
 A decline almost always falls into one of three buckets:
 
 - **The terminal is a category you haven't approved** — e.g. a driver tried to buy gas at the pump using a wash-only card.
@@ -31,6 +35,10 @@ At the top of the page:
 <Card title="Date range" icon="calendar">
   Two date pickers — **start** and **end**. Defaults to the current calendar month. Selection is reflected in the URL so you can bookmark or share a specific window.
 </Card>
+
+<Tip>
+  The Incidents table defaults to 10 rows. Bump the page size to 50 from the bottom of the table for a fuller view of the period.
+</Tip>
 
 ## The Incidents table
 
@@ -85,6 +93,18 @@ These are the patterns the Rynse CS team sees over and over. If you're looking a
 
     **What to do.** Forward the driver the program one-pager and let them know the wash card isn't for fuel. Point them at the car-wash locations map. If you also want fuel on this card, reach out to your CSM — fuel can be enabled on the same card.
   </Accordion>
+  <Accordion title="Driver tried to use the card at a non-wash retailer">
+    **The fingerprint.** Merchant category is something like *General Retail*, *Department Store*, or *Convenience Store* — not a wash MCC. The swipe is blocked because the card is approved for car-wash merchant categories, not retail.
+
+    **What to do.** This is the card doing its job. Confirm with the driver that the swipe was at a non-wash merchant, and reinforce the program rules. No action needed in the portal.
+  </Accordion>
+  <Accordion title="Wash happened at a gas station with an attached car wash">
+    **The fingerprint.** The driver pulled into a fuel station that also offers a car wash, but the wash terminal is wired through the station's primary terminal — so the swipe came through as **Automated Fuel Dispenser** instead of a wash merchant category. You can usually tell because the driver insists they were at the wash, the merchant name is a gas-station brand, and the time-of-day matches a normal wash visit.
+
+    **What to do.** Email `support@gorynse.com` with the incident details. We can greenlight that specific merchant for wash use. If it keeps happening at the same location, the fix is permanent.
+
+    Alternative: tell drivers to use a different car wash in your network for now.
+  </Accordion>
   <Accordion title="Driver hit a monthly limit or per-transaction cap">
     **The fingerprint.** The message references a spend rule or velocity limit. The merchant and category both look correct — it's the *amount* that tripped the block.
 
@@ -122,7 +142,9 @@ You don't have to remember to check this tab. Turn on email alerts in **Settings
     Set the date range to the quarter. Sort or scan the **Merchant Category** column — if one category (especially *Automated Fuel Dispenser*) is dominating, you have a driver-education or scope problem. If one **Merchant** keeps appearing, the vendor's terminal is likely misclassified.
   </Accordion>
   <Accordion title="Confirm a decline you can't find under Incidents">
-    Switch the view toggle to **All Declines**. This shows every declined authorization in the window, including ones that didn't trip a Rynse rule (e.g. PIN entered wrong at the pump, terminal communication errors). If the swipe shows up here but not under Incidents, the network rejected it before our rules even ran.
+    Switch the view toggle to **All Declines**. This shows every declined authorization in the window, including ones that didn't trip a Rynse rule (e.g. PIN entered wrong at the pump, terminal communication errors).
+
+    If the swipe isn't on either view, it never reached the payment processor — common causes: the merchant doesn't accept the card type, the terminal couldn't establish a connection, or the driver swiped a different card. Confirm with the driver where exactly the swipe was attempted.
   </Accordion>
   <Accordion title="Decide whether to greenlight a misclassified merchant">
     Open the incident, confirm in **Transaction Information** that the merchant is genuinely a car wash. Email `support@gorynse.com` and ask us to allow that merchant ID. Trade-off: greenlighting allows any spend at that merchant within your existing category and dollar policies, so only do it for locations you trust.
