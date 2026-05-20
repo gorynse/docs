@@ -13,26 +13,33 @@ This page is the lay of the land. The next two pages cover what you actually do 
 
 Here's what a mobile wash looks like from your seat — the five touchpoints you actually see and act on. Everything between is handled by Rynse and the vendor.
 
-```mermaid
-flowchart LR
-    A["<b>1 · Submit request</b><br/>facility · vehicles<br/>services · date window"] --> B["<b>2 · Scheduled</b><br/>vendor matched<br/>date confirmed"]
-    B --> C["<b>3 · On the schedule</b><br/>visit visible on<br/>the calendar"]
-    C --> D(("<b>4 · Wash on-site</b><br/><i>happens offline</i>"))
-    D --> E["<b>5 · Work order complete</b><br/>invoice ready<br/>in the portal"]
+<Steps>
+  <Step title="Submit request" icon="paper-plane">
+    Open **Mobile Wash → Work Orders** and create a request: facility, vehicles, services, date window, notes.
 
-    classDef stage fill:#EEEBFF,stroke:#5A47FF,stroke-width:1.5px,color:#1F1A4D
-    classDef offline fill:#F4F6FA,stroke:#CDD3DD,stroke-width:1.5px,color:#475063,stroke-dasharray: 4 3
-    class A,B,C,E stage
-    class D offline
-```
+    **What you'll see:** _"Work order requested"_ confirmation.
+  </Step>
+  <Step title="Scheduled" icon="handshake">
+    Nothing on your end — Rynse coordinates with the vendor on your behalf.
 
-| Stage | What you do | What you'll see |
-| --- | --- | --- |
-| **1 · Submit request** | Open **Mobile Wash → Work Orders** and create a request: facility, vehicles, services, date window, notes. | _"Work order requested"_ confirmation. |
-| **2 · Scheduled** | Nothing — Rynse coordinates with the vendor on your behalf. | _"Your work order is scheduled for [date]"_ notification once a vendor and date are locked in. |
-| **3 · On the schedule** | Optional — check the Schedule view to confirm timing or share with a colleague. | The visit on the calendar, plus reminder + reschedule updates as the date approaches. |
-| **4 · Wash on-site** | Nothing in the portal. Vendor's crew shows up and washes the listed vehicles. | _(offline — no portal activity)_ |
-| **5 · Work order complete** | Pull the invoice from the work order; reconcile against the monthly invoice cycle. | _"Work order complete — invoice attached"_ notification with the per-WO invoice. |
+    **What you'll see:** _"Your work order is scheduled for [date]"_ notification once a vendor and date are locked in.
+  </Step>
+  <Step title="On the schedule" icon="calendar-check">
+    Optional — check the Schedule view to confirm timing or share with a colleague.
+
+    **What you'll see:** the visit on the calendar, plus reminder and reschedule updates as the date approaches.
+  </Step>
+  <Step title="Wash on-site" icon="spray-can-sparkles">
+    The mobile wash vendor's crew comes to your facility and washes the listed vehicles.
+
+    **What you'll see:** crew on-site on the scheduled date.
+  </Step>
+  <Step title="Work order complete" icon="file-invoice-dollar">
+    Pull the invoice from the work order and reconcile against the monthly invoice cycle.
+
+    **What you'll see:** _"Work order complete — invoice attached"_ notification with the per-WO invoice.
+  </Step>
+</Steps>
 
 ## Two ways a mobile wash happens
 
