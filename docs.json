@@ -34,7 +34,8 @@
           "rynse-web/facilities",
           "rynse-web/vehicles",
           "rynse-web/users",
-          "rynse-web/car-wash-locations"
+          "rynse-web/car-wash-locations",
+          "rynse-web/spend-controls"
         ]
       },
       {
