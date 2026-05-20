@@ -8,7 +8,7 @@ icon: "car"
 The **Organization → Vehicles** page at [app.v2.gorynse.com](https://app.v2.gorynse.com) is the source of truth for which vehicles are enrolled in your program. This is where you confirm what's in the fleet, surface vehicles missing a card, and check what each vehicle is approved to spend on.
 
 <Info>
-  **The Vehicles list is read-only.** Adding, editing, archiving, swapping cards between vehicles, or changing memberships is handled by the Rynse team — see [Asking us to make changes](#asking-us-to-make-changes) below. The actions you *can* take from this page (Freeze Card, Close Card, Change Facility) are covered further down.
+  **The Vehicles list is read-only.** Adding, editing, archiving, swapping cards between vehicles, or changing memberships is handled by the Rynse team — see [Asking us to make changes](#asking-us-to-make-changes) below. The actions you _can_ take from this page (Freeze Card, Close Card, Change Facility) are covered further down.
 </Info>
 
 ## How it's organized
@@ -62,12 +62,15 @@ The Spend Policy column is the most information-dense column on the page. Hover 
   <Accordion title="Policy">
     The named spend policy applied to this vehicle (e.g., "Standard Wash Policy"). The tooltip shows the policy's description and each rule inside it — for example, a per-transaction cap, a monthly cap, or an allowed merchant list.
   </Accordion>
+
   <Accordion title="Organization Rules">
     Rules that apply across your whole organization — for example, "no spend on weekends" or "block fuel purchases org-wide." If you only see a single gray chip in the Spend Policy column, that's an org-level rule applying because the vehicle has no specific policy of its own.
   </Accordion>
+
   <Accordion title="Merchant Rules">
     The list of approved spend categories for this card — Car Wash, Fuel Gas, EV Charging, Preventative Maintenance. The padlock icon in the column means merchant rules are configured.
   </Accordion>
+
   <Accordion title="Schedule">
     Any time-of-day or day-of-week restrictions on the card. The clock icon in the column means a schedule is configured.
   </Accordion>
@@ -89,10 +92,11 @@ Changes to the vehicle roster — adding a vehicle, editing details, swapping a 
 
 <Steps>
   <Step title="Email support@gorynse.com">
-    Send an email to <a href="mailto:support@gorynse.com">support@gorynse.com</a> describing what you need.
+    Send an email to  describing what you need.
   </Step>
   <Step title="Include the vehicle details">
     For each vehicle, send:
+
     - **Description** — year, make, model, and your internal name if you use one
     - **VIN**
     - **License plate** and state
@@ -107,7 +111,7 @@ Changes to the vehicle roster — adding a vehicle, editing details, swapping a 
 </Steps>
 
 <Tip>
-  **Decommissioning a vehicle?** Ask us to *archive* it rather than delete it. Archiving stops billing and removes it from dashboard filters, but keeps the transaction history available under the **Archived** tab for future reference.
+  **Decommissioning a vehicle?** Ask us to _archive_ it rather than delete it. Archiving stops billing and removes it from dashboard filters, but keeps the transaction history available under the **Archived** tab for future reference.
 </Tip>
 
 ### Fleetio customers
@@ -115,6 +119,31 @@ Changes to the vehicle roster — adding a vehicle, editing details, swapping a 
 <Warning>
   If your organization is configured to sync with **Fleetio**, you'll see a blue **Synced with Fleetio** banner at the top of the table. Fleetio is your system of record — make vehicle changes in Fleetio, not by emailing support. Changes flow into Rynse automatically.
 </Warning>
+
+## What to expect after requesting a change
+
+Once you've submitted a vehicle addition, deactivation, or any other roster change, here's what happens — and how long each step takes.
+
+<Steps>
+  <Step title="Rynse confirms receipt">
+    You'll get a confirmation email (or a Smartsheet form receipt, if you submitted via form) acknowledging the request. If you don't receive one within a few hours, email `support@gorynse.com` to confirm it was received before assuming it's in progress.
+  </Step>
+  <Step title="Rynse coordinates with the wash vendor">
+    Your Customer Success Manager works the vendor side — enrolling or removing the vehicle from the wash program, updating license plate recognition (LPR) records, and issuing or closing the card. This step can involve multiple vendors depending on your program.
+  </Step>
+  <Step title="Change goes live">
+    - **New vehicle additions:** Typically active within **3–5 business days**, depending on vendor processing time. The vehicle will appear in your Vehicles list and the card (or plate) will be recognized at the wash once activation is complete.
+    - **Vehicle deactivations and removals:** Allow **24 to 48 hours** for wash access to fully close at the vendor. During that window, the vehicle may still be able to complete a wash — you may be responsible for any charges incurred before deactivation is fully processed.
+  </Step>
+</Steps>
+
+<Warning>
+  **If the timeline has passed and the vehicle still isn't active**, don't assume the request is still in progress. Activation can stall if a vendor hasn't processed the enrollment on their end. Email `support@gorynse.com` with the vehicle's VIN or plate number and reference your original request — the CS team can check the vendor-side status and push it through.
+</Warning>
+
+<Tip>
+  For urgent activations (e.g., a vehicle that needs to be on the road immediately), call this out explicitly when you email support. The team can escalate to the vendor and prioritize the enrollment.
+</Tip>
 
 ## Actions you can take from this page
 
@@ -124,9 +153,11 @@ For one-off, time-sensitive card situations, the table offers three bulk actions
   <Card title="Freeze Card" icon="snowflake">
     Temporarily disable the selected vehicles' cards. Transactions are blocked until the card is unfrozen. Use when a vehicle is out of service or a card is misplaced and you want to pause it without canceling.
   </Card>
+
   <Card title="Close Card" icon="ban">
     Permanently close the selected vehicles' cards. **There is no way to reopen a closed card** — a new card has to be issued. Use this for confirmed lost, stolen, or compromised cards.
   </Card>
+
   <Card title="Change Facility" icon="building">
     Reassign the selected vehicles to a different facility (e.g., after a depot move). Affects how their spend is bucketed on the dashboard and on invoices.
   </Card>
@@ -138,4 +169,4 @@ For one-off, time-sensitive card situations, the table offers three bulk actions
 
 ## A note on timing
 
-Transactions and visits on the Vehicles page reflect what vendors have reported to us. Vendor usage reports typically arrive in the first week of each month for the previous month's activity — so a brand-new vehicle won't show usage immediately, even if drivers are washing. If you've made a change and don't see it within a few business days, email <a href="mailto:support@gorynse.com">support@gorynse.com</a>.
+Transactions and visits on the Vehicles page reflect what vendors have reported to us. Vendor usage reports typically arrive in the first week of each month for the previous month's activity — so a brand-new vehicle won't show usage immediately, even if drivers are washing. If you've made a change and don't see it within a few business days, email .
