@@ -31,43 +31,43 @@ The portal has two sides — pages you **check** and pages where you **make chan
 
 <CardGroup cols={2}>
   <Card title="Pages you check (reporting)" icon="chart-mixed">
-    Dashboard, Fleet Wash Health, Visits, Incidents, Invoices, Spend Controls. This is what your morning looks like — health, spend, and program adoption at a glance.
+    Dashboard, Fleet Wash Health, Visits, Incidents, Invoices. This is what your morning looks like — health, spend, and program adoption at a glance.
   </Card>
   <Card title="Pages where you change things (management)" icon="sliders">
-    Facilities, Vehicles, Users, Car Wash Locations, Mobile Wash. Most management actions you can do yourself; vehicle, card, and spend-policy changes go through your CSM.
+    Facilities, Vehicles, Users, Car Wash Locations, Purchase Orders, Mobile Wash. Most management actions you can do yourself; vehicle, card, and spend-policy changes go through your CSM.
   </Card>
 </CardGroup>
 
-The sidebar groups these by category. Here's what each group contains:
+Here's the actual sidebar layout you'll see in the portal:
 
 <AccordionGroup>
-  <Accordion title="Reports" icon="chart-mixed">
+  <Accordion title="Reports (group)" icon="chart-mixed">
     - **Dashboard** — at-a-glance metrics, transactions broken out by category (Car Wash, Fuel / Gas, EV, Preventative Maintenance), and recent activity.
     - **Fleet Wash Health** — surface vehicles due for a wash and your most frequent washers.
   </Accordion>
-  <Accordion title="Organization" icon="building">
+  <Accordion title="Organization (group)" icon="building">
     - **Facilities** — your departments, depots, or sub-locations.
     - **Vehicles** — your fleet roster, card assignments, and active memberships.
     - **Users** — the people on your team with portal access.
-    - **Car Wash Locations** — a map of the vendors enrolled in your program.
-    - **Spend Controls** — the menu of card-spending rules your CSM configures for your fleet.
+    - **Car Wash Locations** — the embedded map of the vendors enrolled in your program.
+    - **Purchase Orders** — track spend against a budget or PO; works as a standalone monthly cap too.
   </Accordion>
-  <Accordion title="Mobile Wash" icon="spray-can-sparkles">
-    - **Schedule** — calendar of upcoming on-site visits and completed work orders.
-    - **Work Orders** — list view for requesting and tracking on-site washes.
+  <Accordion title="Mobile Wash (group)" icon="spray-can-sparkles">
+    - **Work Orders** — the entry point for on-site washing. The page itself has two tabs: **Schedule** (calendar of upcoming visits and completed work orders) and **Work Orders** (list view for requesting and tracking).
   </Accordion>
-  <Accordion title="Billing & activity" icon="receipt">
+  <Accordion title="Visits, Incidents, Invoices, Settings (top-level items)" icon="receipt">
+    These four items sit directly in the sidebar, not under a group:
     - **Visits** — every wash, fuel stop, and visit across your fleet.
-    - **Incidents** — declined card swipes with reasons and recommended next steps.
+    - **Incidents** — declined card swipes with reasons and recommended next steps (only meaningful for card customers).
     - **Invoices** — monthly invoices, balances, and budget tracking.
-  </Accordion>
-  <Accordion title="Account" icon="user-gear">
     - **Settings** — org preferences and per-user notification settings (including Incident alerts).
   </Accordion>
 </AccordionGroup>
 
 <Note>
   Everyone you invite into your org has the same level of access today — there are no per-page permission tiers. Keep your user list tight (see [Users](/rynse-web/users)).
+
+  **Spend Controls** isn't in the sidebar — it's configured by your CSM. The [Spend Controls](/rynse-web/spend-controls) page documents the menu of rules you can request.
 </Note>
 
 ## Card customers vs. license-plate customers

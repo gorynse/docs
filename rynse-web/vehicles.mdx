@@ -8,12 +8,8 @@ icon: "car"
 The **Organization → Vehicles** page at [app.v2.gorynse.com](https://app.v2.gorynse.com) is the source of truth for which vehicles are enrolled in your program. This is where you confirm what's in the fleet, surface vehicles missing a card, and check what each vehicle is approved to spend on.
 
 <Info>
-  **Most changes go through Rynse.** Adding or archiving a vehicle, swapping a card between vehicles, ordering new cards, and changing memberships are all handled by your CS team — see [Asking us to make changes](#asking-us-to-make-changes) below. **A few fields are editable inline by double-clicking the cell:** Description, VIN, and License Plate. Card status actions (Freeze, Close, Change Facility) are covered further down.
+  **Most changes go through Rynse.** Adding or archiving a vehicle, swapping a card between vehicles, ordering new cards, and changing memberships are all handled by your CS team — see [Asking us to make changes](#asking-us-to-make-changes) below. **Click any vehicle row to open the Vehicle dialog**, where you can edit **External ID** directly. Other identification fields (VIN, license plate, make / model / year) are read-only and managed by CS. Card status actions (Freeze Card, Close Card, Change Facility, Archive Vehicle) are covered further down.
 </Info>
-
-<Tip>
-  Tables default to showing 10 rows. Bump the page size to 50 from the dropdown at the bottom of the table — you'll usually want to see your whole fleet at once.
-</Tip>
 
 ## How it's organized
 
@@ -49,7 +45,7 @@ If any of your vehicles are enrolled in wash memberships (pay-as-you-go or unlim
 | **License Plate** | The plate vendors use to identify the vehicle, especially at LPR locations |
 | **External ID** | Your own asset number — surfaces on tables and invoices so you can reconcile back to your internal records |
 | **Asset Type** | Category of the vehicle (e.g., sedan, van, heavy duty) |
-| **Card** | Last 4 of the Rynse card currently attached. Icons in this column tell you the card's state at a glance: **green check** = active; **snowflake** = frozen (paused, reversible); **red X** = closed (permanent); **red card** = no card attached. |
+| **Card** | Last 4 of the Rynse card currently attached. **No card attached:** a red card icon appears instead of digits. **On-demand funding accounts:** a bank icon appears in place of the card icon. |
 | **Name on Card** | The name embossed on the physical card. Many customers use this field as a free-text department or account code. |
 | **Spend Policy** | The rules that govern what this card can be used for. Hover for details — see below. |
 | **Services** | Icons for each membership type enrolled on the vehicle. Hover for the vendor list. |
@@ -63,7 +59,7 @@ If any of your vehicles are enrolled in wash memberships (pay-as-you-go or unlim
 The Spend Policy column is the most information-dense column on the page. Hover over it to see a tooltip with up to four sections:
 
 <Note>
-  **The padlock icon means merchant rules are configured — not that the card is frozen.** Frozen cards show the snowflake icon in the **Card** column. See [Spend Controls](/rynse-web/spend-controls) for what each rule type does.
+  **The padlock icon means merchant rules are configured — not that the card is frozen.** The padlock indicates the card has spend-category restrictions; the punch-clock icon next to it (when present) indicates an active schedule constraint. See [Spend Controls](/rynse-web/spend-controls) for what each rule type does.
 </Note>
 
 <AccordionGroup>
@@ -161,11 +157,11 @@ This is why "I closed the card, where did the history go?" is never a real probl
 
 ## Actions you can take from this page
 
-For one-off, time-sensitive card situations, the table offers three bulk actions you can run yourself. Tick the checkbox on one or more rows, then use the buttons below the table.
+For one-off, time-sensitive situations, the table offers four bulk actions you can run yourself. Tick the checkbox on one or more rows, then use the buttons below the table.
 
 **Quick read on the two card actions:** _freezing_ is reversible — like asking your credit-card company to pause a card. _Closing_ is permanent — a new card has to be issued. Use freeze for misplaced or temporarily out-of-service vehicles; reserve close for cards that are confirmed lost, stolen, or compromised.
 
-<CardGroup cols={3}>
+<CardGroup cols={2}>
   <Card title="Freeze Card" icon="snowflake">
     Temporarily disable the selected vehicles' cards. Transactions are blocked until the card is unfrozen. Use when a vehicle is out of service or a card is misplaced and you want to pause it without canceling.
   </Card>
@@ -176,6 +172,10 @@ For one-off, time-sensitive card situations, the table offers three bulk actions
 
   <Card title="Change Facility" icon="building">
     Reassign the selected vehicles to a different facility (e.g., after a depot move). Affects how their spend is bucketed on the dashboard and on invoices.
+  </Card>
+
+  <Card title="Archive Vehicle" icon="box-archive">
+    Decommission the selected vehicles. Archived vehicles move to the **Archived** tab, stop counting toward utilization, and stop being billed. Their transaction history remains accessible.
   </Card>
 </CardGroup>
 

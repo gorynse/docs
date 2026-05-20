@@ -47,15 +47,25 @@
         ]
       },
       {
-        "group": "Billing & activity",
+        "group": "Visits",
         "pages": [
-          "rynse-web/visits",
-          "rynse-web/incidents",
+          "rynse-web/visits"
+        ]
+      },
+      {
+        "group": "Incidents",
+        "pages": [
+          "rynse-web/incidents"
+        ]
+      },
+      {
+        "group": "Invoices",
+        "pages": [
           "rynse-web/invoices"
         ]
       },
       {
-        "group": "Account",
+        "group": "Settings",
         "pages": [
           "rynse-web/settings"
         ]
