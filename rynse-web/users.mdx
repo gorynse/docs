@@ -1,0 +1,133 @@
+---
+title: "Managing portal users"
+sidebarTitle: "Users"
+description: "Add the fleet, finance, and admin teammates who need access to the Rynse portal — and keep drivers out of it."
+icon: "user-gear"
+---
+
+The **Users** page is where you control who can log in to your Rynse portal at `app.v2.gorynse.com`. Unlike vehicles, you manage user access yourself — add a new teammate, reset a password, or remove access in a couple of clicks.
+
+This page is for **fleet managers, finance, and admin staff** who need to pull reports, pay invoices, or run the program. Drivers do not need (and should not have) portal access.
+
+## Who should have a login?
+
+<CardGroup cols={2}>
+  <Card title="Add them" icon="circle-check">
+    - Fleet managers and dispatchers
+    - Finance / AP staff who pay invoices
+    - Operations or admin contacts who pull reports
+    - Anyone on your team who needs visibility into spend, utilization, or vendor activity
+  </Card>
+  <Card title="Skip them" icon="circle-xmark">
+    - Individual drivers — they don't need to see invoices or reports
+    - Field techs who only need to swipe a card or scan a plate at the vendor
+    - Anyone who would only add noise to the account
+  </Card>
+</CardGroup>
+
+<Warning>
+  We actively recommend against giving drivers portal access. The portal is built for the people running the program, not the people using it day-to-day at the wash. Keep the user list short and intentional — it makes audits, password resets, and offboarding much easier.
+</Warning>
+
+## The Users table
+
+The table on **Organization → Users** lists everyone on your account, with four columns:
+
+| Column | What it shows |
+| --- | --- |
+| **Name** | Full name on the user's profile. |
+| **Email** | The login email — also where temp passwords and resets are sent. |
+| **Last Active** | Date and time of the user's most recent portal activity. Blank (`-`) means they've never logged in. |
+| **User Type** | The role assigned to the user. Today this is always **Fleet Manager**. |
+
+<Note>
+  **One role today.** Every portal user is a Fleet Manager — there are no per-tab permission tiers. Anyone you add can see everything in the portal. If we ever ship role-based permissions, this page will be updated.
+</Note>
+
+## Adding a user
+
+<Steps>
+  <Step title="Go to Organization → Users">
+    The table shows everyone with current access.
+  </Step>
+  <Step title="Click Add User">
+    The button sits below the table. A dialog opens.
+  </Step>
+  <Step title="Fill in the form">
+    All four fields are required.
+
+    | Field | Notes |
+    | --- | --- |
+    | **First name** | The teammate's first name. |
+    | **Last name** | The teammate's last name. |
+    | **Email** | Their work email. This becomes their portal login. |
+    | **User Type** | Defaults to **Fleet Manager** — the only option today. |
+  </Step>
+  <Step title="Click Add User to save">
+    The new user appears in the table immediately, and Rynse emails them a temporary password from `support@gorynse.com`.
+  </Step>
+</Steps>
+
+### What your teammate sees
+
+The new user gets an email from `support@gorynse.com` with a temporary password. On their first login at `app.v2.gorynse.com`, they're prompted to change it to something only they know. From there, they have the same access you do.
+
+<Tip>
+  Temporary passwords expire quickly. If your teammate doesn't log in within a day or two, the password may lapse — just use **Reset Password** (below) to send a fresh one.
+</Tip>
+
+## Resetting a password
+
+If a teammate forgets their password or their temp password expired, you can issue a new one without contacting support.
+
+<Steps>
+  <Step title="Find the user in the table">
+    Use the row matching their name or email.
+  </Step>
+  <Step title="Click the key icon">
+    The key icon in their row opens the **Change Password** dialog.
+  </Step>
+  <Step title="Set a new password and save">
+    Enter a new password (at least 6 characters) and click **Reset Password**. Share it with your teammate over a secure channel and have them change it on their next login.
+  </Step>
+</Steps>
+
+## Removing a user
+
+When someone leaves the team or no longer needs portal access, remove them promptly.
+
+<Steps>
+  <Step title="Click the remove-person icon">
+    The icon to the right of the password key in their row.
+  </Step>
+  <Step title="Confirm in the dialog">
+    A confirmation prompt asks **"Are you sure you want to remove this user's access?"** Click **Yes, Remove**.
+  </Step>
+</Steps>
+
+Once removed, the user can no longer log in. Their historical activity (like the **Last Active** timestamp on past records) stays intact — only their access is revoked.
+
+<Note>
+  Removing a user is access-only. It doesn't touch invoices, vehicles, or any other data on your account.
+</Note>
+
+## Best practices
+
+<CardGroup cols={2}>
+  <Card title="Keep the list tight" icon="users">
+    The shorter your user list, the easier it is to audit and offboard. Add fleet, finance, and admin teammates — that's it.
+  </Card>
+  <Card title="Use work emails" icon="envelope">
+    Personal emails make offboarding messy. Stick to email addresses tied to your organization so access can be cut when someone leaves.
+  </Card>
+  <Card title="Offboard quickly" icon="user-minus">
+    When a teammate moves on, remove them the same day. It takes ten seconds and avoids stale access piling up.
+  </Card>
+  <Card title="Need a driver-friendly view?" icon="qrcode">
+    Drivers don't need a login — point them at the QR code on the driver one-pager (linked from **Organization → Car Wash Locations**) instead. It shows every vendor location with driving directions, no portal access required.
+  </Card>
+</CardGroup>
+
+## Stuck or need help?
+
+If a teammate can't log in, isn't receiving the temp password email, or you'd like a hand cleaning up old accounts, email `support@gorynse.com` and we'll sort it out. If invoice or credential emails aren't landing, ask your IT team to whitelist `@gorynse.com` — corporate firewalls are the most common reason new users miss the welcome email.

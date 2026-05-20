@@ -1,0 +1,146 @@
+---
+title: "Your transaction ledger"
+sidebarTitle: "Visits"
+description: "Every wash, fuel stop, preventative maintenance visit, and mobile wash event your fleet has run through Rynse — filtered by date, exportable to CSV, and reconcilable line-by-line against your monthly invoice."
+icon: "receipt"
+---
+
+The **Visits** page at [app.v2.gorynse.com](https://app.v2.gorynse.com) is the line-by-line ledger of every transaction in your Rynse program. If a vehicle was washed, fueled, serviced, or scrubbed by a mobile crew, the event lives here. Use it to reconcile against your monthly invoice, pull usage history for a specific date range, or hand a clean CSV to anyone in your organization who asks for one.
+
+<Info>
+  **Visits is not real-time.** Wash and fuel vendors report usage at the end of each month. The Rynse billing team processes those reports and uploads the visits in the first week of the following month. So you'll see April's transactions populate in the first week of May, not as drivers swipe.
+</Info>
+
+## What you'll see at the top
+
+When the page loads, the header shows the page title and — if any transactions are still in flight — a yellow **Pending** badge with a count next to it.
+
+<Tip>
+  **Hover the Pending badge for a quick reminder.** The tooltip explains that pending transactions are still being processed by the vendor and will auto-update within about 24 hours. Pending rows in the table are also highlighted in yellow so they're easy to spot.
+</Tip>
+
+### Date range filter
+
+The two date pickers in the top right control what's in the table. They default to the current calendar month (first of the month through today), but you can set any range — a single day, a quarter, a full year, or anything in between. The selected range is reflected in the URL, so you can bookmark a useful view or share it with a colleague.
+
+<Note>
+  **Multi-month windows are fully supported.** This is the same filter customers use to pull a full quarter for a board report, or a year-to-date view at renewal time.
+</Note>
+
+## What each column means
+
+The table shows one row per transaction, sorted most recent first.
+
+| Column | What it means |
+| --- | --- |
+| **Status** | Blank when a transaction has cleared. A yellow **Pending** chip means the vendor hasn't posted the final batch yet. Other states (`Declined`, `Fraud`, `Duplicate`) can also appear here in rare cases. |
+| **Transaction Date** | Date and time the event happened. |
+| **Merchant** | The vendor that processed the visit. **Click the merchant name** to open the Transaction Details dialog. |
+| **Facility** | Which of your facilities this vehicle is assigned to — useful when you cost-allocate by department or division. |
+| **Description** | The vehicle's year / make / model. |
+| **Type** | An icon for the kind of visit: car wash, fuel gas, fuel EV, preventative maintenance, or mobile wash. Hover the icon for the label. |
+| **VIN** | The vehicle identification number. |
+| **License Plate** | The plate used at LPR (license plate recognition) locations. |
+| **Last 4** | Last four digits of the Rynse card, when the visit was paid by card. Membership and mobile wash rows leave this blank. |
+| **Name on Card** | The name embossed on the card. Many fleets use this field as a free-text department or account code, so it's a handy way to slice activity. |
+| **External ID** | Your own asset number for the vehicle, so you can reconcile to your internal records. |
+| **Service** | The specific service the driver got (for example, "Premium Exterior", "Basic Full Service", or "Unlimited Fee"). |
+| **Amount** | The dollar amount for that line. |
+
+Below the table is a **Total Amount** line that sums everything in the current date range — a quick "how much did we spend this period?" number you can pull without exporting.
+
+## Pending transactions
+
+The single most common question on this page is: **"Why does this row say PENDING?"**
+
+The answer is almost always the same: the vendor hasn't posted the final batch for that transaction yet. The visit happened, but the vendor's system is still settling. Pending rows update to a normal (cleared) status automatically — typically within 24 hours.
+
+<Warning>
+  **You don't need to do anything to fix a pending row.** Don't email support, don't dispute it. Give it a day. If a row sits in Pending for several days, then it's worth flagging.
+</Warning>
+
+## Clicking into a transaction
+
+Click a **Merchant** name in any row to open the **Transaction Details** dialog. The dialog has tabs across the top showing the lifecycle of the transaction — when it was authorized, if it was reversed, when it cleared, whether it was refunded, or whether it was declined. Only the tabs that apply to that specific transaction are active.
+
+Underneath the lifecycle tabs you'll see:
+
+- **Transaction detail** — the merchant, amount, and timing for that event.
+- **Vehicle detail** — the vehicle the card is tied to, including the same external ID, VIN, and plate you see in the table.
+- **Recent activity at the same card** — a short timeline of nearby transactions on the same card, so you can see the visit in context (was this a one-off, or part of a pattern?).
+
+<Tip>
+  The Transaction Details dialog is the right place to investigate any single line item — a declined swipe, a refund, or a transaction a driver swears they didn't make.
+</Tip>
+
+## Unlimited memberships appear as one row per month
+
+If you have vehicles enrolled in an **Unlimited** membership at a wash vendor, those visits show up differently from pay-as-you-go transactions.
+
+Instead of a row for each wash (an Unlimited member can wash daily without changing what you pay), the ledger shows **one aggregated row per month** with:
+
+- **Merchant**: "Unlimited"
+- **Description**: the count of vehicles on Unlimited that month (e.g. "12 Car(s)")
+- **Service**: "Unlimited Wash"
+- **Amount**: the total monthly Unlimited membership fee for those vehicles
+- **Facility**: "All"
+
+<Note>
+  This is by design — your monthly Unlimited fee is what you actually pay, regardless of wash count. The fee shows once per month and matches the line on your invoice.
+</Note>
+
+## Exporting to CSV
+
+Above the table you'll find a toolbar with an **Export** button. Choose **Download as CSV** and you'll get a file containing every row currently in view — same date range, same filters, every column.
+
+<Info>
+  **This is the same supplemental document your billing team gets each month.** Rynse emails the CSV with your monthly invoice; this button lets you re-pull it any time, for any period, without waiting on us.
+</Info>
+
+Common reasons Fleet Managers export from this page:
+
+<CardGroup cols={2}>
+  <Card title="Send detail to leadership" icon="users">
+    Commissioners, directors, or board members who want line-by-line backup for what they're being invoiced. Export the period they care about and forward the CSV.
+  </Card>
+  <Card title="Reconcile to your accounting system" icon="calculator">
+    Pull a full month or quarter and match it against what posted in your ERP or accounting tool.
+  </Card>
+  <Card title="Year-end reporting" icon="chart-line">
+    Set the date range to the full fiscal year and export — that's your usage data, with vendor, vehicle, and service detail attached.
+  </Card>
+  <Card title="Investigate a driver question" icon="magnifying-glass">
+    A driver swears they only washed twice last month and the invoice shows five. Filter to that month, sort by the vehicle, and you have the answer.
+  </Card>
+</CardGroup>
+
+## Multi-organization customers
+
+If you manage more than one Rynse organization — for example, separate orgs for different funds, departments, or operating units — use the **organization switcher in the upper left** to flip between them. Each org has its own visits ledger, so the switcher is how you pull a per-org usage history.
+
+<Tip>
+  **Switch first, then set the date range.** The date filter is preserved as you switch orgs, so you can pull the same month across each of your organizations in a few clicks.
+</Tip>
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Why is the page blank when I just signed up?">
+    Brand-new accounts won't see any rows until the first vendor usage report uploads — typically the first week of the month following your go-live. As soon as visits start appearing in the ledger, drivers are using the program.
+  </Accordion>
+  <Accordion title="Why doesn't today's wash appear yet?">
+    Visits aren't real-time. Wash and fuel vendors send their reports at the end of each month; Rynse processes and uploads them in the first week of the following month. Mobile wash visits follow the same monthly cycle.
+  </Accordion>
+  <Accordion title="A transaction has been Pending for more than a few days. What do I do?">
+    Email <a href="mailto:support@gorynse.com">support@gorynse.com</a> with the transaction date, merchant, and vehicle. Most pending rows resolve within 24 hours, but if one is stuck we'll chase the vendor on your behalf.
+  </Accordion>
+  <Accordion title="Why is there a row labeled 'Unlimited' that doesn't match a specific date?">
+    That's your monthly Unlimited membership aggregate — one row per month covering all your Unlimited-enrolled vehicles. The amount equals your Unlimited fee for that month, not a per-visit charge.
+  </Accordion>
+  <Accordion title="Can I get the CSV without logging in?">
+    The same file is emailed alongside your monthly invoice. If you need an ad-hoc export, the **Export → Download as CSV** option on this page produces it for any date range you choose.
+  </Accordion>
+  <Accordion title="A row shows the wrong vehicle or external ID. How do I fix it?">
+    Email <a href="mailto:support@gorynse.com">support@gorynse.com</a> with the transaction date, merchant, and what's wrong. Most cases come down to a card that was reassigned mid-period — we'll confirm and correct the record on our side.
+  </Accordion>
+</AccordionGroup>

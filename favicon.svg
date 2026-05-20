@@ -1,19 +1,10 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M9.06145 23.1079C5.26816 22.3769 -3.39077 20.6274 1.4173 5.06384C9.6344 6.09939 16.9728 14.0644 9.06145 23.1079Z" fill="url(#paint0_linear_17557_2021)"/>
-<path d="M8.91928 23.0939C5.27642 21.2223 0.78371 4.20891 17.0071 0C20.7569 7.19341 19.6212 16.5452 8.91928 23.0939Z" fill="url(#paint1_linear_17557_2021)"/>
-<path d="M8.91388 23.0788C8.73534 19.8817 10.1585 9.08525 23.5699 13.1107C23.1812 20.1229 18.984 26.4182 8.91388 23.0788Z" fill="url(#paint2_linear_17557_2021)"/>
-<defs>
-<linearGradient id="paint0_linear_17557_2021" x1="3.77557" y1="5.91571" x2="5.23185" y2="21.5589" gradientUnits="userSpaceOnUse">
-<stop stop-color="#18E299"/>
-<stop offset="1" stop-color="#15803D"/>
-</linearGradient>
-<linearGradient id="paint1_linear_17557_2021" x1="12.1711" y1="-0.718425" x2="10.1897" y2="22.9832" gradientUnits="userSpaceOnUse">
-<stop stop-color="#16A34A"/>
-<stop offset="1" stop-color="#4ADE80"/>
-</linearGradient>
-<linearGradient id="paint2_linear_17557_2021" x1="23.1327" y1="15.353" x2="9.33841" y2="18.5196" gradientUnits="userSpaceOnUse">
-<stop stop-color="#4ADE80"/>
-<stop offset="1" stop-color="#0D9373"/>
-</linearGradient>
-</defs>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Rynse-favicon (1)</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fillRule="evenodd">
+        <g id="Rynse-favicon-(1)">
+            <circle id="Oval" fill="#5A47FF" fillRule="nonzero" cx="8" cy="8" r="8"></circle>
+            <path d="M3.00012,6.28185 C2.98708,8.26167 4.03205,9.61078 6.23285,9.62596 L10.6198,9.65969 L10.6296,8.17904 L6.24263,8.147 C4.87162,8.13519 4.3206,7.38306 4.32712,6.29197 C4.33364,5.20087 4.89607,4.45549 6.26872,4.4656 L6.40402,4.4656 L6.40402,3.00013 L6.29317,3.00013 C4.0777,2.98495 3.01316,4.30202 3.00012,6.28185 Z M6.40408,10.7948 L6.40408,12.2755 L9.76723,12.2435 C11.9664,12.2283 13.013,10.864 13,8.89934 C12.9869,6.93469 11.9224,5.60244 9.70691,5.61762 L6.40408,5.61762 L6.40408,7.0831 L9.733,7.0831 C11.104,7.07298 11.6681,7.79475 11.6746,8.90271 C11.6811,10.0107 11.1285,10.7476 9.75745,10.7577 L6.40408,10.7948 Z" id="Shape" fill="#FFFFFF"></path>
+        </g>
+    </g>
 </svg>

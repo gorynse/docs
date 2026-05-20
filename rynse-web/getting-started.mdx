@@ -1,0 +1,83 @@
+---
+title: "Getting started"
+sidebarTitle: "Getting started"
+description: "Sign in, find your way around Rynse Web, and understand the navigation before you do anything else."
+icon: "compass"
+---
+
+Rynse Web is the management console for your fleet. This page walks you through your first session: signing in, picking the right organization, and orienting to the left-hand navigation.
+
+## Sign in
+
+<Steps>
+  <Step title="Open the dashboard">
+    Go to [app.gorynse.com](https://app.gorynse.com). The sign-in page is shared across all customers and partners.
+  </Step>
+  <Step title="Enter your credentials">
+    Sign in with the email your fleet admin invited. First time? Check your inbox for an invitation email and follow the password-set link before signing in here.
+  </Step>
+  <Step title="Pick your organization">
+    If you belong to more than one organization, an **organization selector** appears at the top of the left sidebar. Use it to switch between them — every screen in Rynse Web is scoped to the currently selected org.
+  </Step>
+</Steps>
+
+<Tip>
+  Forgot your password? Use the **Reset password** link on the sign-in page. The reset email comes from `no-reply@gorynse.com` — check spam if it doesn't appear within a minute.
+</Tip>
+
+## The left sidebar
+
+Rynse Web's navigation is grouped to match the way fleets actually run. Here's what each section is for:
+
+<AccordionGroup>
+  <Accordion title="Reports" icon="chart-mixed">
+    Where you look first thing in the morning.
+
+    - **Dashboard** — at-a-glance metrics, transactions broken out by category (Car Wash, Fuel / Gas, EV, Preventative Maintenance), and recent activity.
+    - **Fleet Wash Health** — your composite health score for wash program engagement.
+  </Accordion>
+  <Accordion title="Organization" icon="building">
+    The records that everything else hangs off of.
+
+    - **Facilities** — locations where your vehicles live.
+    - **Vehicles** — your fleet roster, card assignments, and active memberships.
+    - **Users** — the people on your team with access to this org.
+    - **Car Wash Locations** — a map of accepting car wash vendors.
+    - **Purchase Orders** — for organizations that route spend through POs.
+  </Accordion>
+  <Accordion title="Mobile Wash" icon="spray-can-sparkles">
+    - **Work Orders** — pending and completed on-site mobile wash jobs.
+  </Accordion>
+  <Accordion title="Other" icon="ellipsis">
+    - **Visits** — every wash visit across your fleet, with vehicle, location, and timestamp.
+    - **Incidents** — flagged issues raised against transactions or visits.
+    - **Invoices** — billing history and any open balances.
+    - **Settings** — org preferences and integrations.
+  </Accordion>
+</AccordionGroup>
+
+## Roles and what you'll see
+
+What you see in Rynse Web depends on your role. The most common roles:
+
+| Role | Sees |
+| --- | --- |
+| **Fleet manager** | The full Reports + Organization sections, including vehicle management and dashboard reports |
+| **User** | Limited views — typically just Users and Invoices for their own org |
+| **Vendor** | The vendor dashboard (work orders, history) instead of the fleet manager dashboard |
+| **Rynse admin** | An additional **Rynse** section for cross-org administration |
+
+<Note>
+  If a menu item described above isn't visible to you, that role doesn't have access. Ask your fleet manager (or the Rynse team) if you think you should.
+</Note>
+
+## What to do next
+
+<CardGroup cols={2}>
+  <Card title="Read the dashboard" icon="chart-mixed" href="/rynse-web/dashboard">
+    Understand the cards, charts, and tables on the home screen.
+  </Card>
+  <Card title="Add a vehicle" icon="car" href="/rynse-web/vehicles">
+    Walk through adding a vehicle, assigning a card, and attaching memberships.
+  </Card>
+</CardGroup>

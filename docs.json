@@ -3,24 +3,76 @@
   "theme": "mint",
   "name": "Rynse",
   "colors": {
-    "primary": "#9b87f5",
-    "light": "#bdb0fa",
-    "dark": "#6b58d9"
+    "primary": "#5A47FF",
+    "light": "#8678FF",
+    "dark": "#2B349B"
   },
   "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
   "navigation": {
     "groups": [
       {
         "group": "Getting started",
         "pages": [
-          "index"
+          "index",
+          "rynse-web/getting-started"
+        ]
+      },
+      {
+        "group": "Reports",
+        "pages": [
+          "rynse-web/dashboard",
+          "rynse-web/fleet-wash-health"
+        ]
+      },
+      {
+        "group": "Organization",
+        "pages": [
+          "rynse-web/facilities",
+          "rynse-web/vehicles",
+          "rynse-web/users",
+          "rynse-web/car-wash-locations"
+        ]
+      },
+      {
+        "group": "Mobile Wash",
+        "pages": [
+          "mobile-wash/overview",
+          "mobile-wash/requesting-a-wash",
+          "mobile-wash/tracking-work-orders"
+        ]
+      },
+      {
+        "group": "Billing & activity",
+        "pages": [
+          "rynse-web/visits",
+          "rynse-web/incidents",
+          "rynse-web/invoices"
+        ]
+      },
+      {
+        "group": "Account",
+        "pages": [
+          "rynse-web/settings"
         ]
       }
     ]
   },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+  "navbar": {
+    "links": [
+      {
+        "label": "Sign in",
+        "href": "https://app.v2.gorynse.com"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "gorynse.com",
+      "href": "https://gorynse.com"
+    }
   },
   "footer": {
     "socials": {
