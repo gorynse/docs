@@ -1,13 +1,13 @@
 ---
 title: "Spend Controls"
 sidebarTitle: "Spend Controls"
-description: "Set the rules for when, where, and how much your cards can spend — by merchant, category, amount, or frequency."
+description: "What your Rynse cards are allowed to do — per-transaction caps, monthly allowances, merchant allow/block lists, and category controls. Configured for you by your Customer Success Manager."
 icon: "shield-check"
 ---
 
-**Organization → Spend Rules** is where you decide what your Rynse cards are allowed to do. Block fuel pumps you never authorized, cap any single transaction at $40, allow only the three vendors near your depot, or stack all three at once. Every card carries the rules of the policy it's attached to, and the rules are enforced at the moment of authorization — before the swipe goes through.
+Rynse cards aren't open-ended fuel cards. Every card carries a set of rules — how much it can spend, where it can spend it, how often, and on what categories — and those rules are enforced **at the moment of authorization**, before the swipe goes through.
 
-<Frame caption="Spend Controls — build policies from velocity caps, merchant allow/block lists, and category toggles, then attach them to cards">
+<Frame caption="Spend Controls — build policies from per-transaction caps, monthly allowances, merchant allow/block lists, and category toggles">
   ![Spend Controls overview](https://cdn.prod.website-files.com/66f6dc6d8e13869d15a3c296/69cac5128e954b6a16677ff0_Fleet%20Wash%20Health%20Report%20(1).png)
 </Frame>
 
@@ -15,165 +15,160 @@ icon: "shield-check"
 
 <iframe width="100%" height="400" src="https://player.vimeo.com/video/1178562060" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen />
 
+<Note>
+  **Spend controls are configured by your Customer Success Manager**, not directly inside the dashboard. This page is your menu — read it, decide what you want enforced for your fleet, then email your CSM with the changes. Most adjustments are turned around the same day.
+</Note>
+
 ## How the layers fit together
 
-Spend controls in Rynse stack from broad to specific. The card at the pump or the wash bay has to clear every layer that applies to it:
+Every authorization a card sends has to clear three layers. Your CSM can use any combination — one card might be governed by all three, another by just the org-wide ceiling.
 
 <CardGroup cols={2}>
-  <Card title="Organization rules" icon="building-shield">
-    Apply to **every card** in your organization automatically. Use these for org-wide ceilings — e.g., "no single transaction over $100, ever."
+  <Card title="Organization-wide rules" icon="building-shield">
+    Apply to **every card** in your org automatically. Used for hard ceilings — e.g., "no single transaction over $100, ever, anywhere."
   </Card>
-  <Card title="Spend policies" icon="folder-tree">
-    Named bundles of rules you build once and attach to cards. A card has at most one policy. Different fleets within the same org can use different policies.
+  <Card title="Vehicle-specific policies" icon="folder-tree">
+    Named bundles of rules attached to specific cards. Different vehicle groups (police, admin, service trucks) can each have their own policy.
   </Card>
-  <Card title="Category toggles (MCC)" icon="toggle-on">
-    Per-card switches for the four standard fleet categories: **Car Washes**, **Fuel – Gas**, **Fuel – EV**, **Preventative Maintenance**. Fast way to authorize or revoke a whole category without touching policies.
+  <Card title="Category toggles" icon="toggle-on">
+    Per-card switches for the four standard fleet categories — **Car Washes**, **Fuel – Gas**, **Fuel – EV**, **Preventative Maintenance**. Fast way to authorize or revoke an entire category for one vehicle.
   </Card>
-  <Card title="Per-card overrides" icon="credit-card">
-    Assigning a policy + flipping category toggles is done on individual cards or in bulk from the cards table.
+  <Card title="Enforcement, live" icon="bolt">
+    Rules are enforced by the card network at authorization time. A blocked merchant declines at the terminal — there's nothing to reconcile after the fact.
   </Card>
 </CardGroup>
 
-<Tip>
-  Rules are enforced **at authorization** by the card network, not after the fact in a report. If a rule says "block fuel," the pump declines — you don't have to reconcile the charge later.
-</Tip>
+## The kinds of controls available
 
-## Spend policies
+Tell your CSM in plain language what you want — they'll translate it into the right combination of these primitives.
 
-A **policy** is a named, described container — e.g., _North Region Drivers_, _Service Trucks_, _Executive Vehicles_. Each policy holds a list of **rules**, and you attach the policy to one or more cards.
+### Per-transaction caps
 
-From **Organization → Spend Rules → Add Policy**:
+A hard maximum on any single swipe. Use it to force a specific wash package or service tier.
 
-| Field | What it does |
+- _Express washes only_ → $12 per transaction.
+- _Premium washes allowed_ → $25 per transaction.
+- _Block any fuel fill-up over $100_ → $100 per transaction in the fuel category.
+
+### Frequency / velocity caps
+
+A limit on how often a card can be used over a window.
+
+| Period | Used for |
 | --- | --- |
-| **Name** | How the policy appears in the cards table and on card-edit dialogs. |
-| **Description** | One line that explains the intent. Shown in the policy header so anyone editing cards understands what they're attaching. |
+| **Per transaction** | Cap the single swipe (see above). |
+| **Daily** | "No more than two washes per day." |
+| **Weekly** | "Up to $100 in EV charging per week." |
+| **Monthly** | "4 washes per month per vehicle." |
+| **All time** | Hard lifetime cap (rarely used). |
 
-Click into a policy to expand it and see the rule list. Each policy header shows two chips: how many **rules** it contains, and how many **active cards** are currently attached.
+Velocity can be expressed as a **dollar amount** (max $300/month) or an **authorization count** (max 4 transactions/month).
 
-## Rule types
+### Merchant allow / block lists
 
-Inside a policy (or at the org level), every rule is one of three types:
+Restrict cards to (or away from) specific vendors. Three ways to target a merchant:
 
-<AccordionGroup>
-  <Accordion title="Velocity — cap how much or how often">
-    A spending or count limit over a time window. Use it to keep a single bad swipe from running away with your budget.
+- **By category (MCC)** — broad ("all car washes," "all gas stations").
+- **By merchant name** — narrower ("Shell," "ChargePoint").
+- **By merchant ID** — exact, used when you want one specific store location.
 
-    - **Velocity Type:** _Currency Amount_ (e.g., $40 max) or _Authorization Count_ (e.g., 4 transactions max).
-    - **Period:** _Per Transaction_, _Hourly_, _Daily_, _Weekly_, _Monthly_, _All Time_.
-    - **Amount:** the cap itself.
+Allow-list = card works **only** at the listed merchants. Block-list = card works everywhere **except** the listed merchants.
 
-    Examples: _$40 per transaction_, _$300 per week_, _2 washes per day_, _50 transactions all time_.
-  </Accordion>
+### Category toggles
 
-  <Accordion title="Merchant Allow — only this list works">
-    An allow-list. The card declines everywhere **except** the merchants you list. Used when you want to lock cards to a specific vendor or a tight set of vendors near your facility.
-
-    Restrictions inside the rule scope the allow-list by **Merchant Category** (MCC), **Merchant Name**, or **Merchant ID**.
-  </Accordion>
-
-  <Accordion title="Merchant Block — this list never works">
-    A block-list. The card works everywhere **except** the merchants you list. Used to surgically cut out a problem vendor or category without rebuilding the whole policy.
-
-    Restrictions inside the rule scope the block-list by **Merchant Category** (MCC), **Merchant Name**, or **Merchant ID**.
-  </Accordion>
-</AccordionGroup>
-
-### Restrictions inside a rule
-
-Every rule can carry one or more **restrictions** that narrow what the rule applies to. A restriction has:
-
-| Field | What it does |
-| --- | --- |
-| **Type** | _Merchant Category_, _Merchant Name_, _Merchant ID_, or a nested _Velocity_ window. |
-| **Value** | The MCC code, vendor name, or merchant ID you're targeting. |
-| **Velocity Cycle / Type / Value** | Optional — apply a sub-limit only within the scope of the restriction (e.g., _$60 per day, but only at fuel pumps_). |
-| **Override** | _Green Light_ forces approval for matches; _Red Light_ forces a decline. Use sparingly — it bypasses the rest of the rule logic for matching authorizations. |
-
-A merchant_allow rule with three "Merchant Name" restrictions, for example, becomes _"approve only these three vendors."_ A velocity rule with a "Merchant Category" restriction becomes _"this cap only counts against this category."_
-
-## Category toggles (the simple version)
-
-If you don't need named policies, every card has four built-in category switches that any admin can flip from the cards table. Select one or more cards and click **Edit Spend Rules**:
+The four standard fleet categories that can be flipped on/off per card:
 
 <CardGroup cols={2}>
-  <Card title="Car Washes" icon="car-wash">
-    Authorizes the standard wash MCCs. Leave this on for any vehicle in the wash program.
+  <Card title="Car Washes" icon="car-side">
+    Standard wash MCCs. Leave on for any vehicle in the wash program.
   </Card>
   <Card title="Fuel – Gas" icon="gas-pump">
-    Authorizes gas-station MCCs. Turn off for vehicles that should never fuel on the card.
+    Gas-station MCCs. Off for vehicles that should never fuel on the card.
   </Card>
   <Card title="Fuel – EV" icon="charging-station">
-    Authorizes EV-charging MCCs. Turn on for EVs in the fleet.
+    EV charging networks. On for EVs in the fleet.
   </Card>
   <Card title="Preventative Maintenance" icon="wrench">
-    Authorizes maintenance / service MCCs.
+    Service / maintenance MCCs. Useful for service trucks and supervisor vehicles.
   </Card>
 </CardGroup>
 
-The same dialog also has a **Spend Policy** dropdown — pick **No Policy** to keep things simple, or attach one of your saved policies to layer on velocity caps and merchant lists.
+## Real policy examples
 
-## Organization-level rules
-
-For ceilings you want enforced **everywhere, without exception**, use **Organization Spend Rules** at the bottom of the Spend Rules tab. These rules apply to every card in the organization automatically — no policy attachment required.
-
-Typical org-level rules:
-
-- _No single transaction over $100_ — velocity / currency_amount / single_transaction / 100.
-- _Max 10 authorizations per day, per card_ — velocity / authorization_count / daily / 10.
-- _Block this one merchant that keeps double-charging_ — merchant_block / Merchant ID restriction.
-
-<Warning>
-  Org-level rules can't be overridden by a policy. If your org rule says "no single transaction over $40," no policy will let a card spend $50.
-</Warning>
-
-## Attaching a policy to cards
-
-From the cards table:
-
-1. Select one or more cards.
-2. Click **Edit Spend Rules**.
-3. Choose a policy from the **Spend Policy** dropdown (or **No Policy** to detach).
-4. Optionally toggle the four MCC categories at the same time.
-5. **Save Spend Rule Configuration.**
-
-The change is enforced on the next authorization — there's no nightly batch.
-
-## Common workflows
+These are the kinds of bundles your CSM puts together. Use them as a starting point when you describe what you want.
 
 <AccordionGroup>
-  <Accordion title="Lock cards to one wash vendor near a depot">
-    Create a policy called _Depot — Wash Only_. Add a **Merchant Allow** rule with one **Merchant Name** restriction set to the vendor. Turn off Fuel – Gas / EV / Preventative Maintenance on the cards. Attach the policy to every card assigned to that depot.
+  <Accordion title="Police fleet — strict wash + light EV charging">
+    - **Per-transaction cap:** $12, express washes only
+    - **Monthly allowance:** 2 washes per vehicle ($40/month)
+    - **EV charging:** weekly cap of $100
+    - **Categories enabled:** Car Washes, Fuel – EV
+    - **Categories disabled:** Fuel – Gas, Preventative Maintenance
   </Accordion>
 
-  <Accordion title="Cap any single wash at $40">
-    Add a **Velocity** rule, _Currency Amount_, _Per Transaction_, 40. Apply it as an org-level rule if it's a hard ceiling for everyone, or scope it inside a policy if only some fleets should have the cap.
+  <Accordion title="Administrative vehicles — premium washes + flexible service">
+    - **Per-transaction cap:** $25, premium washes allowed
+    - **Monthly wash allowance:** 4 washes per vehicle ($140/month)
+    - **Combined monthly spend on repairs, EV charging, and fuel:** $500
+    - **Categories enabled:** all four
   </Accordion>
 
-  <Accordion title="Allow a driver gas for one road trip">
-    Don't change the standing policy. From the cards table, select the one card, toggle **Fuel – Gas** on, save. Toggle it back off when the trip's over. The change history is captured on the vehicle log.
+  <Accordion title="Service trucks — wash + fuel + maintenance, higher caps">
+    - **Per-transaction cap:** $40 on wash; $150 on fuel
+    - **Daily fuel cap:** $200
+    - **Allowed vendors:** any car wash, your preferred fuel network
+    - **Categories enabled:** all four
   </Accordion>
 
-  <Accordion title="Stop a specific vendor from being used">
-    Add a **Merchant Block** rule to either the relevant policy or as an org-level rule, with a **Merchant ID** or **Merchant Name** restriction set to the vendor. The decline is immediate.
-  </Accordion>
-
-  <Accordion title="Different rules for service trucks vs. passenger cars">
-    Create two policies — _Service Trucks_ (Fuel + Maintenance allowed, higher daily cap) and _Passenger Cars_ (Wash only, $40 per-transaction cap). Attach each policy to the matching vehicle group from the cards table using multi-select.
-  </Accordion>
-
-  <Accordion title="Tighten controls fast after a card is suspected of misuse">
-    Two-step: (1) Freeze the card from the cards table to stop the bleeding. (2) Move it to a tighter policy (e.g., _Wash Only_) before unfreezing. Anything that came in while the card was frozen is declined automatically.
+  <Accordion title="Single-vendor lockdown">
+    - **Merchant allow-list:** one specific car wash near the depot
+    - All other merchants decline
+    - Useful when you want zero risk of drivers using the card off-route
   </Accordion>
 </AccordionGroup>
+
+## What this gets you
+
+<CardGroup cols={2}>
+  <Card title="Prevent unauthorized upgrades" icon="lock">
+    Drivers can't bump up to a premium wash if the per-transaction cap is below that price.
+  </Card>
+  <Card title="Enforce program compliance" icon="badge-check">
+    Wash limits are enforced at the pump — no manual reconciliation, no after-the-fact "talk to the driver."
+  </Card>
+  <Card title="Track usage by vehicle type" icon="chart-line">
+    With separate policies per fleet group, the [Fleet Wash Health](/rynse-web/fleet-wash-health) report makes utilization by group easy to read.
+  </Card>
+  <Card title="Surgical merchant control" icon="store">
+    Block one problem vendor, lock cards to one location, or grant exceptions — all without changing the rest of your program.
+  </Card>
+</CardGroup>
+
+## How to request a change
+
+<Steps>
+  <Step title="Describe the change in plain English">
+    "I want our 12 admin vehicles capped at $25/wash and limited to 4 washes a month." Don't worry about the technical shape — your CSM translates.
+  </Step>
+  <Step title="Send it to your CSM">
+    Email or Slack works. Reference the affected vehicles, facilities, or card numbers if you have them — otherwise your CSM will pull the list.
+  </Step>
+  <Step title="Confirm and go live">
+    Your CSM applies the policy and confirms. The new rules are enforced on the **very next authorization** — there's no nightly batch, no waiting period.
+  </Step>
+</Steps>
+
+<Tip>
+  Not sure what to ask for? Send your CSM the [Fleet Wash Health](/rynse-web/fleet-wash-health) export for the vehicles you're concerned about. The neglected list, the frequent washers list, and the wash history together usually point at the right policy shape.
+</Tip>
 
 ## What's next
 
 <CardGroup cols={2}>
   <Card title="Vehicles" icon="car" href="/rynse-web/vehicles">
-    Confirm which card is attached to which vehicle and which policy that card is on.
+    See which vehicles are in which group — useful for telling your CSM which policy applies where.
   </Card>
   <Card title="Fleet Wash Health" icon="heart-pulse" href="/rynse-web/fleet-wash-health">
-    Once the rules are in place, watch utilization to confirm the program is still healthy.
+    Once policies are in place, watch utilization to confirm the program is still healthy.
   </Card>
 </CardGroup>
