@@ -1,0 +1,124 @@
+---
+title: "Managing facilities"
+sidebarTitle: "Facilities"
+description: "Set up your sub-locations, departments, or divisions so costs and dashboards roll up the way you expect."
+icon: "building"
+---
+
+A **facility** is a sub-location, department, or division within your organization — a depot, a yard, a precinct, a service area, anything you use to group vehicles for reporting. Facilities show up in the dashboard filter, on the vehicle list, and on every invoice — **invoices always break cost out by facility** — so it's worth setting them up the way you'd want to see them in a report.
+
+You can manage everything on this page yourself: add one at a time, bulk-upload a CSV, or click any row to edit or archive.
+
+## Why facilities matter
+
+<CardGroup cols={3}>
+  <Card title="Cost breakouts" icon="file-invoice-dollar">
+    Every monthly invoice breaks out spend by facility, so the grouping you set here is what your finance team will reconcile against.
+  </Card>
+  <Card title="Dashboard filtering" icon="chart-mixed">
+    The Dashboard's **Facility** filter narrows every chart and stat to vehicles assigned to that facility. Only active (non-archived) facilities appear in the filter.
+  </Card>
+  <Card title="Vehicle organization" icon="car">
+    Every vehicle is assigned to one facility. That assignment shows up on the vehicle row and on mobile wash work orders.
+  </Card>
+</CardGroup>
+
+## Adding a single facility
+
+<Steps>
+  <Step title="Go to Organization → Facilities">
+    The page lists every active facility you've set up. Archived facilities are hidden from this view.
+  </Step>
+  <Step title="Click Add Facility">
+    Bottom-left of the table.
+  </Step>
+  <Step title="Fill in the form">
+    Only **Name** is required. Address fields are optional but recommended — mobile wash technicians and your own drivers navigate to the address.
+
+    | Field | Notes |
+    | --- | --- |
+    | **Name** | Required. Use something a dispatcher would recognize — "Denver — Park Hill Yard" beats "Facility 2". |
+    | **Address Line 1** | Type-ahead suggests real addresses; picking one auto-fills city, state, zip, and country. |
+    | **Address Line 2** | Suite, unit, or building number. |
+    | **City** | |
+    | **State** | Dropdown of US state abbreviations (2-letter codes). |
+    | **Zip** | Up to 5 digits. |
+    | **Country** | Auto-fills to USA when you pick a suggested address. |
+  </Step>
+  <Step title="Click Add Facility to save">
+    The facility appears in the table immediately and becomes available in the Dashboard's facility filter.
+  </Step>
+</Steps>
+
+<Tip>
+  Smaller fleets often only need one facility — that's fine. Set it up once and you can ignore this page.
+</Tip>
+
+## Bulk-adding facilities from a CSV
+
+If you're rolling out across many sub-locations at once, upload a CSV instead of adding them one at a time.
+
+<Steps>
+  <Step title="Click the bulk-add button">
+    Next to **Add Facility**, the button with the city-building icon opens the **Bulk Add Facilities** dialog.
+  </Step>
+  <Step title="Grab the example CSV">
+    Click **Example CSV Download** in the dialog. The file lives at `/facilities.csv` and shows the exact column order.
+  </Step>
+  <Step title="Format your file">
+    Seven columns, in this order, with a header row:
+
+    ```csv
+    name,addressLine1,addressLine2,city,state,zip,country
+    Denver — Park Hill Yard,1234 Park Hill Rd,,Denver,CO,80207,USA
+    Aurora Depot,500 E Colfax Ave,Bldg B,Aurora,CO,80010,USA
+    ```
+
+    A few rules the importer enforces:
+
+    - Every row needs all seven columns (leave a column blank if it doesn't apply, but keep the commas).
+    - **State must be the 2-letter code** (e.g., `CO`, not `Colorado`).
+    - Facility names must be unique — if a name already exists in your account, that row is rejected.
+  </Step>
+  <Step title="Upload and review">
+    Pick the file, click **Next**. If anything's malformed, the dialog lists the problem rows with line numbers — fix them in the CSV and re-upload. If the file's clean, you'll see a preview table of every facility about to be created.
+  </Step>
+  <Step title="Click Add Facilities">
+    A progress bar tracks the import. When it finishes, the new facilities appear in the main table.
+  </Step>
+</Steps>
+
+## Editing a facility
+
+Click any row in the table to open the **Update Facility** dialog. Change the name or any address field and click **Update Facility** to save. The new values flow through the rest of the portal — vehicle rows, dashboard filters, and future invoices.
+
+<Note>
+  Renaming a facility doesn't rewrite historical invoices. Past invoices keep the name that was in place when they were generated; new invoices use the current name.
+</Note>
+
+## Archiving a facility
+
+Facilities are archived rather than deleted — that keeps your history intact while removing the facility from active views.
+
+<Steps>
+  <Step title="Click the facility row to open the dialog">
+    Same dialog as editing.
+  </Step>
+  <Step title="Click Archive Facility">
+    At the bottom of the dialog, below the divider.
+  </Step>
+</Steps>
+
+Once archived:
+
+- The facility disappears from the Facilities table.
+- It's hidden from the Dashboard's Facility filter.
+- Historical visits, transactions, and invoices that referenced the facility keep their original record.
+
+<Tip>
+  If you decommission a whole sub-location, archive its facility **after** you've moved or archived the vehicles assigned to it — otherwise those vehicles will still reference a hidden facility.
+</Tip>
+
+## Need to change a vehicle's facility?
+
+Vehicle assignments live on the **Organization → Vehicles** page, not here. Vehicle edits — including facility reassignment — are handled by Customer Success. Email `support@gorynse.com` with the vehicle's description, VIN, license plate, and the destination facility, and we'll update it across all the vendors you're enrolled with.

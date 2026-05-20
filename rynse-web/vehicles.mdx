@@ -1,0 +1,141 @@
+---
+title: "Your fleet roster"
+sidebarTitle: "Vehicles"
+description: "View every vehicle enrolled in your Rynse program, filter by card or membership status, and take quick action on a card when you need to."
+icon: "car"
+---
+
+The **Organization → Vehicles** page at [app.v2.gorynse.com](https://app.v2.gorynse.com) is the source of truth for which vehicles are enrolled in your program. This is where you confirm what's in the fleet, surface vehicles missing a card, and check what each vehicle is approved to spend on.
+
+<Info>
+  **The Vehicles list is read-only.** Adding, editing, archiving, swapping cards between vehicles, or changing memberships is handled by the Rynse team — see [Asking us to make changes](#asking-us-to-make-changes) below. The actions you *can* take from this page (Freeze Card, Close Card, Change Facility) are covered further down.
+</Info>
+
+## How it's organized
+
+The page opens on the **Organization Vehicles** table — every active vehicle in your fleet, one row per vehicle. Click any row to open the **Vehicle Info** dialog with the full detail view (VIN, plate, external ID, facility, card, memberships, schedule, and recent activity).
+
+### View tabs
+
+Four tabs at the top right of the table switch what's in the list:
+
+| Tab | Shows |
+| --- | --- |
+| **All** | Every active vehicle in your fleet |
+| **No Card** | Active vehicles that don't currently have a Rynse card attached |
+| **Card** | Active vehicles that do have a card attached |
+| **Archived** | Vehicles that have been decommissioned from the program |
+
+<Tip>
+  **No Card** is a useful audit view — if you expect every vehicle to have a card, anything here is either waiting for activation or got missed during onboarding. Email support and we'll dig in.
+</Tip>
+
+### Membership filter
+
+If any of your vehicles are enrolled in wash memberships (pay-as-you-go or unlimited at a specific vendor), a **Membership** dropdown appears next to the view tabs. Use it to narrow the list to vehicles enrolled with a specific vendor and plan type — for example, "Quick Quack — Unlimited" or "Flagstop — Paygo". Pick **All** to clear the filter.
+
+## What each column means
+
+| Column | What it means |
+| --- | --- |
+| **Created** | When the vehicle was added to your program |
+| **Facility** | The facility this vehicle is assigned to. Used for cost breakdown on the dashboard and on invoices. |
+| **Description** | Year / make / model, plus your internal name or unit number |
+| **VIN** | Vehicle identification number |
+| **License Plate** | The plate vendors use to identify the vehicle, especially at LPR locations |
+| **External ID** | Your own asset number — surfaces on tables and invoices so you can reconcile back to your internal records |
+| **Asset Type** | Category of the vehicle (e.g., sedan, van, heavy duty) |
+| **Card** | Last 4 of the Rynse card currently attached. A red card icon means no card is attached; a bank icon means the vehicle is on an on-demand funding account. |
+| **Name on Card** | The name embossed on the physical card. Many customers use this field as a free-text department or account code. |
+| **Spend Policy** | The rules that govern what this card can be used for. Hover for details — see below. |
+| **Services** | Icons for each membership type enrolled on the vehicle. Hover for the vendor list. |
+
+<Note>
+  **Memberships** is a column too, but it's hidden by default to keep the table readable. If you want it on screen, click the columns icon above the table header and toggle **Memberships** on. The same information is available at a glance in the **Services** column.
+</Note>
+
+### Spend Policy column
+
+The Spend Policy column is the most information-dense column on the page. Hover over it to see a tooltip with up to four sections:
+
+<AccordionGroup>
+  <Accordion title="Policy">
+    The named spend policy applied to this vehicle (e.g., "Standard Wash Policy"). The tooltip shows the policy's description and each rule inside it — for example, a per-transaction cap, a monthly cap, or an allowed merchant list.
+  </Accordion>
+  <Accordion title="Organization Rules">
+    Rules that apply across your whole organization — for example, "no spend on weekends" or "block fuel purchases org-wide." If you only see a single gray chip in the Spend Policy column, that's an org-level rule applying because the vehicle has no specific policy of its own.
+  </Accordion>
+  <Accordion title="Merchant Rules">
+    The list of approved spend categories for this card — Car Wash, Fuel Gas, EV Charging, Preventative Maintenance. The padlock icon in the column means merchant rules are configured.
+  </Accordion>
+  <Accordion title="Schedule">
+    Any time-of-day or day-of-week restrictions on the card. The clock icon in the column means a schedule is configured.
+  </Accordion>
+</AccordionGroup>
+
+### Services column
+
+The Services column uses icons to show what kinds of programs each vehicle is enrolled in:
+
+- **Payments icon** — Pay-as-you-go enrollment (pay per wash)
+- **Verified icon** — Unlimited membership (flat monthly fee, unlimited washes at that vendor)
+- **Membership card icon** — Other / legacy enrollments
+
+Hover any icon to see the specific vendors covered under that program type. A dash (`-`) means the vehicle isn't enrolled in any wash program.
+
+## Asking us to make changes
+
+Changes to the vehicle roster — adding a vehicle, editing details, swapping a card to a different vehicle, archiving a vehicle, attaching or canceling a wash membership — all go through Rynse. We coordinate the vendor-side updates so you don't have to.
+
+<Steps>
+  <Step title="Email support@gorynse.com">
+    Send an email to <a href="mailto:support@gorynse.com">support@gorynse.com</a> describing what you need.
+  </Step>
+  <Step title="Include the vehicle details">
+    For each vehicle, send:
+    - **Description** — year, make, model, and your internal name if you use one
+    - **VIN**
+    - **License plate** and state
+    - **External ID** — your internal asset number
+    - **Facility** — which of your facilities the vehicle should be assigned to
+
+    For changes to existing vehicles (memberships, plate updates, decommissions), just include enough to identify the vehicle — VIN or external ID works.
+  </Step>
+  <Step title="We handle the vendor side">
+    Your Customer Success Manager coordinates with the wash vendors to enroll, re-enroll, or remove the vehicle. The Vehicles list updates once the change is live.
+  </Step>
+</Steps>
+
+<Tip>
+  **Decommissioning a vehicle?** Ask us to *archive* it rather than delete it. Archiving stops billing and removes it from dashboard filters, but keeps the transaction history available under the **Archived** tab for future reference.
+</Tip>
+
+### Fleetio customers
+
+<Warning>
+  If your organization is configured to sync with **Fleetio**, you'll see a blue **Synced with Fleetio** banner at the top of the table. Fleetio is your system of record — make vehicle changes in Fleetio, not by emailing support. Changes flow into Rynse automatically.
+</Warning>
+
+## Actions you can take from this page
+
+For one-off, time-sensitive card situations, the table offers three bulk actions you can run yourself. Tick the checkbox on one or more rows, then use the buttons below the table:
+
+<CardGroup cols={3}>
+  <Card title="Freeze Card" icon="snowflake">
+    Temporarily disable the selected vehicles' cards. Transactions are blocked until the card is unfrozen. Use when a vehicle is out of service or a card is misplaced and you want to pause it without canceling.
+  </Card>
+  <Card title="Close Card" icon="ban">
+    Permanently close the selected vehicles' cards. **There is no way to reopen a closed card** — a new card has to be issued. Use this for confirmed lost, stolen, or compromised cards.
+  </Card>
+  <Card title="Change Facility" icon="building">
+    Reassign the selected vehicles to a different facility (e.g., after a depot move). Affects how their spend is bucketed on the dashboard and on invoices.
+  </Card>
+</CardGroup>
+
+<Warning>
+  **Close Card is permanent.** If you're not sure whether a card is gone for good, freeze it first and email support — we can help confirm next steps. A frozen card can always be unfrozen later; a closed card requires re-issuing.
+</Warning>
+
+## A note on timing
+
+Transactions and visits on the Vehicles page reflect what vendors have reported to us. Vendor usage reports typically arrive in the first week of each month for the previous month's activity — so a brand-new vehicle won't show usage immediately, even if drivers are washing. If you've made a change and don't see it within a few business days, email <a href="mailto:support@gorynse.com">support@gorynse.com</a>.

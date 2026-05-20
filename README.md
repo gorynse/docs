@@ -1,43 +1,31 @@
-# Mintlify Starter Kit
+# Rynse Docs
 
-Use the starter kit to get your docs deployed and ready to customize.
+The source for [docs.gorynse.com](https://docs.gorynse.com) (and the Mintlify "rynse" deployment).
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+## Local preview
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
-
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
-
-## Development
-
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
-
-```
-npm i -g mint
-```
-
-Run the following command at the root of your documentation, where your `docs.json` is located:
-
-```
+```bash
+# From the repo root
 mint dev
 ```
 
-View your local preview at `http://localhost:3000`.
+This boots the Mintlify dev server on `localhost:3000` and hot-reloads as you edit MDX or `docs.json`.
 
-## Publishing changes
+The CLI is installed globally:
 
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
+```bash
+npm i -g mint
+```
 
-## Need help?
+## Structure
 
-### Troubleshooting
+- `docs.json` — site config (theme, colors, navigation, footer)
+- `index.mdx` — landing page
+- `logo/` — light + dark logo SVGs
+- `favicon.svg` — site favicon
 
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
+Content pages live as `.mdx` files in the repo root or in topic folders, and are referenced from `docs.json` `navigation.groups[*].pages`.
 
-### Resources
-- [Mintlify documentation](https://mintlify.com/docs)
+## Deployment
+
+The `gorynse/rynse` Mintlify project auto-deploys from `main` on this repo.

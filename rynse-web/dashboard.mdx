@@ -1,0 +1,165 @@
+---
+title: "Reading the Dashboard"
+sidebarTitle: "Dashboard"
+description: "The landing page in the Rynse portal — the overarching view of averages and totals across your fleet."
+icon: "chart-mixed"
+---
+
+The Dashboard is the first page you'll see when you log in to `app.v2.gorynse.com`. It rolls up activity across every vehicle and card in your organization for the period and facility you choose. Think of it as the overarching view — totals, averages, and where the trends are heading.
+
+<Note>
+  **Data is not real-time.** Vendor usage reports arrive after the end of each month. Our billing team processes them, generates your invoice, and uploads the visits — so you'll typically see the prior month's data fill in during the **first week** of the following month. Brand-new accounts will look mostly empty until that first upload lands.
+</Note>
+
+## At the top of the page
+
+### Invoice banner
+
+If you have any unpaid invoices, a banner appears at the very top of the Dashboard:
+
+- A **yellow banner** lists how many invoices are due and the outstanding balance.
+- A **red banner** lists how many invoices are overdue and the outstanding balance.
+- A **green banner** confirms when everything is paid.
+
+Each banner includes a direct link to the Invoices page so you can complete payment.
+
+### Period
+
+The button on the upper right controls the date range for everything on the page:
+
+- **Last 30 Days** (default)
+- **This Month**
+- **Last Month**
+- **Last 3 Months**
+- **Last 6 Months**
+- **Last Year**
+- **Custom** — pick any start and end date
+
+### Facility
+
+Use the **Facility** dropdown to scope the dashboard to a single sub-location, department, or division — or leave it on **All Facilities** to see the whole organization. Only active facilities appear in the dropdown; archived ones are hidden.
+
+### Service tabs
+
+Below the filters is a row of service tabs. Each tab filters the dashboard to that category of spend:
+
+- **Car Washes**
+- **Fuel Gas**
+- **Fuel EV**
+- **Preventative Maintenance**
+
+<Tip>
+  Tabs only appear for categories your cards are approved for. A wash-only or LPR-only customer will just see **Car Washes**. If you want to enable Fuel Gas, EV charging, or Preventative Maintenance, reach out to your Rynse account team — it's a quick flip on our end.
+</Tip>
+
+## The four summary tiles
+
+Across the top of the dashboard are four tiles that summarize the selected service tab, period, and facility:
+
+<CardGroup cols={2}>
+  <Card title="Utilization %" icon="chart-pie">
+    The percent of your active vehicles that had at least one transaction in the selected service category during the period.
+
+    *Unique vehicles used ÷ total active vehicles.* The label changes by tab — "Utilization", "Fueled", "Charged", or "Maintained".
+  </Card>
+  <Card title="Active Vehicles" icon="car">
+    The number of vehicles in your fleet that are not archived. This is the denominator behind the Utilization % calculation.
+  </Card>
+  <Card title="Total Vehicle Cards" icon="credit-card">
+    The number of cards tied to a specific vehicle, with a side-by-side count of **Total Admin Cards** (cards not tied to a specific vehicle, usable across the fleet).
+
+    *Only shown if your program uses cards.*
+  </Card>
+  <Card title="Total Spend" icon="dollar-sign">
+    The dollar total your fleet spent in the selected service category during the period.
+  </Card>
+</CardGroup>
+
+<Info>
+  **Active vs archived vehicles.** Archived vehicles drop off these tiles and out of the facility filter — they stop counting toward utilization and stop being billed. To archive or add a vehicle, email `support@gorynse.com` with the description, VIN, license plate, and external ID; we handle the vendor-side updates.
+</Info>
+
+## Charts
+
+Two charts sit under the tiles:
+
+### Expenses (bar chart)
+
+A stacked bar chart of fleet spend over the selected period. Each bar is broken out by service type — Car Wash, Fuel Gas, Fuel EV, Preventative Maintenance, and Mobile Wash — so you can see weekend dips, month-end spikes, or a fuel category climbing while washes stay flat.
+
+### Fleet Costs (doughnut chart)
+
+The mix of where your dollars went, by service type. Each row in the table beneath the chart shows the source, the dollar amount, and the share of total spend.
+
+**Click the "Car Washes" row** to drill down into the specific car wash packages your drivers purchased — Express, Basic Exterior, Premium Exterior, Premium Plus Exterior, Top Exterior, Basic Fullservice, Premium Fullservice, Top Fullservice, Basic Detail, Premium Detail, Top Detail, and Unlimited Fee. The chip at the top lets you back out to the service-type view.
+
+<Note>
+  **Unlimited memberships show as a single monthly aggregate** in the doughnut breakdown (the "Unlimited Fee" slice), not as one row per visit. The individual wash visits still appear on the **Visits** page.
+</Note>
+
+## Car Wash deep-dive tiles
+
+When you have the **Car Washes** tab selected, three extra tiles appear below the charts:
+
+<CardGroup cols={2}>
+  <Card title="Wash Utilization Chart" icon="chart-line">
+    A trend of wash utilization over time, using the same numbers as the Fleet Wash Health page. Trending up means adoption is working.
+  </Card>
+  <Card title="Asset Transactions" icon="ranking-star">
+    Your top vehicles by wash count for the period — useful for spotting the heaviest users.
+  </Card>
+</CardGroup>
+
+<Card title="Asset / Facility / Period Activity" icon="table-cells">
+  A drill-down table you can pivot by asset, facility, or date to see exactly where activity is coming from.
+</Card>
+
+## Recent Visits table
+
+The **Recent Visits** table at the bottom of the Car Washes tab is the raw record of every wash transaction in the selected period — both in-bay car wash visits and on-site mobile wash visits. Columns:
+
+- **Vehicle Description** — year, make, model, and license plate of the vehicle that used the card
+- **Facility** — which of your facilities the vehicle is assigned to
+- **Merchant** — the vendor where the visit took place
+- **Service** — the specific package (e.g., "Premium Exterior", "Unlimited Fee")
+- **Date** — when the transaction posted
+- **Amount** — what the visit cost
+
+Sort by any column header, and use the table for quick spot-checks. For a full transaction ledger across every service type — including Fuel, EV, and Preventative Maintenance — and to export to CSV, head to the **Visits** page.
+
+## Common workflows
+
+<AccordionGroup>
+  <Accordion title="Check how your fleet is trending this month">
+    Set the period to **This Month** (or **Last 30 Days**) and the facility to **All Facilities**. The four tiles up top give you the snapshot — Utilization %, Active Vehicles, Cards, and Total Spend. The Expenses bar chart shows whether you're tracking ahead of or behind the prior month.
+  </Accordion>
+  <Accordion title="Spot vehicles that aren't getting washed">
+    The Dashboard tiles give you the top-line utilization number. To see exactly *which* vehicles haven't washed in 30, 60, 90+ days — or never — open the **Fleet Wash Health** page. That's where the actionable lists live, and you can export them to circulate internally.
+  </Accordion>
+  <Accordion title="Find heavy users who might be cheaper on Unlimited">
+    A vehicle washing 3+ times a month at pay-as-you-go pricing is usually a candidate to move to an Unlimited membership — break-even is around 2 washes a month at most vendors. The **Asset Transactions** tile (Car Washes tab) ranks your top users for the period. For deeper analysis, the **Fleet Wash Health** page has a dedicated "Most Frequent Washers" table.
+  </Accordion>
+  <Accordion title="Break out spend by department or location">
+    Use the **Facility** filter to scope the Dashboard to a single sub-location. Every tile, chart, and table updates to that facility only. (Invoices always break out cost by facility regardless.)
+  </Accordion>
+  <Accordion title="Pull a quarter or year of activity">
+    Set the period to **Last 3 Months**, **Last 6 Months**, **Last Year**, or use **Custom** for any range. For a full export of every transaction, open the **Visits** page and use the CSV download.
+  </Accordion>
+</AccordionGroup>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Fleet Wash Health" icon="stethoscope" href="/rynse-web/fleet-wash-health">
+    Surface vehicles due for a wash, your most frequent washers, and Unlimited candidates.
+  </Card>
+  <Card title="Visits" icon="receipt" href="/rynse-web/visits">
+    The full transaction ledger with date filters and CSV export.
+  </Card>
+  <Card title="Vehicles" icon="car" href="/rynse-web/vehicles">
+    The source of truth for which vehicles are enrolled. To add, edit, or archive, email `support@gorynse.com`.
+  </Card>
+  <Card title="Invoices" icon="file-invoice-dollar" href="/rynse-web/invoices">
+    Where monthly invoices live after billing generates them.
+  </Card>
+</CardGroup>

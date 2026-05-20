@@ -1,0 +1,165 @@
+---
+title: "Your invoices, on demand"
+sidebarTitle: "Invoices"
+description: "View, download, and reconcile every monthly invoice in one place — and track your spend against a PO or budget as transactions accrue."
+icon: "file-invoice-dollar"
+---
+
+The **Invoices** page at [app.v2.gorynse.com](https://app.v2.gorynse.com) is where every monthly invoice lands after our billing team generates it. Open an invoice as a PDF, check what's paid versus outstanding, pull the supplemental transaction history, and — if you've set one up — watch your budget burn down in real time.
+
+<Info>
+  **Your invoices are emailed to you every month.** This page is the backup. Use it any time the email gets caught in a filter, you want to revisit an older invoice, or you need to reconcile against a PO.
+</Info>
+
+## Didn't get your invoice email?
+
+This is the single most common invoice question we get — and almost always, the fix is the same: **your IT firewall is blocking the sender**.
+
+Rynse invoices are generated through Zoho Books, so they're sent from an automated address at `message.service.sender.zohobooks.com` rather than from a `@gorynse.com` address. Many corporate firewalls let general Rynse emails through but quietly block the Zoho sender.
+
+<Steps>
+  <Step title="Ask your IT team to whitelist both senders">
+    Have IT add allow-list entries for:
+
+    - `@gorynse.com` — for general Rynse communication
+    - `message.service.sender.zohobooks.com` — for invoice delivery
+
+    You need **both**. Whitelisting only `@gorynse.com` is the usual partial fix that still leaves invoices blocked.
+  </Step>
+  <Step title="In the meantime, download from this tab">
+    Every invoice is always downloadable here — click the invoice number to open the PDF. Use this as your backup until IT confirms the whitelist is in place.
+  </Step>
+  <Step title="Or ask billing to resend manually">
+    Email <a href="mailto:billing@gorynse.com">billing@gorynse.com</a> and our billing team can resend the invoice manually from a `@gorynse.com` address, which usually clears the firewall.
+  </Step>
+</Steps>
+
+<Tip>
+  Once IT has whitelisted both senders, future invoices arrive automatically. You shouldn't have to chase them — but the portal is here whenever you need it.
+</Tip>
+
+## The invoices table
+
+Each row is one monthly invoice. From left to right:
+
+| Column | What it means |
+| --- | --- |
+| **Invoice** | The invoice number. Click it to open the full PDF in a new tab. |
+| **Directed To** | The customer name the invoice is made out to (your organization, or the specific entity within it). |
+| **Status** | A color-coded badge — see below. |
+| **Due Date** | The date payment is due. |
+| **Emailed To** | The email address the invoice was sent to when generated. |
+| **Total** | The invoice total in dollars. |
+| **Balance** | What's still outstanding. A balance of `$0.00` means it's paid. |
+
+Below the table, the **Total for Period** sums every invoice currently in view — handy for quick reconciliation across a quarter or a fiscal year.
+
+### Status badges
+
+<CardGroup cols={3}>
+  <Card title="Paid" icon="circle-check">
+    Green. The invoice has been fully reconciled — nothing owed.
+  </Card>
+  <Card title="Overdue" icon="circle-exclamation">
+    Red. There's still a balance and the due date has passed. Pay as soon as possible.
+  </Card>
+  <Card title="Due in X days" icon="clock">
+    Gold. There's an outstanding balance, but you still have time — the count tells you exactly how long.
+  </Card>
+</CardGroup>
+
+<Note>
+  The same statuses appear as banners on your **Dashboard** so you don't have to come here to check. If anything is outstanding, you'll see a warning at the top of the dashboard with a link straight to this page.
+</Note>
+
+## Paying an invoice
+
+Every invoice PDF includes two ways to pay:
+
+- **Pay by card** — each PDF has a payment link near the top that opens a secure checkout. Pay by debit or credit card in a couple of clicks.
+- **Pay by ACH** — bank transfer information (routing and account numbers) is printed at the bottom of every invoice. Use this if your AP process runs through ACH or wire.
+
+Pick whichever fits your finance workflow — there's no preference on our end.
+
+<Tip>
+  Have questions about a specific charge, a credit, or a payment that didn't post? Email <a href="mailto:billing@gorynse.com">billing@gorynse.com</a> and our billing team will dig in.
+</Tip>
+
+## Tracking spend against a budget or PO
+
+If your organization has set up a **Purchase Order or budget** under **Organization → Purchase Orders**, you'll see a **Budget Tracking** card at the top of the Invoices page. It updates as new invoices and transactions roll in, so you always know how much of your budget is left.
+
+<Note>
+  You don't need a formal PO to use this — it works just as well as a standalone monthly or quarterly spend cap. Set any period that matches how you budget internally.
+</Note>
+
+### What the card shows
+
+- **Period** — the start and end of the budget you're viewing.
+- **Outstanding Balance** — how much has been spent (invoiced) against this budget so far.
+- **Budget Remaining** — what's left before you hit the limit.
+- **Budget Utilization** — the percentage used, with a live progress bar.
+- **Remaining Term** — how many days are left in the budget period.
+- **PDF link** — if a PO was uploaded when the budget was set up, the file is one click away here.
+
+### Switching budgets and facilities
+
+If you have more than one active PO/budget, the **dropdown on the right** of the card lets you switch between them. Each one tracks against its own period and limit.
+
+There's also a **Facility filter** — pick a single facility to see only that location's spend tally up against the budget. Useful for departments that allocate a slice of the budget per site.
+
+### The 80% alert
+
+<Warning>
+  When a budget reaches **80% utilization**, we automatically send an email alert to the contacts on the account. It's an early warning — enough lead time to reallocate funds, request a new PO, or pause spending before you hit the cap. A second alert fires if the budget is exceeded.
+</Warning>
+
+### Setting up a budget
+
+Head to **Organization → Purchase Orders** to create one. You'll set:
+
+- A **Budget Name** (e.g., `FY-2024-2025`, or `Q3 Wash Spend`)
+- A **PO Number** if you have one (optional)
+- A **Budget Limit** in dollars
+- A **Start and End** month/year for the period
+- An optional **PDF upload** of the PO itself
+
+Once saved, the budget starts tracking immediately and shows up at the top of this page.
+
+## Pulling supporting detail
+
+Each monthly invoice is accompanied by a transaction-level breakdown — every wash, fuel charge, mobile wash, or membership event that rolled up into the invoice total.
+
+- The full breakdown is **emailed alongside the invoice** every month as a supplemental CSV.
+- You can also re-pull it any time from the **Visits** page — set the date range to the invoice's billing period and click **Export CSV**.
+
+<Tip>
+  Visits exports are great for ad-hoc reporting — pull a full quarter or fiscal year in one shot, or hand a single month to a department head for review.
+</Tip>
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="I never got the email — where is it?">
+    Almost always a firewall issue. Have IT whitelist **both** `@gorynse.com` and `message.service.sender.zohobooks.com`. Until then, download the PDF directly from this page, or ask <a href="mailto:billing@gorynse.com">billing@gorynse.com</a> to resend manually.
+  </Accordion>
+  <Accordion title="Can I pay an invoice with a credit card?">
+    Yes — every invoice PDF includes a payment link for card payment. ACH transfer details are also printed on every invoice if you'd rather pay by bank transfer.
+  </Accordion>
+  <Accordion title="Why does my invoice still say Overdue after I paid?">
+    Payment reconciliation can take a couple of business days after the payment posts on our end. If it's been longer than that, email <a href="mailto:billing@gorynse.com">billing@gorynse.com</a> with the invoice number and we'll confirm.
+  </Accordion>
+  <Accordion title="Can I get the line-item detail behind an invoice?">
+    Yes — the supporting CSV is emailed with each invoice and is always available on the **Visits** page. Filter to the invoice's date range and click **Export CSV**.
+  </Accordion>
+  <Accordion title="How does the budget tracker handle multiple facilities?">
+    Out of the box, the budget tracks total spend across the whole organization. If you want to see how a single facility is drawing against the budget, use the **Facility** dropdown on the Budget Tracking card.
+  </Accordion>
+  <Accordion title="Do I need a PO to use the budget tracker?">
+    No. You can set a budget with no PO attached — it works just as well as a simple monthly or quarterly spend cap, with the same 80% email alert.
+  </Accordion>
+</AccordionGroup>
+
+## Need help?
+
+For anything invoice- or payment-related, email <a href="mailto:billing@gorynse.com">billing@gorynse.com</a>. For account, vehicle, or portal questions, email <a href="mailto:support@gorynse.com">support@gorynse.com</a>.
