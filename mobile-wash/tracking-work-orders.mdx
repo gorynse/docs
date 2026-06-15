@@ -21,12 +21,15 @@ Once a work order is in the system — whether you requested it or your vendor s
   <Card title="Vehicles washed (this month)" icon="circle-check">
     Count of vehicles washed during the calendar month currently shown on the calendar. Updates as you navigate between months.
   </Card>
+
   <Card title="Next wash" icon="calendar-day">
     The next upcoming scheduled date, with the facility name.
   </Card>
+
   <Card title="Repeating schedules" icon="repeat">
     How many of your upcoming entries are on a recurring cadence (not one-time).
   </Card>
+
   <Card title="Upcoming list" icon="bell">
     Up to five upcoming entries in the next 14 days, with vendor, facility, date, and cadence.
   </Card>
@@ -50,7 +53,7 @@ Click any day to see its entries in the side panel. Click a completed event to o
 </Tip>
 
 <Note>
-  Today, Schedule shows scheduled recurring visits and completed work orders. Manual work orders you've submitted that haven't been picked up yet appear on **Work Orders** but not yet as scheduled events on the calendar.
+  Schedule shows scheduled recurring visits and completed work orders. Manual work orders you've submitted that are still pending appear on **Work Orders**, not on the Schedule calendar.
 </Note>
 
 ## Work Orders
@@ -76,12 +79,15 @@ Click any row to open the work order detail with the full per-vehicle list, serv
   <Card title="Request a new work order" icon="square-plus" href="/mobile-wash/requesting-a-wash">
     Use **Request work order** in the top-right. See [Requesting a wash](/mobile-wash/requesting-a-wash) for the full walkthrough.
   </Card>
+
   <Card title="Delete a requested order" icon="trash">
     While a work order is in `Requested` status, click **Delete** on its row. Once it moves to `Active`, `Completed`, or `Cancelled`, the Delete action is no longer available — contact your account team if you need to change it.
   </Card>
+
   <Card title="Open the detail view" icon="eye">
     Click any row to see every vehicle on the order, the services applied, and any vendor invoice references.
   </Card>
+
   <Card title="Cross-reference with Schedule" icon="calendar">
     Use the **Date** column to line up upcoming work with what's on the Schedule calendar.
   </Card>
@@ -105,17 +111,21 @@ History is the source of truth when you're:
   <Accordion title="Checking the status of a request I submitted">
     Open **Work Orders**. New requests appear at the top with status `Requested`. Once Rynse matches it to a vendor, the row updates with the vendor name and the status changes to `Active`. If a request has been sitting at `Requested` for more than a couple of days, contact your account team.
   </Accordion>
+
   <Accordion title="Confirming next week's scheduled visit">
     Open **Schedule** and look at the calendar. Recurring visits show as blue events on their expected dates. A missing date where you'd expect one usually means the visit hasn't been dispatched yet — flag it with your account team.
   </Accordion>
+
   <Accordion title="Pulling a month of mobile wash records for accounting">
     Open **History**, find the month you need, and click into each completed order to grab per-vehicle services and pricing. These tie back to the line items on your monthly invoice.
   </Accordion>
+
   <Accordion title="Investigating a complaint about a specific wash">
     Find the work order in **History** by date and facility. Open the result to see exactly which vehicles were serviced and what services they received. If something looks off, contact your account team with the work order number.
   </Accordion>
+
   <Accordion title="Seeing which vehicles will be hit on the next visit">
-    Today, the Schedule shows when an upcoming recurring visit will happen and at which facility, but the specific vehicle list for that visit is finalized by your vendor at the time of service. The completed work order — once processed — will show the exact vehicles that were washed.
+    The Schedule shows when an upcoming recurring visit will happen and at which facility, but the specific vehicle list for that visit is finalized by your vendor at the time of service. The completed work order — once processed — will show the exact vehicles that were washed.
   </Accordion>
 </AccordionGroup>
 
@@ -125,6 +135,7 @@ History is the source of truth when you're:
   <Card title="Requesting a wash" icon="square-plus" href="/mobile-wash/requesting-a-wash">
     Submit a new on-site wash request when you need vehicles handled outside the recurring cadence.
   </Card>
+
   <Card title="Fleet Wash Health" icon="heart-pulse" href="/rynse-web/fleet-wash-health">
     Pair Mobile Wash records with the wash health view to see which vehicles are getting attention and which are being missed.
   </Card>
