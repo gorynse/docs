@@ -5,53 +5,70 @@ description: "Submit a Mobile Wash work order from the portal — pick a facilit
 icon: "square-plus"
 ---
 
-This walkthrough covers requesting an on-site wash for vehicles at one of your facilities. The whole flow lives at **Mobile Wash → Work Orders** in [app.v2.gorynse.com](https://app.v2.gorynse.com).
+This walkthrough covers requesting an on-site wash at one of your facilities. The whole flow lives at **Mobile Wash → Work Orders** in [app.v2.gorynse.com](https://app.v2.gorynse.com).
 
 <Note>
-  The request form does **not** ask you to pick a vendor. Rynse matches your request to the right vendor on the back end based on your facility and service area. If you have a preferred vendor relationship, that's already wired into how requests get routed.
+  The request form does **not** ask you to pick a vendor. Rynse matches your request to the right vendor based on your facility and service area. If you have a preferred vendor relationship, that's already wired into routing.
 </Note>
 
 ## Before you start
 
-A quick checklist:
-
-- **The vehicles you want washed are already in your fleet** and assigned to the right facility. Vehicle edits go through Rynse — email `support@gorynse.com` with the description, VIN, license plate, and external ID if anything needs to change.
-- **You know which facility the crew should come to.** Only one facility per work order — if you need washes at two facilities, submit two work orders.
+- **Vehicles are in your fleet and assigned to the right facility.** Vehicle edits go through Rynse — email `support@gorynse.com` with the description, VIN, license plate, and external ID if anything needs to change.
+- **You know which facility the crew should come to.** One facility per work order — submit two work orders if you need washes at two locations.
 
 ## Step-by-step
 
-The request form is a three-step stepper. Each step has to be valid before the **Next** button lights up.
+The form is a three-step stepper. Each step must be valid before **Next** lights up.
 
 <Steps>
   <Step title="Open the form">
     From **Mobile Wash → Work Orders**, click **Request work order** in the top-right of the page.
   </Step>
   <Step title="Location & vehicles">
-    1. Pick a **facility** from the dropdown. The facility's address shows underneath so you can confirm it.
-    2. The vehicle list under the facility loads automatically. Use the **search box** to filter by make, model, year, plate, or asset ID.
-    3. Click vehicles in the list to select them, or use **Select all** to add every vehicle at the facility. The header shows a running count (for example, *"6 of 12 vehicles selected"*).
+    **1. Pick a facility.** Select from the dropdown. The facility's address appears below the picker so you can confirm it.
+
+    **2. (Optional) Override the dispatch address.** If the crew should go somewhere other than the address on file — a temporary staging location, a second gate entrance — click the address card to open the address editor. Start typing and select a result from the Google Places suggestions. The override applies to this work order only.
+
+    **3. Choose your request mode.** Two options:
+
+    | Mode | When to use |
+    | --- | --- |
+    | **Select specific vehicles** | You know exactly which vehicles need washing. The crew works from your list. |
+    | **Estimate vehicle count** | You're not sure which vehicles will be on-site, or you want the crew to wash whatever's there up to a number. Enter the estimated count and the vendor brings enough supplies. |
+
+    **In vehicle mode:** the vehicle list for the selected facility loads automatically. Use the search box to filter by make, model, plate, or asset ID. Click rows to select, or **Select all** to grab every vehicle.
 
     <Warning>
-      Only vehicles assigned to the chosen facility appear here. If the list looks short or empty, the vehicles are probably assigned to a different facility — email `support@gorynse.com` to fix the facility assignment, then come back.
+      Only vehicles assigned to the chosen facility appear here. If the list looks short, the vehicles may be assigned to a different facility — email `support@gorynse.com` to fix the assignment.
     </Warning>
+
+    **In count mode:** enter the estimated number of vehicles (minimum 1). You don't pick specific vehicles — the crew handles assignment on-site.
   </Step>
   <Step title="Services">
-    For each selected vehicle, choose **Exterior**, **Interior**, **Trailer**, or any combination. Every vehicle needs at least one service before you can continue.
+    Choose what each vehicle (or the whole order, in count mode) needs. Services are displayed as cards — click a card to toggle it on or off.
 
-    The fastest way to set services is the **Services to apply** panel at the top:
+    | Service | What it covers |
+    | --- | --- |
+    | **Exterior** | Standard wash — body, wheels, windows |
+    | **Interior** | Vacuum and wipe-down |
+    | **Trailer** | Trailer washout |
+    | **Biohazard** | Biological waste cleanup with specialized handling |
+    | **Custom** | Any other service — describe it in the Notes field on the next step |
 
-    1. Check the services you want (Exterior, Interior, Trailer).
-    2. Use the checkboxes on the table rows to pick which vehicles you're applying them to.
-    3. Click **Apply to selected (N)** to set those services on just the rows you checked, or **Apply to all (N)** to set them on every vehicle in the order.
+    At least one service must be selected before you can continue.
 
-    <Tip>
-      **Exterior** is the standard wash — body, wheels, windows. **Interior** is vacuum and wipe-down. **Trailer** is a trailer washout. Mix and match per vehicle — a tractor might get exterior + interior while the trailer behind it gets a trailer washout.
-    </Tip>
+    <Note>
+      If you select **Custom**, the **Notes** field on the next step becomes required. You must describe what you need before you can submit.
+    </Note>
+
+    **In vehicle mode**, services are set per vehicle. To apply the same services to a batch, check the vehicle rows you want to update and use **Apply to selected**. Use **Apply to all** to set services on every vehicle at once.
+
+    **In count mode**, one set of services applies to the whole order.
   </Step>
   <Step title="Schedule & notes">
-    1. **Preferred date range.** Pick a start date and an end date for the window the vendor can schedule within. Wider windows are easier to fit; tight windows constrain the vendor.
-    2. **Additional notes.** Anything the crew needs — gate codes, where to stage vehicles, contact on-site, vehicles that need extra attention.
-    3. Review the **Summary** at the bottom — every vehicle with its services listed, and a total vehicle count.
+    1. **Earliest date / Latest date.** Set the window the vendor can schedule within. Dates must be at least two days out — same-day and next-day requests are not supported. Wider windows are easier for vendors to accommodate; tight windows constrain scheduling.
+    2. **Notes.** Anything the crew needs to know — gate codes, staging location, on-site contact, vehicles that need extra attention. If you selected **Custom** as a service, this field is required and you must describe the custom work.
+    3. Review the **Summary** — services, date window, address, and vehicle count.
     4. Click **Submit request.**
   </Step>
 </Steps>
@@ -64,17 +81,29 @@ After you submit, the work order appears at the top of the Work Orders table wit
   <Accordion title="Can I include vehicles from multiple facilities in one work order?">
     No — a work order is tied to one facility because the crew makes one trip to one address. To cover multiple facilities, submit one work order per facility.
   </Accordion>
+
   <Accordion title="Where do I pick the vendor?">
-    You don't — Rynse routes the request to the right vendor based on your facility and the vendor relationships set up on your account. If you need a different vendor or a new vendor relationship, contact your Rynse account team.
+    You don't — Rynse routes the request to the right vendor based on your facility and the vendor relationships on your account. If you need a different vendor or a new vendor relationship, contact your Rynse account team.
   </Accordion>
+
+  <Accordion title="Can I request a wash for tomorrow?">
+    No — the earliest available date is two days from today. Same-day and next-day requests aren't supported because vendors need lead time to schedule a crew.
+  </Accordion>
+
+  <Accordion title="What's the difference between Biohazard and Custom?">
+    **Biohazard** is a defined service type for biological waste cleanup — vendors know what equipment and handling it requires. **Custom** is a catch-all for anything else. When you select Custom, the Notes field becomes required so you can describe exactly what you need.
+  </Accordion>
+
   <Accordion title="Can I set up a recurring wash?">
-    Not from the request form today. Recurring on-site visits are arranged directly with Rynse and your vendor — those visits show up automatically on the **Schedule** view without you needing to submit each one. Talk to your account team if you want to set up a standing cadence.
+    Not from the request form. Recurring on-site visits are arranged directly with Rynse and your vendor — those visits show up automatically on the **Schedule** view. Talk to your account team to set up a standing cadence.
   </Accordion>
+
   <Accordion title="Can I cancel after I submit?">
-    While the work order is in **Requested** status, open **Mobile Wash → Work Orders** and click **Delete** on the row. Once the order moves past Requested, deletion is no longer available — contact your Rynse account team and they'll coordinate with the vendor.
+    While the work order is in **Requested** status, open **Mobile Wash → Work Orders** and click **Delete** on the row. Once it moves past Requested, deletion is no longer available — contact your Rynse account team and they'll coordinate with the vendor.
   </Accordion>
+
   <Accordion title="When will I see pricing?">
-    Pricing isn't shown in the request form. Completed work orders appear on your monthly invoice with line items per vehicle and service, alongside the rest of your Rynse usage.
+    Pricing isn't shown in the request form. Completed work orders appear on your monthly invoice with line items per vehicle and service.
   </Accordion>
 </AccordionGroup>
 
@@ -84,6 +113,7 @@ After you submit, the work order appears at the top of the Work Orders table wit
   <Card title="Track your work orders" icon="list-check" href="/mobile-wash/tracking-work-orders">
     Once your request is in, this is how you watch it through to completion and see what else is on the schedule.
   </Card>
+
   <Card title="Fleet Wash Health" icon="heart-pulse" href="/rynse-web/fleet-wash-health">
     Pair Mobile Wash usage with the wash health view to see which vehicles need attention most.
   </Card>
