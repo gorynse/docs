@@ -73,7 +73,8 @@
       {
         "group": "Integrations",
         "pages": [
-          "integrations/fleetio"
+          "integrations/fleetio",
+          "integrations/holman"
         ]
       }
     ]
