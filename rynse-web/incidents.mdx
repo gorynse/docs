@@ -1,149 +1,117 @@
 ---
 title: "Incidents"
 sidebarTitle: "Incidents"
-description: "Diagnose declined card transactions — why the swipe was blocked, which driver and vehicle were involved, and what to do about it."
+description: "See why a Rynse card was declined — the driver, vehicle, reason, and what to do about it."
 icon: "triangle-exclamation"
 ---
 
 <Warning>
-  **Only relevant for card-based customers.** If you're an LPR-only or pure-membership customer, your drivers don't carry Rynse cards — there's nothing to decline, and this tab will stay empty. You can safely skip the page.
+  **Only relevant for card-based customers.** If your drivers don't carry Rynse cards, this tab stays empty and you can skip the page.
 </Warning>
 
-**Incidents** is the page you open when a driver says *"my card got rejected."* Every time a Rynse card swipe is blocked at a terminal, a row lands here with the date, merchant, vehicle, reason, and which card was used. It turns "the card didn't work" into a specific, fixable story.
+**Incidents** is where you go when a driver says *"my card got rejected."* Every blocked Rynse card swipe lands here with the date, merchant, vehicle, reason, and card used.
 
 <Note>
-  **Incidents only captures declines that reached the payment processor.** If a terminal can't accept the card at all — communication errors, the merchant doesn't accept the card type, or the swipe was rejected before it left the terminal — the attempt never makes it here. If a driver says they were declined and you can't find the row, that's why.
+  Incidents only shows declines that reached the payment processor. If the terminal couldn't accept the card at all — communication error, unsupported card type, or a swipe rejected before it left the terminal — it won't appear here.
 </Note>
 
 A decline almost always falls into one of three buckets:
 
-- **The terminal is a category you haven't approved** — e.g. a driver tried to buy gas at the pump using a wash-only card.
-- **A spend cap or velocity limit was hit** — the driver is over the monthly limit or above the per-transaction ceiling on their card.
-- **A card schedule restriction blocked the swipe** — the card isn't allowed to be used at that time of day or day of week.
+- **Unapproved merchant category** — e.g. buying gas with a wash-only card.
+- **A spend cap or limit was hit** — over the monthly limit or per-transaction ceiling.
+- **A card schedule blocked it** — used outside its allowed days or times.
 
-## Page-level controls
+## Page controls
 
-At the top of the page:
+- **View toggle — Incidents / All Declines.** *Incidents* (default) shows declines flagged by a Rynse rule (category, schedule, or spend) — the actionable ones. *All Declines* adds every other declined swipe, including issuer-level ones (insufficient funds, bad PIN, terminal errors).
+- **Date range.** Start and end pickers, defaulting to the current month. Your selection is saved in the page address, so you can bookmark or share a window.
 
-<Card title="View toggle: Incidents / All Declines" icon="toggle-on">
-  Two radio buttons control what the table shows.
-
-  - **Incidents** (default) — declines flagged with a specific Rynse rule violation (unapproved category, schedule, or spend rule). These are the actionable ones.
-  - **All Declines** — every declined authorization in the window, including issuer-level declines (insufficient funds on a prepaid card, bad PIN entry, terminal errors). Use this if a driver swears they were declined but you don't see it under Incidents.
-</Card>
-
-<Card title="Date range" icon="calendar">
-  Two date pickers — **start** and **end**. Defaults to the current calendar month. Selection is reflected in the URL so you can bookmark or share a specific window.
-</Card>
-
-## The Incidents table
-
-### Columns
+## The table
 
 | Column | What it shows |
 | --- | --- |
-| **Date** | When the swipe happened, down to the minute |
-| **Type** | **Declined** (blocked at swipe) or **Auth** (authorized but flagged) |
-| **Message** | The specific reason — e.g. *Merchant category not allowed*, *Spend rule exceeded*, *Outside schedule* |
-| **Requested** | The amount the merchant asked to authorize |
-| **Approved** | The amount actually approved (usually `$0.00` for a hard decline) |
+| **Date** | When the swipe happened, to the minute |
+| **Type** | **Declined** (blocked) or **Auth** (authorized but flagged) |
+| **Message** | The reason — merchant category not allowed, spend rule exceeded, outside schedule |
+| **Requested** | Amount the merchant asked to authorize |
+| **Approved** | Amount actually approved (usually $0.00 for a decline) |
 | **Last 4** | Last four digits of the card used |
-| **Merchant** | The vendor name as it came in from the terminal |
-| **Merchant Category** | The category the terminal reported itself as (e.g. *Car Wash*, *Automated Fuel Dispenser*, *Service Stations*) |
-| **Category** | Icon for the card's intended use — car wash, fuel gas, fuel EV, or preventative maintenance |
-
-Click any row to open the full **Incident Details** drill-down (see below).
+| **Merchant** | Vendor name from the terminal |
+| **Merchant Category** | Category the terminal reported itself as (e.g. Car Wash, Automated Fuel Dispenser) |
+| **Category** | Icon for the card's intended use — car wash, fuel gas, fuel EV, or maintenance |
 
 ## Incident details
 
-Clicking a row opens a dialog with everything you need to decide what happened and what to do next:
+Click any row for a dialog with everything you need to decide what happened:
 
 <AccordionGroup>
   <Accordion title="Transaction Information">
-    The raw swipe: timestamp, merchant name and address, requested amount, approved amount, and the message string from the network. This is what the terminal sent us at the moment of decline.
+    The raw swipe: timestamp, merchant name and address, requested and approved amounts, and the reason the network sent back.
   </Accordion>
   <Accordion title="Credit Card">
-    Which card was used — last 4, name on card, balance, status, and which vehicle it's assigned to. Confirms the right card was in the right hands.
+    Which card was used — last 4, name on card, balance, status, and assigned vehicle.
   </Accordion>
   <Accordion title="Schedule Constraint At Time of Incident">
-    The card's schedule rule as it existed when the swipe happened — e.g. *Mon–Fri, 6 AM–6 PM*. If the decline happened outside that window, this is your answer.
+    The card's schedule rule when the swipe happened — e.g. Mon–Fri, 6 AM–6 PM. If the decline was outside that window, this is your answer.
   </Accordion>
   <Accordion title="Card Spend Rule">
-    The categories this card is allowed to spend in (car wash, fuel gas, etc.). If the terminal's category doesn't match anything on this list, the swipe was blocked here.
+    The categories this card can spend in. If the terminal's category isn't on the list, the swipe was blocked here.
   </Accordion>
   <Accordion title="Spend Rule (Limits)">
-    Per-transaction and monthly spend ceilings on the card and the organization. If the driver hit one of these, it'll be in the rule list.
+    Per-transaction and monthly ceilings on the card and the organization. A driver who hit one shows up here.
   </Accordion>
   <Accordion title="Transaction Timeline">
-    A 14-day window of other activity on the same card around the decline. Helpful for spotting patterns — e.g. *they swiped successfully five minutes earlier at a different vendor*.
+    A 14-day window of other activity on the same card — useful for spotting patterns, like a successful swipe minutes earlier elsewhere.
   </Accordion>
 </AccordionGroup>
 
-## Common decline patterns
+## Common incidents you'll see
 
-These are the patterns the Rynse CS team sees over and over. If you're looking at an unfamiliar incident, it's probably one of these.
+If an incident looks unfamiliar, it's probably one of these.
 
 <AccordionGroup>
   <Accordion title="Driver tried to buy gas with a wash-only card">
-    **The fingerprint.** Merchant category on the terminal is **Automated Fuel Dispenser**. The requested amount is unusually high — gas pumps auto-authorize for around $200 to hold against a fill-up. The message often reads as a PIN failure even though the real reason is the category.
-
-    **What to do.** Forward the driver the program one-pager and let them know the wash card isn't for fuel. Point them at the car-wash locations map. If you also want fuel on this card, reach out to your CSM — fuel can be enabled on the same card.
+    Merchant category is **Automated Fuel Dispenser** with an unusually high requested amount — pumps auto-authorize around $200 to hold against a fill-up. (The message may read as a PIN failure even though the category is the real reason.) Remind the driver the wash card isn't for fuel and point them to the car-wash locations map. To add fuel to this card, contact your account team.
   </Accordion>
   <Accordion title="Driver tried to use the card at a non-wash retailer">
-    **The fingerprint.** Merchant category is something like *General Retail*, *Department Store*, or *Convenience Store* — not a wash MCC. The swipe is blocked because the card is approved for car-wash merchant categories, not retail.
-
-    **What to do.** This is the card doing its job. Confirm with the driver that the swipe was at a non-wash merchant, and reinforce the program rules. No action needed in the portal.
+    Merchant category is something like General Retail, Department Store, or Convenience Store — the card is approved for car-wash categories, not retail. This is the card doing its job; confirm the swipe was non-wash, reinforce the rules, nothing to fix.
   </Accordion>
   <Accordion title="Wash happened at a gas station with an attached car wash">
-    **The fingerprint.** The driver pulled into a fuel station that also offers a car wash, but the wash terminal is wired through the station's primary terminal — so the swipe came through as **Automated Fuel Dispenser** instead of a wash merchant category. You can usually tell because the driver insists they were at the wash, the merchant name is a gas-station brand, and the time-of-day matches a normal wash visit.
-
-    **What to do.** Email `support@gorynse.com` with the incident details. We can greenlight that specific merchant for wash use. If it keeps happening at the same location, the fix is permanent.
-
-    Alternative: tell drivers to use a different car wash in your network for now.
+    The driver washed at a fuel station whose wash terminal runs through the station's main terminal, so the swipe came through as **Automated Fuel Dispenser**. The merchant name is a gas-station brand and the time matches a normal wash. Email `support@gorynse.com` to greenlight that merchant for wash use — a permanent fix. Meanwhile, send drivers to a different car wash in your network.
   </Accordion>
   <Accordion title="Driver hit a monthly limit or per-transaction cap">
-    **The fingerprint.** The message references a spend rule or velocity limit. The merchant and category both look correct — it's the *amount* that tripped the block.
-
-    **What to do.** Open the incident, check the **Spend Rule (Limits)** section. Either the limit is correct and the driver needs to budget for the rest of the month, or the limit needs to be raised. Email `support@gorynse.com` if you want a cap adjusted.
+    The message references a spend rule or limit; merchant and category look correct — it's the *amount* that tripped the block. Check **Spend Rule (Limits)**. Either the limit is correct and the driver budgets for the rest of the month, or email `support@gorynse.com` to raise it.
   </Accordion>
   <Accordion title="Wash vendor's terminal is registered under the wrong category">
-    **The fingerprint.** You know the driver pulled into a car wash, but the terminal reports itself as a fuel station, convenience store, or generic retail. The message reads *Merchant category not allowed*.
-
-    **What to do.** This is a vendor configuration issue, not a driver issue. Email `support@gorynse.com` with the incident details — we can greenlight that specific merchant so future swipes go through. Heads up: greenlighting opens up all spend at that merchant within your existing policies, so we usually only do it when you trust the location.
-
-    Alternative: tell the driver to use a different car wash on the map and skip that location for now.
+    You know it was a car wash, but the terminal reports as a fuel station, convenience store, or generic retail, and the message reads *Merchant category not allowed*. This is a vendor setup issue — email `support@gorynse.com` to greenlight that merchant. Note: greenlighting opens all spend there within your existing policies, so we only do it for trusted locations. Meanwhile, send drivers elsewhere on the map.
   </Accordion>
   <Accordion title="Card schedule restriction blocked the swipe">
-    **The fingerprint.** The decline happened on a weekend, late night, or holiday. The **Schedule Constraint At Time of Incident** section shows the swipe fell outside the allowed window.
-
-    **What to do.** Either the schedule is doing its job (driver shouldn't have been washing off-hours) or the schedule needs to be widened. Email `support@gorynse.com` to adjust the card's allowed days and times.
+    The decline was on a weekend, late night, or holiday, and **Schedule Constraint At Time of Incident** shows the swipe fell outside the allowed window. Either the schedule is doing its job, or email `support@gorynse.com` to widen the card's allowed days and times.
   </Accordion>
 </AccordionGroup>
 
 ## Get notified the moment a card declines
 
-You don't have to remember to check this tab. Turn on email alerts in **Settings → Incident notifications** and you'll get a message every time a Rynse card is declined. The CS team gets the same alert internally, but having direct visibility means you can act on the same day instead of waiting for a check-in.
+You don't have to remember to check this tab. Turn on **Settings → Incident notifications** to get an email whenever a Rynse card is declined, so you can act the same day instead of waiting for a check-in.
 
 <Tip>
-  Notification preferences are **per user**. Every fleet manager has to enable Incident alerts on their own profile.
+  Notifications are per user — each fleet manager enables Incident alerts on their own profile.
 </Tip>
 
 ## Common workflows
 
 <AccordionGroup>
   <Accordion title='A driver said the card was "rejected" — figure out why'>
-    Set the date range to cover the day in question. Look for that driver's vehicle in the table. Click the row to open the details. The **Message** field and the **Spend Rule** / **Schedule Constraint** sections in the dialog will tell you which of the three buckets it falls into.
+    Set the date range to the day in question, find the driver's vehicle, and click the row. The **Message**, **Spend Rule**, and **Schedule Constraint** sections tell you which of the three buckets it falls into.
   </Accordion>
   <Accordion title="Audit a quarter of declines for a pattern">
-    Set the date range to the quarter. Sort or scan the **Merchant Category** column — if one category (especially *Automated Fuel Dispenser*) is dominating, you have a driver-education or scope problem. If one **Merchant** keeps appearing, the vendor's terminal is likely misclassified.
+    Set the date range to the quarter and scan the **Merchant Category** column. If one category (especially Automated Fuel Dispenser) dominates, you have a driver-education or scope problem. If one **Merchant** keeps appearing, that vendor's terminal is likely misclassified.
   </Accordion>
   <Accordion title="Confirm a decline you can't find under Incidents">
-    Switch the view toggle to **All Declines**. This shows every declined authorization in the window, including ones that didn't trip a Rynse rule (e.g. PIN entered wrong at the pump, terminal communication errors).
-
-    If the swipe isn't on either view, it never reached the payment processor — common causes: the merchant doesn't accept the card type, the terminal couldn't establish a connection, or the driver swiped a different card. Confirm with the driver where exactly the swipe was attempted.
+    Switch the view toggle to **All Declines** to see swipes that didn't trip a Rynse rule (wrong PIN, terminal errors). If it's on neither view, it never reached the payment processor — likely an unsupported card type, a terminal that couldn't connect, or a different card. Confirm with the driver where the swipe was attempted.
   </Accordion>
   <Accordion title="Decide whether to greenlight a misclassified merchant">
-    Open the incident, confirm in **Transaction Information** that the merchant is genuinely a car wash. Email `support@gorynse.com` and ask us to allow that merchant ID. Trade-off: greenlighting allows any spend at that merchant within your existing category and dollar policies, so only do it for locations you trust.
+    Open the incident and confirm in **Transaction Information** that the merchant is genuinely a car wash. Email `support@gorynse.com` to allow that merchant. Trade-off: greenlighting allows any spend there within your existing category and dollar policies, so only do it for locations you trust.
   </Accordion>
 </AccordionGroup>
 
@@ -151,7 +119,7 @@ You don't have to remember to check this tab. Turn on email alerts in **Settings
 
 <CardGroup cols={2}>
   <Card title="Vehicles" icon="car" href="/rynse-web/vehicles">
-    Find the vehicle from a decline, check its card status and which categories the card is allowed to spend in.
+    Find the vehicle from a decline, check its card status and the categories the card can spend in.
   </Card>
   <Card title="Fleet Wash Health" icon="heart-pulse" href="/rynse-web/fleet-wash-health">
     Once a decline is sorted, confirm the driver is back to washing on the cadence you expect.

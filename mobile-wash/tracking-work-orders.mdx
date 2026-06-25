@@ -1,131 +1,77 @@
 ---
 title: "Tracking work orders"
 sidebarTitle: "Tracking work orders"
-description: "Use Schedule, Work Orders, and History to see what's coming up, what's in flight, and what's already shipped."
+description: "Use Schedule, Work Orders, and History to see what's coming up, what's in flight, and what's done."
 icon: "list-check"
 ---
 
-Once a work order is in the system — whether you requested it or your vendor scheduled it — three views help you keep tabs on it: **Schedule**, **Work Orders**, and **History**. All three live under Mobile Wash in [app.v2.gorynse.com](https://app.v2.gorynse.com).
+Three views help you keep tabs on your work orders: **Schedule**, **Work Orders**, and **History**. All live under Mobile Wash in [app.v2.gorynse.com](https://app.v2.gorynse.com).
 
 <Note>
-  Mobile Wash data is tied to your monthly invoice cycle. Completed work orders and visit counts appear after the vendor's monthly usage report is processed — typically in the first week of the following month.
+  Completed work orders usually appear within a few days of the wash — exact timing varies by vendor. Billing is separate: depending on what you've set up with Rynse, a mobile wash is either billed right after it's completed or rolled into your monthly invoice.
 </Note>
 
 ## Schedule
 
-**Mobile Wash → Schedule** is a month-view calendar plus a few summary cards. It's the fastest way to answer "when is my next wash?" and "what landed last month?"
-
-### What's on the page
-
-<CardGroup cols={2}>
-  <Card title="Vehicles washed (this month)" icon="circle-check">
-    Count of vehicles washed during the calendar month currently shown on the calendar. Updates as you navigate between months.
-  </Card>
-
-  <Card title="Next wash" icon="calendar-day">
-    The next upcoming scheduled date, with the facility name.
-  </Card>
-
-  <Card title="Repeating schedules" icon="repeat">
-    How many of your upcoming entries are on a recurring cadence (not one-time).
-  </Card>
-
-  <Card title="Upcoming list" icon="bell">
-    Up to five upcoming entries in the next 14 days, with vendor, facility, date, and cadence.
-  </Card>
-</CardGroup>
-
-### The calendar
+**Mobile Wash → Schedule** is a month-view calendar with summary cards — the fastest way to answer "when's my next wash?" and "what landed last month?"
 
 The calendar shows two kinds of events:
 
-- **Scheduled** (blue) — upcoming on-site visits coordinated with your vendor on a recurring or one-time cadence.
+- **Scheduled** (blue) — upcoming visits coordinated with your vendor.
 - **Completed** (green) — past work orders that have been processed, with the vehicle count in the label.
 
-Click any day to see its entries in the side panel. Click a completed event to open the work order detail with the full per-vehicle list.
+Click any day to see its entries in the side panel. Click a completed event to open the work order detail.
 
 <Frame caption="The Schedule calendar — blue events are scheduled visits, green are completed work orders">
   ![Mobile Wash Schedule calendar](/images/mobile-wash/schedule-calendar.png)
 </Frame>
 
-<Tip>
-  Schedule is the right view for spotting coverage gaps. If a recurring visit is expected next Saturday and you don't see it on the calendar, ping your account team — that's a signal the visit hasn't been dispatched.
-</Tip>
-
 <Note>
-  Schedule shows scheduled recurring visits and completed work orders. Manual work orders you've submitted that are still pending appear on **Work Orders**, not on the Schedule calendar.
+  Pending requests you've submitted appear on **Work Orders**, not on the Schedule calendar. If a recurring visit you expect isn't on the calendar, it likely hasn't been dispatched — contact your account team.
 </Note>
 
 ## Work Orders
 
-**Mobile Wash → Work Orders** is the table of every work order for your organization, regardless of status.
-
-### Columns
+**Mobile Wash → Work Orders** lists every work order for your organization, at any status. Click any row to open its full detail — every vehicle, the services applied, and (for completed orders) the per-line pricing that rolls up to your invoice.
 
 | Column | What it shows |
 | --- | --- |
-| Date | The scheduled date if the vendor has set one, otherwise **TBD**. |
+| Date | Scheduled date, or **TBD**. |
 | Name | Work order name. |
 | Status | `Requested`, `Active`, `Completed`, or `Cancelled`. |
-| Number | Work order number — use this when referencing the order with support. |
-| Vendor | The vendor assigned to the work, once matched. |
-| Actions | A **Delete** button, available only while the order is `Requested`. |
+| Number | Reference this with support. |
+| Vendor | Assigned vendor, once matched. |
+| Actions | **Delete**, only while `Requested`. |
 
-Click any row to open the work order detail with the full per-vehicle list, services, and (for completed orders) the per-line pricing that rolls up to your invoice.
+To create a new order, use **Request work order** in the top-right — see [Requesting a wash](/mobile-wash/requesting-a-wash).
 
-### What you can do here
-
-<CardGroup cols={2}>
-  <Card title="Request a new work order" icon="square-plus" href="/mobile-wash/requesting-a-wash">
-    Use **Request work order** in the top-right. See [Requesting a wash](/mobile-wash/requesting-a-wash) for the full walkthrough.
-  </Card>
-
-  <Card title="Delete a requested order" icon="trash">
-    While a work order is in `Requested` status, click **Delete** on its row. Once it moves to `Active`, `Completed`, or `Cancelled`, the Delete action is no longer available — contact your account team if you need to change it.
-  </Card>
-
-  <Card title="Open the detail view" icon="eye">
-    Click any row to see every vehicle on the order, the services applied, and any vendor invoice references.
-  </Card>
-
-  <Card title="Cross-reference with Schedule" icon="calendar">
-    Use the **Date** column to line up upcoming work with what's on the Schedule calendar.
-  </Card>
-</CardGroup>
+<Note>
+  Deleting asks you to confirm first, and it can't be undone.
+</Note>
 
 ## History
 
-**Mobile Wash → History** (at `/mobilewash/history`) is a focused archive view that filters down to **Completed** and **Cancelled** work orders only. It's not in the Mobile Wash tab bar — go there directly when you want a clean reconciliation view without active or in-progress work in the way.
+**Mobile Wash → History** (at `/mobilewash/history`) is a clean archive of **Completed** and **Cancelled** work orders only. It isn't in the Mobile Wash tab bar — go there directly for reconciliation without active work in the way.
 
-Each entry shows the work order number, the date (or scheduled window), the vehicle count, your organization, the facility, and a **View Result** button that opens the full per-vehicle detail with services and pricing.
-
-History is the source of truth when you're:
-
-- **Reconciling an invoice.** Match invoice line items to completed work orders by number.
-- **Reviewing a vendor's recent work.** Scan the last several completed orders at a facility to spot consistency issues.
-- **Pulling records for accounting.** Each completed work order has the per-vehicle services and pricing that roll up onto your monthly invoice.
+Each entry shows the work order number, date, vehicle count, organization, facility, and a **View Result** button for the full per-vehicle detail with services and pricing. Use it to reconcile invoices (match line items by number), review a vendor's recent work, or pull records for accounting.
 
 ## Common workflows
 
 <AccordionGroup>
   <Accordion title="Checking the status of a request I submitted">
-    Open **Work Orders**. New requests appear at the top with status `Requested`. Once Rynse matches it to a vendor, the row updates with the vendor name and the status changes to `Active`. If a request has been sitting at `Requested` for more than a couple of days, contact your account team.
+    Open **Work Orders**. New requests appear at the top as `Requested`. Once Rynse matches a vendor, the row shows the vendor name and moves to `Active`. Sitting at `Requested` for more than a couple of days? Contact your account team.
   </Accordion>
 
   <Accordion title="Confirming next week's scheduled visit">
-    Open **Schedule** and look at the calendar. Recurring visits show as blue events on their expected dates. A missing date where you'd expect one usually means the visit hasn't been dispatched yet — flag it with your account team.
+    Open **Schedule**. Recurring visits show as blue events on their expected dates. A missing date usually means the visit hasn't been dispatched — flag it with your account team.
   </Accordion>
 
-  <Accordion title="Pulling a month of mobile wash records for accounting">
-    Open **History**, find the month you need, and click into each completed order to grab per-vehicle services and pricing. These tie back to the line items on your monthly invoice.
+  <Accordion title="Pulling records for accounting or reconciling an invoice">
+    Open **History**, find the month you need, and click into each completed order for per-vehicle services and pricing. These tie back to the line items on your monthly invoice.
   </Accordion>
 
   <Accordion title="Investigating a complaint about a specific wash">
-    Find the work order in **History** by date and facility. Open the result to see exactly which vehicles were serviced and what services they received. If something looks off, contact your account team with the work order number.
-  </Accordion>
-
-  <Accordion title="Seeing which vehicles will be hit on the next visit">
-    The Schedule shows when an upcoming recurring visit will happen and at which facility, but the specific vehicle list for that visit is finalized by your vendor at the time of service. The completed work order — once processed — will show the exact vehicles that were washed.
+    Find the order in **History** by date and facility, then open the result to see which vehicles were serviced and what services they received. If something looks off, contact your account team with the work order number.
   </Accordion>
 </AccordionGroup>
 

@@ -1,11 +1,11 @@
 ---
 title: "Fleet Wash Health"
 sidebarTitle: "Fleet Wash Health"
-description: "Spot which vehicles aren't getting washed, find your power users, and watch wash adoption trend over time."
+description: "Spot which vehicles aren't getting washed, find your power users, and track wash adoption over time."
 icon: "heart-pulse"
 ---
 
-**Reports → Fleet Wash Health** answers two simple questions: _which of my vehicles aren't getting washed?_ and _which ones are washing the most?_ It's the page our CS team reaches for most often on customer check-ins, because it turns raw transaction data into a short list of vehicles you can actually do something about.
+**Reports → Fleet Wash Health** answers two questions: _which of my vehicles aren't getting washed?_ and _which ones wash the most?_ It turns your wash history into short lists of vehicles you can act on.
 
 <Frame caption="Fleet Wash Health — wash utilization trends, overdue vehicles, and top washers in one view">
   ![Fleet Wash Health Report dashboard](https://cdn.prod.website-files.com/66f6dc6d8e13869d15a3c296/69cac4fbdc39838666c75818_Fleet%20Wash%20Health%20Report.png)
@@ -15,152 +15,72 @@ icon: "heart-pulse"
 
 <iframe width="100%" height="400" src="https://player.vimeo.com/video/1178555496" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen />
 
-You'll find three things stacked top to bottom:
+The page has three sections, top to bottom: a **wash utilization chart**, a **Vehicles Due for a Wash** table (your neglected list), and a **Most Frequent Washers** table (your power users).
 
-1. A **wash utilization chart** for the trend over time.
-2. A **Vehicles Due for a Wash** table — your neglected list.
-3. A **Most Frequent Washers** table — your power users.
-
-## The page-level filter
-
-There is one filter at the top of the page:
-
-<Card title="Facility" icon="building">
-  Scopes the chart and both tables to vehicles assigned to a single facility. Defaults to **All Facilities**. Your selection is reflected in the URL — bookmark or share a link and the recipient lands on the same view.
-</Card>
-
-Each section below has its own inline filter chips for time range or threshold — covered in context.
+Use the **Facility** filter at the top to scope everything to one facility. It defaults to **All Facilities**, and your selection is saved in the URL — bookmark or share a link and the recipient lands on the same view. Each table has its own time range or threshold filter, covered below.
 
 ## Wash utilization chart
 
-A bar-and-line chart of how many unique vehicles washed each month, plus a utilization line (% of active vehicles washed) when you're on pay-as-you-go. Use it to:
+A monthly chart of how many unique vehicles washed, plus a utilization line (% of active vehicles washed) for pay-as-you-go accounts. Use it to confirm the program is healthy (a flat or growing trend), catch a regression (a sustained dip often means a vendor closed or a card issue is blocking washes), or see the impact of turning on a new vendor.
 
-- **Confirm the program is healthy** — a flat or growing bar trend means drivers are engaging with the benefit. "Trending in the right direction" is the phrase to look for.
-- **Catch a regression** — a sustained dip usually means a vendor closed, a depot moved, or there's a card or membership issue blocking washes.
-- **See the impact of a change** — turn on a new vendor or add mobile wash and the line should step up.
-
-### View chips
-
-Inline above the chart:
-
-- **Last 365 Days** (default) — the trailing twelve months.
-- **One chip per prior year that has data** — e.g. **2025**, **2024**. These appear automatically as your history accumulates.
+Switch the time range above the chart between **Last 365 Days** (default) and any prior year with data (e.g. **2025**, **2024**), which appear automatically as your history builds.
 
 <Tip>
-  Utilization % is _unique vehicles washed in the period ÷ active vehicles with a card or membership_. It only appears for pay-as-you-go customers; unlimited accounts see the bar chart on its own.
+  Utilization % is _unique vehicles washed in the period ÷ active vehicles with a card or membership_. It only appears for pay-as-you-go accounts; unlimited accounts see the bar chart alone.
 </Tip>
 
 ## Vehicles Due for a Wash
 
-The neglected list — every vehicle that hasn't washed in at least the selected threshold. This is the table the CS team calls out as the killer report.
+Every vehicle that hasn't washed in at least the selected threshold. Use the color-coded filters above the table to set how overdue:
 
-### Threshold chips
-
-Inline at the top of the table, color-coded so the urgency is visible at a glance:
-
-| Chip | Color | What it shows |
+| Filter | Color | Shows |
 | --- | --- | --- |
-| **30\+ days** | Yellow | Default. Vehicles 30 or more days since their last wash. |
-| **60\+ days** | Orange | Tightens to 60\+ days. |
-| **90\+ days** | Red | Tightens to 90\+ days. |
-| **Never** | Red | Vehicles that have never been washed under your program. |
+| **30\+ days** | Yellow | Default — 30 or more days since last wash |
+| **60\+ days** | Orange | 60 or more days |
+| **90\+ days** | Red | 90 or more days |
+| **Never** | Red | Vehicles never washed under your program |
 
-### Columns
-
-| Column | What it shows |
-| --- | --- |
-| **Vehicle** | Year, make, model, and your internal name |
-| **External ID** | Your own asset number — same one on invoices |
-| **License Plate** | Plate \+ state |
-| **Facility** | Which facility the vehicle is assigned to |
-| **Last Wash** | The date of the most recent wash, or **Never** |
-| **Status** | A colored chip showing how many days since the last wash (yellow / orange / red based on the threshold) or **Never** |
-
-Click any row to open the **Vehicle Wash History** drill-down — date, merchant, facility, service, and amount for every wash that vehicle has ever had. It's the fastest way to confirm whether a "Never" is a card-distribution problem or a driver-engagement problem.
+Each row shows the vehicle, your external ID, plate, facility, last wash date, and a colored label for days since last wash. Click any row to open the **Vehicle Wash History** drill-down — the full wash record for that vehicle.
 
 <Warning>
-  A vehicle showing **Never** usually means one of two things: the card never made it to the driver, or the driver doesn't know the program exists. Both are worth following up on. The CS team's framing: _"You have X vehicles where we distributed cards and they've never washed. Review this list proactively — cards may be sitting on someone's desk, or drivers may not know the program is available to them."_
+  A **Never** vehicle usually means the card never reached the driver, or the driver doesn't know the program exists. Both are worth a quick follow-up.
 </Warning>
 
 ## Most Frequent Washers
 
-The mirror image — vehicles ranked by visit count over the selected window. Useful for spotting power users and finding candidates to move from pay-as-you-go to an unlimited membership.
+Vehicles ranked by wash count over the selected window — your power users, and good candidates to move from pay-as-you-go to an unlimited membership. Set the window above the table: **30 Days**, **90 Days** (default), **Year**, or **All Time**.
 
-### Window chips
-
-Inline at the top of the table:
-
-- **30 Days**
-- **90 Days** (default)
-- **Year**
-- **All Time**
-
-### Columns
-
-| Column | What it shows |
-| --- | --- |
-| **Vehicle** | Year, make, model, and your internal name |
-| **External ID** | Your own asset number |
-| **License Plate** | Plate \+ state |
-| **Facility** | Assignment |
-| **Washes** | Count of washes in the selected window |
-| **Last Wash** | Date of the most recent wash |
-
-Click any row to open the same **Vehicle Wash History** drill-down as the neglected table.
+Each row shows the vehicle, external ID, plate, facility, wash count for the window, and last wash date. Click any row for the same **Vehicle Wash History** drill-down.
 
 <Tip>
-  **The unlimited-membership math.** Break-even at most vendors is roughly two washes a month — anything at three or more pays for itself. If a vehicle is showing **3\+ washes/month** on the 30-day view at pay-as-you-go pricing, it's a strong candidate to move to an unlimited account at the vendor it uses most. Reach out to your CSM if you want to run the numbers.
+  **The unlimited-membership math.** Break-even at most vendors is roughly two washes a month — three or more pays for itself. A vehicle showing **3\+ washes/month** on the 30-day view at pay-as-you-go pricing is a strong candidate for an unlimited account at its most-used vendor. Email support@gorynse.com or your account team to run the numbers.
 </Tip>
 
 ## Drilling into a vehicle
 
-Clicking a row in either table opens a **Vehicle Wash History** dialog with that vehicle's complete wash record:
-
-| Column | What it shows |
-| --- | --- |
-| **Date** | When the wash was processed |
-| **Merchant** | Vendor name |
-| **Facility** | Which of your facilities the vehicle is assigned to |
-| **Service** | Specific service (e.g. _Premium Exterior_, _Unlimited Fee_) |
-| **Amount** | What it cost |
-
-Use it to answer questions like _"is this driver going to the closest vendor or out of the way?"_, _"did our membership cover this, or did we pay per visit?"_, or _"when did the gaps actually start?"_
+Clicking a row in either table opens **Vehicle Wash History** — the date, merchant, facility, service, and amount for every wash that vehicle has had. Use it to see whether a membership covered a visit or you paid per wash, where the driver is washing, and when gaps started.
 
 ## Exporting
 
-Every table on this page has an export button in its header. Each chip filter (30\+, 60\+, 90\+, Never on the neglected side; 30 / 90 / Year / All Time on the frequent side) is a separate dataset — to get all four lists, switch the chip and export again.
-
-The CS team's most common export workflows:
-
-- **Circulate the _Never_ list internally.** Forward it to department heads or the captain so they can check whether cards reached drivers.
-- **Send the _60\+_ list to ops.** Use it as the basis for driver follow-ups before the gap stretches to 90\+.
-- **Brief leadership.** Screenshot the wash utilization chart and pair it with the frequent washers list to show the program is being used.
+Every table has an export button in its header. Each filter is a separate dataset, so to get all the lists (30\+, 60\+, 90\+, Never; or 30 / 90 / Year / All Time), switch the filter and export again.
 
 ## Common workflows
 
 <AccordionGroup>
-  <Accordion title="Weekly health check on the whole fleet">
-    Set **Facility** to **All Facilities**. On the Vehicles Due for a Wash table, click **60\+ days** — anything in that list is worth following up on with a driver or dispatcher this week.
+  <Accordion title="Weekly fleet health check">
+    Set **Facility** to **All Facilities** and the neglected table to **60\+ days**. Anything in that list is worth a driver or dispatcher follow-up this week.
   </Accordion>
 
-  <Accordion title="Proactive cadence for police, law enforcement, or appearance-conscious fleets">
-    If your department has standards for how often vehicles should be washed, this page is the enforcement tool. Set the neglect threshold to your tolerance (often **30\+**), export, and share with the relevant supervisors. The CS framing: _"It's a way to be more proactive."_
-  </Accordion>
-
-  <Accordion title="Justifying the wash program to leadership">
-    Keep the chart on **Last 365 Days** and screenshot it. A flat-or-up bar trend is the easiest visual proof that drivers are engaging with the benefit.
-  </Accordion>
-
-  <Accordion title="Spot-checking a specific depot">
-    Set **Facility** to the depot in question. The chart and both tables narrow to vehicles parked there. Bookmark the URL so you can come back to the same view next week.
+  <Accordion title="Enforcing a wash cadence">
+    If your fleet has standards for how often vehicles should be washed, set the neglect threshold to your tolerance (often **30\+**), export, and share with the relevant supervisors.
   </Accordion>
 
   <Accordion title="Finding unlimited-membership candidates">
-    Open Most Frequent Washers, set the chip to **30 Days**. Any vehicle with three or more washes in the last 30 days is paying more on pay-as-you-go than it would on an unlimited plan. Export the list and send it to your CSM to set up unlimited accounts for those specific vehicles.
+    Open Most Frequent Washers and set the window to **30 Days**. Any vehicle with three or more washes is paying more on pay-as-you-go than on an unlimited plan. Export the list and send it to your account team to set up unlimited accounts.
   </Accordion>
 
   <Accordion title="Following up on a 'Never washed' vehicle">
-    Click the row to open Vehicle Wash History. If it's truly empty, the cause is almost always (1) the card never made it to the driver, or (2) the driver doesn't know the program exists. Confirm with the assigned facility before pinging the driver directly.
+    Click the row to open Vehicle Wash History. If it's empty, the cause is almost always that the card never reached the driver or the driver doesn't know the program exists. Confirm with the assigned facility before contacting the driver.
   </Accordion>
 </AccordionGroup>
 

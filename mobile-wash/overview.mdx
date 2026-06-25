@@ -1,67 +1,57 @@
 ---
 title: "Mobile Wash overview"
 sidebarTitle: "Overview"
-description: "How on-site wash work happens for your fleet — what you request, what your vendor schedules, and where each piece shows up in the portal."
+description: "How on-site washing works for your fleet — what you request, what your vendor schedules, and where it shows up in the portal."
 icon: "spray-can-sparkles"
 ---
 
-Mobile Wash brings the wash to your fleet. Instead of sending vehicles through a tunnel, a vendor sends a crew to one of your facilities, washes the vehicles you've listed, and the work order shows up in [app.v2.gorynse.com](https://app.v2.gorynse.com) once it's been processed.
+Mobile Wash brings the wash to your fleet. Instead of sending vehicles through a tunnel, a vendor sends a crew to your facility, washes the vehicles you've listed, and the work order appears in [app.v2.gorynse.com](https://app.v2.gorynse.com) once it's processed.
 
 **Quick overview (~30 seconds)**
 
 <iframe width="100%" height="400" src="https://player.vimeo.com/video/1178561346" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen />
 
-This page is the lay of the land. The next two pages cover what you actually do day to day.
-
 ## Your journey, from request to invoice
 
-Here's what a mobile wash looks like from your seat — the five touchpoints you actually see and act on. Everything between is handled by Rynse and the vendor.
+The five touchpoints you see and act on. Everything in between is handled by Rynse and the vendor.
 
 <Steps>
   <Step title="Submit request" icon="paper-plane">
     Open **Mobile Wash → Work Orders** and create a request: facility, vehicles, services, date window, notes.
-
-    **What you'll see:** _"Work order requested"_ confirmation.
   </Step>
   <Step title="Scheduled" icon="handshake">
-    Nothing on your end — Rynse coordinates with the vendor on your behalf.
-
-    **What you'll see:** _"Your work order is scheduled for [date]"_ notification once a vendor and date are locked in.
+    Nothing on your end — Rynse coordinates with the vendor and notifies you once a date is locked in.
   </Step>
   <Step title="On the schedule" icon="calendar-check">
     Optional — check the Schedule view to confirm timing or share with a colleague.
-
-    **What you'll see:** the visit on the calendar, plus reminder and reschedule updates as the date approaches.
   </Step>
   <Step title="Wash on-site" icon="spray-can-sparkles">
-    The mobile wash vendor's crew comes to your facility and washes the listed vehicles.
-
-    **What you'll see:** crew on-site on the scheduled date.
+    The vendor's crew comes to your facility and washes the listed vehicles.
   </Step>
   <Step title="Work order complete" icon="file-invoice-dollar">
-    Pull the invoice from the work order and reconcile against the monthly invoice cycle.
-
-    **What you'll see:** _"Work order complete — invoice attached"_ notification with the per-WO invoice.
+    Pull the invoice from the completed work order to reconcile your costs.
   </Step>
 </Steps>
 
 ## Two ways a mobile wash happens
 
-There are two paths for getting a vehicle washed on-site. Most customers use a mix of both.
+Most customers use a mix of both.
 
 <CardGroup cols={2}>
   <Card title="You request a wash" icon="square-plus">
-    You open **Mobile Wash → Work Orders** and submit a request — pick the facility, pick the vehicles, pick the services, pick a date window. Rynse matches the request to a vendor on the back end.
+    You submit a request — facility, vehicles, services, date window — and Rynse matches it to a vendor.
   </Card>
   <Card title="A vendor visits on a recurring schedule" icon="calendar-check">
-    For customers with a standing arrangement, the vendor comes to a facility on a set cadence (for example, every other Saturday). You don't submit a request each time — the visit is already on the schedule.
+    With a standing arrangement, the vendor comes on a set cadence (for example, every other Saturday). No request needed each time — the visit is already scheduled.
   </Card>
 </CardGroup>
 
-Both paths land in the same place: a completed work order with the list of vehicles that were washed, what services they received, and the line items that will appear on your monthly invoice.
+Both paths land in the same place: a completed work order listing the vehicles washed, the services they received, and the line items you'll be billed for.
 
 <Note>
-  Mobile Wash data is tied to the monthly invoice cycle, not real-time. Completed work orders and visits appear after your vendor's monthly usage report is processed — typically in the first week of the following month.
+  **When it appears:** completed mobile wash work orders usually show up within a few days of the wash — exact timing varies by vendor.
+
+  **When you're billed:** it depends on what you've set up with Rynse. A mobile wash is either billed right after it's completed or rolled into your monthly invoice, based on your preference.
 </Note>
 
 ## Where Mobile Wash lives in the portal
@@ -70,49 +60,49 @@ The Mobile Wash menu has two tabs:
 
 <CardGroup cols={2}>
   <Card title="Schedule" icon="calendar" href="/mobile-wash/tracking-work-orders">
-    Calendar of upcoming visits and completed work orders. This is the fastest way to answer "when is my next wash?" and to see which facilities are covered.
+    Calendar of upcoming visits and completed work orders. The fastest way to see when your next wash is and which facilities are covered.
   </Card>
   <Card title="Work Orders" icon="clipboard-list" href="/mobile-wash/tracking-work-orders">
-    The list of work orders for your organization — requested, active, completed, and cancelled. This is where you create a new request.
+    The list of work orders for your organization, and where you create a new request.
   </Card>
 </CardGroup>
 
-There's also a **History** view at `/mobilewash/history` showing only completed and cancelled work orders. It's not in the tab navigation; use it when you need a clean archive view for reconciliation.
+There's also a **History** view at `/mobilewash/history` showing only completed and cancelled work orders. It's not in the tab navigation — use it for a clean archive when reconciling.
 
 ## Work order labels you'll see
 
-Every work order has a **status** and a **state**. They mean different things — the status is the overall phase the order is in, and the state is the more granular step the vendor is on.
+Every work order has a **status** (the overall phase) and a **state** (the vendor's current step).
 
-**Status** (the big-picture phase):
+**Status**
 
 | Label | What it means |
 | --- | --- |
-| Requested | You submitted the work order. Waiting for Rynse to match it to a vendor. |
+| Requested | You submitted the order. Waiting for Rynse to match a vendor. |
 | Active | The vendor has the work and it's in motion. |
-| Completed | All vehicles on the order were serviced. |
+| Completed | All vehicles were serviced. |
 | Cancelled | The order was cancelled before completion. |
 
-**State** (the granular step within an active order):
+**State**
 
 | Label | What it means |
 | --- | --- |
 | Pending | Vendor hasn't confirmed yet. |
-| Confirmed | Vendor has confirmed they'll do the work. |
-| In Progress | Crew is on-site or actively working the order. |
-| Done | Vendor has marked the work finished; awaiting Rynse processing. |
+| Confirmed | Vendor will do the work. |
+| In Progress | Crew is on-site or actively working. |
+| Done | Work finished; awaiting Rynse processing. |
 | Rejected | Vendor declined the work. |
 
 <Tip>
-  A single work order can include many vehicles at one facility. The crew treats them as one visit and your invoice line items roll up under the same work order number.
+  A single work order can include many vehicles at one facility. The crew treats them as one visit, and your invoice line items roll up under the same work order number.
 </Tip>
 
 ## What's next
 
 <CardGroup cols={2}>
   <Card title="Requesting a wash" icon="square-plus" href="/mobile-wash/requesting-a-wash">
-    Step-by-step walkthrough of the **Request work order** flow.
+    Step-by-step walkthrough of the request flow.
   </Card>
   <Card title="Tracking work orders" icon="list-check" href="/mobile-wash/tracking-work-orders">
-    How to use the Schedule, Work Orders, and History views to keep tabs on what's coming up and what shipped.
+    Using the Schedule, Work Orders, and History views to keep tabs on what's coming and what shipped.
   </Card>
 </CardGroup>
