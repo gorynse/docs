@@ -69,6 +69,12 @@
         "pages": [
           "rynse-web/settings"
         ]
+      },
+      {
+        "group": "Integrations",
+        "pages": [
+          "integrations/fleetio"
+        ]
       }
     ]
   },

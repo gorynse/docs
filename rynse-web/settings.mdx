@@ -1,87 +1,87 @@
 ---
 title: "Settings"
 sidebarTitle: "Settings"
-description: "Choose which email notifications you want to receive from Rynse — card events, incidents, and mobile wash updates."
+description: "Choose which Rynse emails you receive — card events, incidents, and mobile wash updates."
 icon: "gear"
 ---
 
-**Settings** is where you manage the email notifications Rynse sends to _your_ inbox. Open it from the menu at [app.v2.gorynse.com/settings](https://app.v2.gorynse.com/settings).
+**Settings** controls the email notifications Rynse sends to your inbox. Open it at [app.v2.gorynse.com/settings](https://app.v2.gorynse.com/settings).
 
-Everything on this page is optional. Turn on as many or as few notifications as fit your role — fleet managers tracking card events tend to enable more, finance and admin users often leave them off.
+Every notification is optional — turn on as many or as few as you need.
 
 <Note>
-  **Notifications are per-profile.** Each user on your account chooses their own preferences. If you enable **Incident** for yourself, your colleagues still need to come to their own Settings page and enable it on their profile. This trips people up — if a teammate says they aren't getting an email you assumed they would, this is usually why.
+  **Notifications are per-profile.** Each user sets their own. Turning one on for yourself doesn't turn it on for teammates — they each have to enable it on their own Settings page. This is usually why a colleague isn't getting an email you expected them to.
 </Note>
 
 ## Email Notifications
 
-All preferences are simple on/off checkboxes. Tick the ones you want, then click **Save Settings** at the bottom.
+Tick the ones you want, then click **Save Settings**.
 
 ### Fleet and card notifications
 
-These notifications are about your Rynse cards and the transactions on them. If you're a card customer, we strongly recommend turning at least **Incident** on.
+These cover your Rynse cards and the transactions on them. If you have cards, we strongly recommend turning on **Incident**.
 
 <Card title="Card Status Change" icon="credit-card">
-  Sent any time the status of one of your cards changes — activated, deactivated, frozen, or closed. Useful if you want a paper trail every time a card moves between states.
+  Sent when a card is activated, deactivated, frozen, or closed — a paper trail of every status change.
 </Card>
 
 <Card title="Card Order" icon="truck">
-  Sent when a card order is shipped and again when it's delivered. Helpful during onboarding or when you're rolling cards out to new vehicles or drivers.
+  Sent when a card order ships and again when it's delivered. Handy during onboarding or when rolling out cards.
 </Card>
 
 <Card title="Incident" icon="triangle-exclamation">
-  Sent any time a card transaction is declined — wrong MCC, spend-cap hit, schedule violation, or a merchant restriction. This is the one most card customers want on.
+  Sent whenever a card transaction is declined — wrong category, spend cap, schedule, or merchant restriction. The one most card customers want on.
 </Card>
 
 <Tip>
-  **Turn Incident on if you have cards.** Without it, you find out about declines either when a driver tells you or on your next check-in with our CS team. With it on, you get an email the moment a decline happens, so you can chase the driver or adjust the policy right away. The same notifications flow to our team too — we keep an eye out — but it's good for you to have direct visibility.
+  **Turn Incident on if you have cards.** You'll get an email the moment a Rynse card is declined, so you can chase the driver or adjust the policy right away.
 </Tip>
 
 ### Mobile wash notifications
 
-These options only appear if your organization has mobile wash service enabled. If you don't see them, you're not signed up for mobile wash and can ignore this section.
+These appear only if your organization has mobile wash enabled. If you don't see them, you're not signed up for mobile wash — skip this section.
 
 <Card title="Wash Complete" icon="circle-check">
-  Sent when a mobile wash session finishes. Confirmation that the work happened.
+  Sent when a mobile wash finishes — confirmation the work happened.
 </Card>
 
 <Card title="Work Order Updates" icon="clipboard-list">
-  Sent when the status of a mobile wash work order changes — for example, **Scheduled** to **In Progress**, or **In Progress** to **Completed**.
+  Sent when a wash work order changes status, such as Scheduled to In Progress.
 </Card>
 
 <Card title="Service Reminder" icon="bell">
-  Periodic reminder emails about upcoming or recurring mobile wash service.
+  Periodic reminders about upcoming or recurring mobile wash service.
 </Card>
 
 ## Saving your changes
 
-Click **Save Settings** at the bottom of the page. You'll see a green confirmation banner once the update goes through. Changes apply immediately — the next event that fires (a decline, a status change, a completed wash) will email you based on your new preferences.
+Click **Save Settings** at the bottom. A green confirmation message means it saved, and changes apply right away — the next event emails you based on your new preferences.
 
 <Warning>
-  Saving only affects _your_ profile. To roll a preference out across the team, ask each user to log in and enable it themselves. There is no admin-level "enable for everyone" toggle.
+  Saving only affects _your_ profile. To roll a preference out across the team, have each user enable it themselves. There's no account-wide toggle.
 </Warning>
 
 ## Who typically enables what
 
 <AccordionGroup>
   <Accordion title="Card customers (pay-as-you-go or unlimited with cards)">
-    At minimum, turn on **Incident**. Many fleet managers also enable **Card Status Change** and **Card Order** during onboarding, then leave them on as a paper trail.
+    At minimum, turn on **Incident**. Many also enable **Card Status Change** and **Card Order** for a paper trail.
   </Accordion>
 
   <Accordion title="LPR-only customers">
-    There are no cards in your program, so the top three notifications won't fire for you. Most LPR-only customers leave Settings empty.
+    No cards in your program, so the top three won't fire. Most LPR-only customers leave Settings empty.
   </Accordion>
 
   <Accordion title="Pure-membership customers (no cards, no mobile wash)">
-    None of these notifications are relevant — usage just shows up on your monthly invoice. You can safely skip this page.
+    None of these apply — usage shows up on your monthly invoice. Skip this page.
   </Accordion>
 
   <Accordion title="Mobile wash customers">
-    Enable **Work Order Updates** if you want to track the lifecycle of each job. **Wash Complete** is the quieter option — just the "done" confirmation. **Service Reminder** is useful if you're coordinating drivers to park in specific yards on specific days.
+    **Work Order Updates** tracks each job's lifecycle; **Wash Complete** is just the "done" confirmation; **Service Reminder** helps coordinate drivers and yards.
   </Accordion>
 
   <Accordion title="Finance or admin users">
-    Notifications on this page are operational, not financial. Most finance users leave them off and rely on the **Invoices** page plus the monthly email from billing.
+    These notifications are operational, not financial — most finance users leave them off and rely on the **Invoices** page and the monthly billing email.
   </Accordion>
 </AccordionGroup>
 
@@ -89,10 +89,10 @@ Click **Save Settings** at the bottom of the page. You'll see a green confirmati
 
 <CardGroup cols={2}>
   <Card title="Incidents" icon="triangle-exclamation" href="/rynse-web/incidents">
-    The page where every declined transaction is logged. Pair it with the **Incident** email notification for full coverage.
+    Where every declined transaction is logged. Pair it with the **Incident** email for full coverage.
   </Card>
 
   <Card title="User Accounts" icon="users" href="/rynse-web/users">
-    Add teammates to the portal so they can manage their own notification preferences.
+    Add teammates so they can manage their own notification preferences.
   </Card>
 </CardGroup>
