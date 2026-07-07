@@ -15,14 +15,15 @@ Three views help you keep tabs on your work orders: **Schedule**, **Work Orders*
 
 **Mobile Wash → Schedule** is a month-view calendar with summary cards — the fastest way to answer "when's my next wash?" and "what landed last month?"
 
-The calendar shows two kinds of events:
+The calendar shows three kinds of events:
 
-- **Scheduled** (blue) — upcoming visits coordinated with your vendor.
+- **Scheduled** (blue) — upcoming visits coordinated with your vendor. A recurring visit may show an estimated vehicle count.
+- **Active** (blue) — work orders that have been matched to a vendor and are in motion.
 - **Completed** (green) — past work orders that have been processed, with the vehicle count in the label.
 
-Click any day to see its entries in the side panel. Click a completed event to open the work order detail.
+Click any day to see its entries in the side panel. Click an active or completed event to open the work order detail.
 
-<Frame caption="The Schedule calendar — blue events are scheduled visits, green are completed work orders">
+<Frame caption="The Schedule calendar — blue events are scheduled or active visits, green are completed work orders">
   ![Mobile Wash Schedule calendar](/images/mobile-wash/schedule-calendar.png)
 </Frame>
 
@@ -32,7 +33,9 @@ Click any day to see its entries in the side panel. Click a completed event to o
 
 ## Work Orders
 
-**Mobile Wash → Work Orders** lists every work order for your organization, at any status. Click any row to open its full detail — every vehicle, the services applied, and (for completed orders) the per-line pricing that rolls up to your invoice.
+**Mobile Wash → Work Orders** lists every work order for your organization, at any status. Click any row to open its full detail — a status banner telling you exactly where the order stands, the request details (facility, services, preferred window, and the vendor once matched), every vehicle, and (for completed orders) the per-line pricing that rolls up to your invoice. The button on each card follows the status too: **View request**, **View details**, or **View results**.
+
+While an order is still `Requested`, its detail shows a progress tracker — **Request submitted → Vendor assignment → Service scheduling → Active** — so you can see what's left before the wash is scheduled.
 
 | Column | What it shows |
 | --- | --- |
@@ -53,7 +56,7 @@ To create a new order, use **Request work order** in the top-right — see [Requ
 
 **Mobile Wash → History** (at `/mobilewash/history`) is a clean archive of **Completed** and **Cancelled** work orders only. It isn't in the Mobile Wash tab bar — go there directly for reconciliation without active work in the way.
 
-Each entry shows the work order number, date, vehicle count, organization, facility, and a **View Result** button for the full per-vehicle detail with services and pricing. Use it to reconcile invoices (match line items by number), review a vendor's recent work, or pull records for accounting.
+Each entry shows the work order number, date, vehicle count, organization, facility, and a **View results** button for the full per-vehicle detail with services and pricing. Use it to reconcile invoices (match line items by number), review a vendor's recent work, or pull records for accounting.
 
 ## Common workflows
 
