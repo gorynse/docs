@@ -15,24 +15,31 @@ Three views help you keep tabs on your work orders: **Schedule**, **Work Orders*
 
 **Mobile Wash → Schedule** is a month-view calendar with summary cards — the fastest way to answer "when's my next wash?" and "what landed last month?"
 
-The calendar shows two kinds of events:
+The calendar shows three kinds of events:
 
-- **Scheduled** (blue) — upcoming visits coordinated with your vendor.
+- **Scheduled** (blue) — upcoming visits coordinated with your vendor, labeled with an estimated vehicle count.
+- **Active** (blue) — work orders that have been dispatched and are in motion.
 - **Completed** (green) — past work orders that have been processed, with the vehicle count in the label.
 
-Click any day to see its entries in the side panel. Click a completed event to open the work order detail.
+Click any day to see its entries in the side panel. Click an active or completed event to open its work order detail.
 
-<Frame caption="The Schedule calendar — blue events are scheduled visits, green are completed work orders">
+<Frame caption="The Schedule calendar — blue events are scheduled visits and active work orders, green are completed washes">
   ![Mobile Wash Schedule calendar](/images/mobile-wash/schedule-calendar.png)
 </Frame>
 
 <Note>
-  Pending requests you've submitted appear on **Work Orders**, not on the Schedule calendar. If a recurring visit you expect isn't on the calendar, it likely hasn't been dispatched — contact your account team.
+  Pending requests you've submitted appear on **Work Orders**, not on the Schedule calendar — they show up here once they're active. If a recurring visit you expect isn't on the calendar, it likely hasn't been dispatched — contact your account team.
 </Note>
 
 ## Work Orders
 
-**Mobile Wash → Work Orders** lists every work order for your organization, at any status. Click any row to open its full detail — every vehicle, the services applied, and (for completed orders) the per-line pricing that rolls up to your invoice.
+**Mobile Wash → Work Orders** lists every work order for your organization, at any status. Click any row to open its full detail — and what you see adapts to where the order is:
+
+- **Requested** — a progress tracker (request submitted → vendor assignment → service scheduling → active) alongside the details you submitted, so you can see where it sits in the pipeline.
+- **Active** — confirmation the work order is in motion, with the scheduled date and assigned vendor once they're set.
+- **Completed** — every vehicle, the services applied, and the per-line pricing that rolls up to your invoice.
+
+Every detail view leads with a request summary: work order number, facility, requester, preferred date window, services, service address, and any notes.
 
 | Column | What it shows |
 | --- | --- |
@@ -59,7 +66,7 @@ Each entry shows the work order number, date, vehicle count, organization, facil
 
 <AccordionGroup>
   <Accordion title="Checking the status of a request I submitted">
-    Open **Work Orders**. New requests appear at the top as `Requested`. Once Rynse matches a vendor, the row shows the vendor name and moves to `Active`. Sitting at `Requested` for more than a couple of days? Contact your account team.
+    Open **Work Orders**. New requests appear at the top as `Requested` — open one to see the progress tracker. Once Rynse matches a vendor, the row shows the vendor name and moves to `Active`. Sitting at `Requested` for more than a couple of days? Contact your account team.
   </Accordion>
 
   <Accordion title="Confirming next week's scheduled visit">
