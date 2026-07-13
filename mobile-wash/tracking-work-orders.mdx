@@ -17,13 +17,13 @@ Three views help you keep tabs on your work orders: **Schedule**, **Work Orders*
 
 The calendar shows three kinds of events:
 
-- **Scheduled** (blue) — upcoming visits coordinated with your vendor. A recurring visit may show an estimated vehicle count.
+- **Scheduled** (purple) — upcoming visits coordinated with your vendor. A recurring visit may show an estimated vehicle count.
 - **Active** (blue) — work orders that have been matched to a vendor and are in motion.
 - **Completed** (green) — past work orders that have been processed, with the vehicle count in the label.
 
 Click any day to see its entries in the side panel. Click an active or completed event to open the work order detail.
 
-<Frame caption="The Schedule calendar — blue events are scheduled or active visits, green are completed washes">
+<Frame caption="The Schedule calendar — purple events are scheduled visits, blue are active, green are completed washes">
   ![Mobile Wash Schedule calendar](/images/mobile-wash/schedule-calendar.png)
 </Frame>
 
@@ -39,7 +39,8 @@ Click any day to see its entries in the side panel. Click an active or completed
 | --- | --- |
 | Date | Scheduled date, or **TBD**. |
 | Name | Work order name. |
-| Status | `Requested`, `Active`, `Completed`, or `Cancelled`. |
+| Completed Date | The date the wash was finished, once the order is `Completed` — otherwise blank. |
+| Status | A colored badge: `Requested`, `Active`, `Completed`, or `Cancelled`. An `Active` order whose scheduled date has passed is also flagged **Overdue**. |
 | Number | Reference this with support. |
 | Vendor | Assigned vendor, once matched. |
 | Actions | **Delete**, only while `Requested`. |
@@ -58,7 +59,7 @@ Click any work order — from the list, the Schedule, or History — to open its
 - A short **status message** in plain language. A pending request reads that Rynse is assigning a vendor and confirming the service date, and that you'll be notified once it's active and scheduled. An active order shows the scheduled date; a completed one shows the date it finished.
 - For a request that's still pending, a **progress tracker** — **Request submitted → Vendor assignment → Service scheduling → Active** — so you can see what's left before the wash is booked.
 
-Below that, a **request summary** gathers everything in one place: the work order number, who requested it, your preferred date window, the services, the service address, and — once assigned — the vendor and scheduled date. Completed orders also list the vehicles serviced, the services applied, and the total that rolls up to your invoice.
+Below that, a **request summary** gathers everything in one place: the work order number, who requested it, your preferred date window, the services, the service address, and — once assigned — the vendor and scheduled date. Completed orders also show the completed date and list the vehicles serviced, the services applied, and the total that rolls up to your invoice.
 
 The button on each work order card follows its status too — **View request**, **View details**, or **View results**.
 
@@ -76,7 +77,7 @@ Each entry shows the work order number, date, vehicle count, organization, facil
   </Accordion>
 
   <Accordion title="Confirming next week's scheduled visit">
-    Open **Schedule**. Recurring visits show as blue events on their expected dates. A missing date usually means the visit hasn't been dispatched — flag it with your account team.
+    Open **Schedule**. Recurring visits show as purple events on their expected dates. A missing date usually means the visit hasn't been dispatched — flag it with your account team.
   </Accordion>
 
   <Accordion title="Pulling records for accounting or reconciling an invoice">
