@@ -89,7 +89,7 @@
     "primary": {
       "type": "button",
       "label": "Sign in",
-      "href": "https://app.v2.gorynse.com"
+      "href": "https://app.gorynse.com"
     }
   },
   "footer": {
