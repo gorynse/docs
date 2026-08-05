@@ -32,14 +32,30 @@ This page is for **fleet managers, finance, and admin staff** who need to pull r
 
 ## The Users table
 
-The table on **Organization → Users** lists everyone on your account, with four columns:
+The table on **Organization → Users** lists everyone on your account, with these columns:
 
 | Column | What it shows |
 | --- | --- |
 | **Name** | Full name on the user's profile. |
 | **Email** | The login email — also where temp passwords and resets are sent. |
+| **Level** | Whether the teammate has **Organization** access (the whole account) or **Facility** access (one or more specific facilities). See [Organization vs. facility access](#organization-vs-facility-access) below. |
 | **Last Active** | Date and time of the user's most recent portal activity. Blank (`-`) means they've never logged in. |
 | **User Type** | The role assigned to the user. Always **Fleet Manager**. |
+
+## Organization vs. facility access
+
+Access comes at two levels:
+
+- **Organization** — the teammate can see and manage your whole account, across every facility.
+- **Facility** — the teammate is scoped to one or more specific facilities. When they sign in, they only see that facility's vehicles, users, and activity.
+
+The **Level** column shows which each person has. An organization icon means account-wide access; a facility name (or a **"N facilities"** chip when there's more than one) means they're scoped to those facilities.
+
+Above the table, a **View** dropdown lets you switch between **Organization** and each of your facilities. Pick one and the table shows just that group's teammates, with a **"Showing [scope] employees"** label so you always know where you are.
+
+<Note>
+  Facility access only matters if you use [facilities](/rynse-web/facilities) to split your account into departments or sub-locations. Smaller fleets that run everything at the organization level can ignore the **View** dropdown and the **Level** column.
+</Note>
 
 ## Adding a user
 
@@ -65,9 +81,13 @@ The table on **Organization → Users** lists everyone on your account, with fou
   </Step>
 </Steps>
 
+### Adding a teammate to a single facility
+
+To give someone access to just one facility instead of the whole account, switch the **View** dropdown to that facility first, then click **Add User**. The dialog reads **Add User to [Facility]**, and the teammate you add can only see that facility when they sign in. Everything else — the form fields, the temporary-password email — works exactly the same way.
+
 ### What your teammate sees
 
-The new user gets an email from `support@gorynse.com` with a temporary password. On their first login at `app.gorynse.com`, they're prompted to change it to something only they know. From there, they have the same access you do.
+The new user gets an email from `support@gorynse.com` with a temporary password. On their first login at `app.gorynse.com`, they're prompted to change it to something only they know. From there, they have portal access at the level you granted them — the whole organization, or just the facility you added them to.
 
 <Tip>
   Temporary passwords expire quickly. If your teammate doesn't log in within a day or two, the password may lapse — just use **Reset Password** (below) to send a fresh one.
@@ -98,11 +118,11 @@ When someone leaves the team or no longer needs portal access, remove them promp
     The icon to the right of the password key in their row.
   </Step>
   <Step title="Confirm in the dialog">
-    A confirmation prompt asks **"Are you sure you want to remove this user's access?"** Click **Yes, Remove**.
+    A confirmation prompt appears. From the **Organization** view it asks whether to remove the user's **organization access**; from a facility view it asks about removing their access to **that facility**. Click **Yes, Remove**.
   </Step>
 </Steps>
 
-Once removed, the user can no longer log in. Their historical activity (like the **Last Active** timestamp on past records) stays intact — only their access is revoked.
+Once removed, that access is revoked. Removing **organization** access takes away their account-wide login; removing **facility** access only unlinks them from that facility and leaves any other access they have in place. Either way, their historical activity (like the **Last Active** timestamp on past records) stays intact.
 
 <Note>
   Removing a user is access-only. It doesn't touch invoices, vehicles, or any other data on your account.

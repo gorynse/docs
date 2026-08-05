@@ -16,8 +16,13 @@ Rynse Web is the management console for your fleet. This page walks you through 
   <Step title="Enter your credentials">
     Sign in with the email your fleet admin invited. First time? Check your inbox for an invitation email and follow the password-set link before signing in here.
   </Step>
-  <Step title="Pick your organization">
-    If you belong to more than one organization, an **organization selector** appears at the top of the left sidebar. Use it to switch between them — every screen in Rynse Web is scoped to the currently selected org.
+  <Step title="Pick your organization or facility">
+    The selector at the top of the left sidebar sets what every screen is scoped to.
+
+    - If you belong to more than one organization, use it to switch between them.
+    - If you've been given access to specific **facilities**, a small **Organization / Facility** toggle appears. Switch to **Facility** to pick a facility and scope the whole portal — vehicles, users, reports — to just that location. Switch back to **Organization** for the account-wide view.
+
+    Teammates who only have facility access skip the toggle entirely and land straight in their facility. Rynse Web remembers whichever view you used last.
   </Step>
 </Steps>
 
@@ -57,6 +62,8 @@ Here's the actual sidebar layout you'll see in the portal:
     - **Users** — the people on your team with portal access.
     - **Car Wash Locations** — the embedded map of the vendors enrolled in your program.
     - **Purchase Orders** — track spend against a budget or PO; works as a standalone monthly cap too.
+
+    When you switch to the **Facility** view (see [Sign in](#sign-in) above), this group is labeled **Facility** and narrows to the facility you picked.
   </Accordion>
 
   <Accordion title="Mobile Wash (group)" icon="spray-can-sparkles">
@@ -74,7 +81,7 @@ Here's the actual sidebar layout you'll see in the portal:
 </AccordionGroup>
 
 <Note>
-  Everyone you invite into your org has the same level of access — there are no per-page permission tiers. Keep your user list tight (see [Users](/rynse-web/users)).
+  There are no per-page permission tiers. Teammates have either **organization** access (the whole account) or **facility** access (one or more specific facilities) — you set this per person on the [Users](/rynse-web/users) page. Keep your user list tight either way.
 
   **Spend Controls** isn't in the sidebar — it's configured by your account team. The [Spend Controls](/rynse-web/spend-controls) page documents the menu of rules you can request.
 </Note>
