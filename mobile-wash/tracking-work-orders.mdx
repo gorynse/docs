@@ -35,15 +35,22 @@ Click any day to see its entries in the side panel. Click an active or completed
 
 **Mobile Wash → Work Orders** lists every work order for your organization, at any status. Click any row to open its full detail.
 
+Above the list, colored summary chips tally how many orders sit in each status — for example `Requested: 3`, `Active: 5`, `Completed: 12` — for a quick read on your current volume.
+
 | Column | What it shows |
 | --- | --- |
-| Date | Scheduled date, or **TBD**. |
-| Completed Date | The date the wash was finished. Blank until the order is `Completed`. |
-| Name | Work order name. |
+| Scheduled | The scheduled service date, shown as `MM-DD-YYYY`. Shows **—** until a date is set. |
+| Completed | The date the wash was finished, shown as `MM-DD-YYYY`. Blank until the order is `Completed`. |
 | Status | A colored badge: `Requested`, `Active`, `Completed`, or `Cancelled`. An `Active` order whose scheduled date has passed is also flagged **Overdue**. |
-| Number | Reference this with support. |
+| Number | Work order reference — quote it with support. |
+| Vehicles | How many vehicles are on the order. Completed orders show the actual count serviced; orders still open show the requested count. |
+| Facility | The facility the wash was requested for. |
 | Vendor | Assigned vendor, once matched. |
-| Actions | **Delete**, only while `Requested`. |
+| Requested By | Who submitted the request. |
+| Requested Address | Where the crew was asked to go — the facility address, or a one-off address if one was entered. |
+| Amount | The order total, once it's priced. |
+
+A **Delete** action is available on a row only while the order is still `Requested`.
 
 To create a new order, use **Request work order** in the top-right — see [Requesting a wash](/mobile-wash/requesting-a-wash).
 
