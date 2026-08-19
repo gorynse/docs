@@ -14,12 +14,12 @@ Click **Request work order**, then work through three steps.
 <Steps>
   <Step title="Step 1 — Location & vehicles">
     1. Pick a **facility** from the dropdown. The facility's address shows underneath so you can confirm it.
-    2. The vehicle list under the facility loads automatically. Use the **search box** to filter by make, model, year, plate, or asset ID.
-    3. Click vehicles in the list to select them, or use **Select all** to add every vehicle at the facility. The header shows a running count (for example, _"6 of 12 vehicles selected"_).
+    2. Your fleet loads automatically in a table with **Vehicle**, **Asset ID**, **Plate**, and **Facility** columns. Use the **search box** to filter by make, model, plate, or asset ID.
+    3. Tick the checkbox on each vehicle you want, or use **Select all** to add every vehicle in the table. The header shows a running count (for example, _"6 of 12 vehicles selected"_).
 
-    <Warning>
-      Only vehicles assigned to the chosen facility appear here. If the list looks short or empty, the vehicles are probably assigned to a different facility — email `support@gorynse.com` to fix the facility assignment, then come back.
-    </Warning>
+    <Note>
+      The table lists your whole organization's fleet, not only the chosen facility's vehicles. Vehicles at the selected facility come first, then the rest of your fleet, and the **Facility** column shows where each one is assigned — so you can still find and add a vehicle that's filed under another location.
+    </Note>
   </Step>
   <Step title="Location & vehicles">
     Pick the facility the crew should come to, then choose how to request:
@@ -49,10 +49,11 @@ Click **Request work order**, then work through three steps.
   </Step>
   <Step title="Step 3 — Schedule & notes">
     1. **Preferred date range.** Pick a start date and an end date for the window the vendor can schedule within. Wider windows are easier to fit; tight windows constrain the vendor.
-    2. **Purchase order.** Enter a PO number for the request, or tick **Not Required** if you don't use one. You can't submit until you've done one or the other.
-    3. **Additional notes.** Anything the crew needs — gate codes, where to stage vehicles, contact on-site, vehicles that need extra attention.
-    4. Review the **Summary** at the bottom — every vehicle with its services listed, and a total vehicle count.
-    5. Click **Submit request.**
+    2. **Arrival time window (optional).** Need the crew within a certain part of the day? Set an **Arrive after** and/or **Arrive before** time for the dispatch day. Leave both blank if any time works — it's a preference, not a guarantee, and a wider window is easier for the vendor to hit.
+    3. **Purchase order.** Enter a PO number for the request, or tick **Not Required** if you don't use one. You can't submit until you've done one or the other.
+    4. **Additional notes.** Anything the crew needs — gate codes, where to stage vehicles, contact on-site, vehicles that need extra attention.
+    5. Review the **Summary** at the bottom — every vehicle with its services listed, and a total vehicle count.
+    6. Click **Submit request.**
   </Step>
   <Step title="Schedule & notes">
     Set the earliest and latest dates the vendor can come — at least two days out. Add a purchase order (or tick **Not Required**) and any notes (gate codes, on-site contact, special instructions), then **Submit request**.
@@ -70,6 +71,10 @@ Your request appears at the top of **Work Orders** as **Requested**. You can del
 
   <Accordion title="Can I request a wash for tomorrow?">
     No. The earliest date is two days out, so the vendor has time to schedule a crew.
+  </Accordion>
+
+  <Accordion title="Can I request a specific arrival time?">
+    You can request an arrival **window** — set an "arrive after" and/or "arrive before" time on the schedule step. It's an optional preference, not a guarantee. Once the wash is scheduled, Rynse confirms an estimated arrival you'll see on the work order.
   </Accordion>
 
   <Accordion title="How do I pick the vendor?">

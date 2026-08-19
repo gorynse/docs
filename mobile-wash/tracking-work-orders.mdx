@@ -35,15 +35,23 @@ Click any day to see its entries in the side panel. Click an active or completed
 
 **Mobile Wash → Work Orders** lists every work order for your organization, at any status. Click any row to open its full detail.
 
+Above the list, colored summary chips tally how many orders sit in each status — for example `Requested: 3`, `Active: 5`, `Completed: 12` — for a quick read on your current volume.
+
 | Column | What it shows |
 | --- | --- |
-| Date | Scheduled date, or **TBD**. |
-| Completed Date | The date the wash was finished. Blank until the order is `Completed`. |
-| Name | Work order name. |
+| Created | The date the work order was created, shown as `MM-DD-YYYY`. |
+| Scheduled | The scheduled service date, shown as `MM-DD-YYYY`. Shows **—** until a date is set. |
+| Completed | The date the wash was finished, shown as `MM-DD-YYYY`. Blank until the order is `Completed`. |
 | Status | A colored badge: `Requested`, `Active`, `Completed`, or `Cancelled`. An `Active` order whose scheduled date has passed is also flagged **Overdue**. |
-| Number | Reference this with support. |
+| Number | Work order reference — quote it with support. |
+| Vehicles | How many vehicles are on the order. Completed orders show the actual count serviced; orders still open show the requested count. |
+| Facility | The facility the wash was requested for. |
 | Vendor | Assigned vendor, once matched. |
-| Actions | **Delete**, only while `Requested`. |
+| Requested By | Who submitted the request. |
+| Requested Address | Where the crew was asked to go — the facility address, or a one-off address if one was entered. |
+| Amount | The order total, once it's priced. |
+
+A **Delete** action is available on a row only while the order is still `Requested`.
 
 To create a new order, use **Request work order** in the top-right — see [Requesting a wash](/mobile-wash/requesting-a-wash).
 
@@ -59,7 +67,7 @@ Click any work order — from the list, the Schedule, or History — to open its
 - A short **status message** in plain language. A pending request reads that Rynse is assigning a vendor and confirming the service date, and that you'll be notified once it's active and scheduled. An active order shows the scheduled date; a completed one shows the date it finished.
 - For a request that's still pending, a **progress tracker** — **Request submitted → Vendor assignment → Service scheduling → Active** — so you can see what's left before the wash is booked.
 
-Below that, a **request summary** gathers everything in one place: the work order number, who requested it, your preferred date window, the purchase order (if you entered one), the services, the service address, and the assigned **Vendor** — shown as **—** until Rynse matches one, so you can see where assignment stands at any stage. The scheduled date joins the summary once the order is active. Completed orders also show the date the wash was finished and list the vehicles serviced, and for each one the service applied along with its **Price** and **Amount** — the per-vehicle figures that roll up to the total on your invoice.
+Below that, a **request summary** gathers everything in one place: the work order number, who requested it, your preferred date window (plus the arrival window you asked for, if you set one, shown as **Requested time**), the purchase order (if you entered one), the **Facility** the wash is for, the services, the service address, and the assigned **Vendor** — shown as **—** until Rynse matches one, so you can see where assignment stands at any stage. The scheduled date joins the summary once the order is active, and active and completed orders also show an **Estimated arrival** — the time or window Rynse expects the vendor to arrive within. Completed orders also show the date the wash was finished and list the vehicles serviced, and for each one the service applied along with its **Price** and **Amount** — the per-vehicle figures that roll up to the total on your invoice. The vehicle list also carries an **Order Number** column — a per-vehicle reference number that shows whenever one has been recorded for that vehicle.
 
 The button on each work order card follows its status too — **View request**, **View details**, or **View results**.
 
