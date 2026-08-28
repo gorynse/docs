@@ -39,12 +39,13 @@ Most columns are self-explanatory — **Created**, **Facility**, **Description**
 | **External ID** | Your own asset number — shows on tables and invoices so you can reconcile to your records |
 | **RFID** | The vehicle's RFID tag identifier, if your program uses RFID readers at the wash. Blank for fleets that don't. Editable from the vehicle's detail view, like External ID |
 | **Card** | Last 4 of the attached card. A red card icon means no card; a bank icon means an on-demand funding account |
+| **Card Type** | How the vehicle's card is funded — **Prepaid** (a balance loaded onto the card) or **ODF** (on-demand funding, drawn as it's spent rather than pre-loaded). Hidden by default; toggle it on from the columns menu |
 | **Name on Card** | The name embossed on the card. Many fleets use it as a department or account code |
 | **Spend Policy** | What this card can be used for — hover for details |
 | **Services** | Wash programs the vehicle is enrolled in — hover for the vendor list |
 
 <Note>
-  A **Memberships** column is hidden by default to keep the table readable. Click the columns icon above the header to toggle it on. The **Services** column shows the same thing at a glance.
+  Two columns are hidden by default to keep the table readable — **Memberships** and **Card Type**. Click the columns icon above the header to toggle either on. The **Services** column shows the same thing as Memberships at a glance.
 </Note>
 
 ### Spend Policy
@@ -64,7 +65,7 @@ Icons show the wash programs a vehicle is enrolled in: **pay-as-you-go** (pay pe
 
 ### Duplicate license plate warnings
 
-If the same license plate is enrolled more than once under a single wash membership plan, a red banner appears above the table naming the plan and the duplicated plates. Because washes at those vendors are recognized by license plate, a duplicate can cause a vehicle's washes to be matched to the wrong record. Email `support@gorynse.com` with the plates shown and we'll clean up the duplicate enrollment.
+If the same license plate is enrolled more than once under a single wash membership plan, a red banner appears above the table naming the plan and the duplicated plates. Because washes at those vendors are recognized by license plate, a duplicate can cause a vehicle's washes to be matched to the wrong record. If one of the duplicates is an **archived** vehicle, the banner flags that too — handy for catching a plate that's still enrolled on an old vehicle after its replacement was added. Email `support@gorynse.com` with the plates shown and we'll clean up the duplicate enrollment.
 
 ## Asking us to make changes
 
