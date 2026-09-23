@@ -15,7 +15,7 @@ If you run your fleet in **Fleetio**, Rynse connects to it so your vehicles and 
 
 <CardGroup cols={3}>
   <Card title="Vehicle sync" icon="arrows-rotate">
-    Your Fleetio vehicles flow into Rynse automatically. Add, edit, or retire a vehicle in Fleetio and Rynse stays current — you manage your fleet in one place.
+    Your Fleetio vehicles (all of them, or just the ones you mark for your wash program) flow into Rynse automatically. Add, edit, or retire a vehicle in Fleetio and Rynse stays current — you manage your fleet in one place.
   </Card>
 
   <Card title="Wash history in Fleetio" icon="clock-rotate-left">
@@ -29,7 +29,71 @@ If you run your fleet in **Fleetio**, Rynse connects to it so your vehicles and 
 
 ## Get connected
 
-Want us to set up your Fleetio account? Email `support@gorynse.com` and we'll handle the connection.
+Setup takes about 10 minutes on your side. You'll create an API key and send us two values through a secure link. We handle the rest.
+
+**Before you start:**
+
+- Your Fleetio account is on a **Professional** or **Premium** plan, which Fleetio requires for API access.
+- You're signed in to Fleetio as an **Administrator** or the **Account Owner**.
+
+<Warning>
+  An API key can see and do exactly what the person who created it can. If a user with limited access creates the key, Rynse will miss any vehicles that user can't see. Create the key from an Administrator account.
+</Warning>
+
+<Steps>
+  <Step title="Create an API key">
+    In Fleetio, open your account menu and go to **Settings → Manage API Keys**. Click **+ Add API Key**, label it **Rynse**, leave the API version as it is, and click **Save**.
+
+    Your new key appears in the **Token** column. There are no permissions to set. The key uses your Fleetio access.
+
+    <Tip>
+      Fleetio's own guide has screenshots of each click: [Create an API key](https://help.fleetio.com/en_US/manage-account-settings-permissions/api-keys). Using a key just for Rynse means you can revoke it without affecting your other integrations.
+    </Tip>
+  </Step>
+
+  <Step title="Find your Account Token">
+    On the same page, scroll down to **Account Tokens**. The short code next to your account name is your Account Token. We need it together with the API key.
+  </Step>
+
+  <Step title="Choose which vehicles to sync (optional)">
+    By default, all your Fleetio vehicles sync to Rynse. To sync only some of them, add a checkbox to mark the ones in your wash program. Go to **Settings → Custom Records → Vehicle** and click **+ Add Field**:
+
+    - **Data Type:** Checkbox
+    - **Label:** `Wash Program` (spell it exactly like this)
+
+    Then check **Wash Program** on each vehicle you want in Rynse. You can do this one vehicle at a time, or all at once with Fleetio's [custom fields import](https://help.fleetio.com/en_US/importexport-data/custom-fields-import-guide).
+
+    <Note>
+      Once you're using **Wash Program**, only checked vehicles stay in Rynse. Unchecking a vehicle archives it in Rynse at the next sync.
+    </Note>
+  </Step>
+
+  <Step title="Send us your credentials securely">
+    Email `support@gorynse.com` to let us know you're ready. We'll reply with a **secure link**. Paste your **API key** and **Account Token** into that link, not into the email.
+
+    <Warning>
+      Treat your API key like a password. Never send it in a regular email, chat message, or screenshot.
+    </Warning>
+  </Step>
+</Steps>
+
+## After you're connected
+
+We'll confirm once the connection is live. Your vehicles appear in Rynse after the first overnight sync. From then on, completed washes are posted to each vehicle's service history in Fleetio.
+
+<Info>
+  **Your Fleetio groups become your Rynse facilities.** Each vehicle is placed in the facility that matches its Fleetio **Group**. If no facility with that name exists yet, we create one.
+</Info>
+
+<AccordionGroup>
+  <Accordion title="Adding or removing vehicles later">
+    Add, retire, or archive the vehicle in Fleetio. If you use **Wash Program**, check or uncheck it instead. Rynse picks up the change at the next overnight sync.
+  </Accordion>
+
+  <Accordion title="Rotating or revoking the key">
+    To stop the connection immediately, revoke the key in **Settings → Manage API Keys**. If you create a new key, email `support@gorynse.com` and we'll send a new secure link.
+  </Accordion>
+</AccordionGroup>
 
 ## What's next
 
