@@ -14,11 +14,11 @@ Click **Request work order**, then work through three steps.
 <Steps>
   <Step title="Step 1 — Location & vehicles">
     1. Pick a **facility** from the dropdown. The facility's address shows underneath so you can confirm it.
-    2. Your fleet loads automatically in a table with **Vehicle**, **Asset ID**, **Plate**, and **Facility** columns. Use the **search box** to filter by make, model, plate, or asset ID.
-    3. Tick the checkbox on each vehicle you want, or use **Select all** to add every vehicle in the table. The header shows a running count (for example, _"6 of 12 vehicles selected"_).
+    2. Your fleet loads automatically in a table with **Vehicle**, **Asset ID**, **Plate**, and **Facility** columns. Use the **search box** to narrow it by make, model, plate, or asset ID. You can search for several things at once — each term you add becomes a chip and stays on, and the table shows every vehicle matching any of them, so you can tick a whole batch in one pass. Pasting adds a whole list at once: copy a column of plates or asset IDs from a spreadsheet and drop it in, and each value becomes its own chip. Any term that matches no vehicle is called out, so you can spot a mistyped or missing plate.
+    3. Tick the checkbox on each vehicle you want, or use **Select all** to add every vehicle in the table. The header shows a running count (for example, _"6 of 12 vehicles selected"_), and while a search is on it also shows how many vehicles are currently shown.
 
     <Note>
-      The table lists your whole organization's fleet, not only the chosen facility's vehicles. Vehicles at the selected facility come first, then the rest of your fleet, and the **Facility** column shows where each one is assigned — so you can still find and add a vehicle that's filed under another location.
+      The table lists your whole organization's fleet, not only the chosen facility's vehicles. Vehicles at the selected facility come first, then the rest of your fleet, and the **Facility** column shows where each one is assigned — so you can still find and add a vehicle that's filed under another location. Archived vehicles are left out — only active vehicles appear, so you can't request a wash for one you've retired.
     </Note>
   </Step>
   <Step title="Location & vehicles">
@@ -30,13 +30,15 @@ Click **Request work order**, then work through three steps.
     Need the crew at a different spot (a staging area or second gate)? Click **Edit** on the address and pick a new one. If the facility has no address saved, add one here before continuing.
   </Step>
   <Step title="Step 2 — Services">
-    For each selected vehicle, choose **Exterior**, **Interior**, **Trailer**, or any combination. Every vehicle needs at least one service before you can continue.
+    Nothing is selected to start, so pick the services for each vehicle yourself — **Exterior**, **Interior**, **Trailer**, or any combination. Every vehicle needs at least one service before you can continue.
 
     The fastest way to set services is the **Services to apply** panel at the top:
 
     1. Check the services you want (Exterior, Interior, Trailer).
     2. Use the checkboxes on the table rows to pick which vehicles you're applying them to.
     3. Click **Apply to selected (N)** to set those services on just the rows you checked, or **Apply to all (N)** to set them on every vehicle in the order.
+
+    Your picks only take effect once you **Apply** them. If you change the panel after applying, a reminder appears — click **Apply** again, or **Discard changes** to drop the edit — so a change can't be left behind. Any vehicle still without a service is flagged, so none slip through.
 
     <Tip>
       **Exterior** is the standard wash — body, wheels, windows. **Interior** is vacuum and wipe-down. **Trailer** is a trailer washout. Mix and match per vehicle — a tractor might get exterior \+ interior while the trailer behind it gets a trailer washout.
