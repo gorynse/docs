@@ -65,6 +65,43 @@ Every invoice PDF offers two ways to pay:
 
 Use whichever fits your finance workflow. Questions about a charge, credit, or a payment that didn't post? Email <a href="mailto:billing@gorynse.com">billing@gorynse.com</a>.
 
+## Prefunding your account with credit
+
+Below the invoices table, **Prefunded Account Credits** lets you put money on your Rynse account ahead of time. Each credit is applied against your invoices until it's used up — handy for working off a deposit, a prepayment, or a budget you've already funded.
+
+### Adding a credit
+
+Click **Add a Credit** and fill in:
+
+- **Send to** — one or more email addresses that should receive the credit. Each address gets it when you create it; your own email is prefilled.
+- **Purchase Order** *(optional)* — a PO or reference number for your records.
+- **Deposit Amount** — how much you're putting on the account.
+- **Notes** — anything you want recorded on the credit.
+
+Creating it sends a credit to the recipients to pay the same way as a monthly invoice — the card payment link or ACH. Once it's paid, the amount becomes available credit and is applied against future invoices.
+
+### The credits table
+
+Each row is one credit, newest first:
+
+| Column | What it shows |
+| --- | --- |
+| **Date** | When the credit was created |
+| **Credit** | The credit number — click to open its PDF |
+| **Pay link** | Opens a secure checkout to pay the credit |
+| **Status** | Where the credit stands (for example, paid or partially drawn) |
+| **Sent to** | The email recipients |
+| **Reference** | Your PO or reference number, if you added one |
+| **Total** | The credit's full amount |
+| **Balance** | What's still owed on the credit itself |
+| **Remaining** | Credit still available to apply to future invoices |
+
+Use the pencil icon to update a credit's details, or the trash icon to remove one — a credit can only be deleted while it hasn't been paid or drawn against.
+
+### Credit Balance
+
+A **Credit Balance** readout sums the credit you have left to draw down. Hover it for a per-credit breakdown of each one's total and remaining amount. The same figure shows as a tile on your [Dashboard](/rynse-web/dashboard).
+
 ## Tracking spend against a budget or PO
 
 If you've set up a **Purchase Order or budget** under **Organization → Purchase Orders**, a **Budget Tracking** card appears at the top of this page and updates as new invoices and transactions roll in.
@@ -108,6 +145,9 @@ Each invoice comes with a transaction-level breakdown — every wash, fuel charg
   </Accordion>
   <Accordion title="Do I need a PO to use the budget tracker?">
     No. A budget works with no PO attached — a simple monthly or quarterly spend cap, with the same 80% email alert. To track a single facility's draw, use the **Facility** filter on the Budget Tracking card.
+  </Accordion>
+  <Accordion title="Can I prepay or put a deposit on my account?">
+    Yes — use **Prefunded Account Credits** at the bottom of this page. Click **Add a Credit**, set the amount and recipients, and a credit goes out to pay by card or ACH. Once it's paid, it's applied against future invoices, and the **Credit Balance** shows what's left. Questions? Email <a href="mailto:billing@gorynse.com">billing@gorynse.com</a>.
   </Accordion>
 </AccordionGroup>
 
