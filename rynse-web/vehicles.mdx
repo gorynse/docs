@@ -132,7 +132,7 @@ For one-off situations, tick the checkbox on one or more rows and use the button
   </Card>
 
   <Card title="Close Card" icon="ban">
-    Permanently close the selected cards. **A closed card can't be reopened** — a new one has to be issued. Use for confirmed lost, stolen, or compromised cards.
+    Permanently close cards — the ones you've selected, or a whole list at once by [uploading a CSV](#closing-cards-in-bulk-from-a-csv). **A closed card can't be reopened** — a new one has to be issued. Use for confirmed lost, stolen, or compromised cards.
   </Card>
 
   <Card title="Change Facility" icon="building">
@@ -146,6 +146,29 @@ For one-off situations, tick the checkbox on one or more rows and use the button
 
 <Warning>
   **Close Card is permanent.** If you're not sure a card is gone for good, freeze it first and email support — a frozen card can always be unfrozen; a closed one requires re-issuing.
+</Warning>
+
+### Closing cards in bulk from a CSV
+
+Closing a lot of cards at once — say, after a depot shuts down or a batch of cards is compromised — doesn't mean ticking every row. **Close Card** also takes a CSV.
+
+<Steps>
+  <Step title="Click Close Card">
+    Below the table. You don't need to select any rows first.
+  </Step>
+  <Step title="Upload your CSV">
+    Under **Close from CSV**, upload a file of **VIN**, **license plate**, or **external ID** values. Use a header row named `VIN`, `License Plate`, or `External ID`, or just put one identifier in each cell.
+  </Step>
+  <Step title="Review the matches">
+    Rynse matches your list to your vehicles and shows every match that still has an active card, along with which value it matched on. Anything it couldn't find, and any matched vehicles that have no active card, are listed separately so you can check them before going ahead.
+  </Step>
+  <Step title="Confirm">
+    Close the matched cards in one step. As with closing a single card, **this is permanent** — each of those vehicles needs a new card afterward.
+  </Step>
+</Steps>
+
+<Warning>
+  Bulk close is just as permanent as closing one card. Double-check the match list before you confirm — if any of those cards might come back into service, freeze them instead.
 </Warning>
 
 ## A note on timing
