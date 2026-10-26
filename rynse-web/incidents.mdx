@@ -31,7 +31,7 @@ A decline almost always falls into one of three buckets:
 | Column | What it shows |
 | --- | --- |
 | **Date** | When the swipe happened, to the minute |
-| **Type** | **Declined** (blocked) or **Auth** (authorized but flagged) |
+| **Type** | **Declined** (blocked) or **Auth** (authorized but flagged). Hover **Declined** for a quick decline-path summary without opening the row |
 | **Message** | The reason — merchant category not allowed, spend rule exceeded, outside schedule |
 | **Requested** | Amount the merchant asked to authorize |
 | **Approved** | Amount actually approved (usually $0.00 for a decline) |
@@ -42,19 +42,41 @@ A decline almost always falls into one of three buckets:
 
 ## Incident details
 
-Click any row for a dialog with everything you need to decide what happened:
+Click any row for a dialog that walks through exactly what happened. Once it's open, use the **left and right arrow keys** to step to the next or previous incident without closing it.
+
+### Decline path
+
+At the top of every incident is a **decline path** — a plain-language summary, then three stages showing where the swipe was stopped:
+
+1. **Merchant** — the store that sent the charge, with its reported category and the amount requested.
+2. **Bank** — the card issuer's decision. An insufficient-funds decline shows here.
+3. **Rynse rules** — your card's categories, schedule, and spend limits.
+
+Each stage is tagged so you can see its part at a glance:
+
+- **Passed** — the charge cleared this stage.
+- **Declined here** — this stage is what stopped the swipe.
+- **Enforced the decline** — the bank declined the charge to enforce one of your Rynse rules.
+- **Not the cause** — this stage wasn't the reason.
+
+The summary at the top names the most likely cause — for example *Insufficient Funds*, *Merchant declined*, *Declined because fuel is off*, or *Authorized, then flagged* when a charge went through but fell outside the card's schedule.
+
+<Tip>
+  You don't have to open the row to see this — hover the **Declined** label in the **Type** column and the same three-stage summary appears in a tooltip.
+</Tip>
+
+### The details
+
+Below the decline path, the dialog gathers everything you need to decide what to do.
 
 <AccordionGroup>
-  <Accordion title="Transaction Information">
-    The raw swipe: timestamp, merchant name and address, requested and approved amounts, and the reason the network sent back.
-  </Accordion>
-  <Accordion title="Credit Card">
-    Which card was used — last 4, name on card, balance, status, and assigned vehicle.
+  <Accordion title="Transaction Details">
+    The swipe and the card, side by side. On the left: the date, the requested and approved amounts, the status, and the merchant — name, address, and reported category. On the right: a picture of the card used, showing the last 4, the name on the card, the expiry, and its current status (active, frozen, or closed).
   </Accordion>
   <Accordion title="Schedule Constraint At Time of Incident">
-    The card's schedule rule when the swipe happened — e.g. Mon–Fri, 6 AM–6 PM. If the decline was outside that window, this is your answer.
+    The card's schedule rule when the swipe happened — e.g. Mon–Fri, 6 AM–6 PM. It shows only when the card actually had a schedule limit in place; if the decline was outside that window, this is your answer.
   </Accordion>
-  <Accordion title="Card Spend Rule">
+  <Accordion title="Spend Categories">
     The categories this card can spend in. If the terminal's category isn't on the list, the swipe was blocked here.
   </Accordion>
   <Accordion title="Spend Rule (Limits)">
@@ -102,7 +124,7 @@ You don't have to remember to check this tab. Turn on **Settings → Incident no
 
 <AccordionGroup>
   <Accordion title='A driver said the card was "rejected" — figure out why'>
-    Set the date range to the day in question, find the driver's vehicle, and click the row. The **Message**, **Spend Rule**, and **Schedule Constraint** sections tell you which of the three buckets it falls into.
+    Set the date range to the day in question, find the driver's vehicle, and click the row. The **decline path** at the top tells you which of the three buckets it falls into at a glance, and the **Spend Rule** and **Schedule Constraint** sections give the specifics.
   </Accordion>
   <Accordion title="Audit a quarter of declines for a pattern">
     Set the date range to the quarter and scan the **Merchant Category** column. If one category (especially Automated Fuel Dispenser) dominates, you have a driver-education or scope problem. If one **Merchant** keeps appearing, that vendor's terminal is likely misclassified.
@@ -111,7 +133,7 @@ You don't have to remember to check this tab. Turn on **Settings → Incident no
     Switch the view toggle to **All Declines** to see swipes that didn't trip a Rynse rule (wrong PIN, terminal errors). If it's on neither view, it never reached the payment processor — likely an unsupported card type, a terminal that couldn't connect, or a different card. Confirm with the driver where the swipe was attempted.
   </Accordion>
   <Accordion title="Decide whether to greenlight a misclassified merchant">
-    Open the incident and confirm in **Transaction Information** that the merchant is genuinely a car wash. Email `support@gorynse.com` to allow that merchant. Trade-off: greenlighting allows any spend there within your existing category and dollar policies, so only do it for locations you trust.
+    Open the incident and confirm in **Transaction Details** that the merchant is genuinely a car wash. Email `support@gorynse.com` to allow that merchant. Trade-off: greenlighting allows any spend there within your existing category and dollar policies, so only do it for locations you trust.
   </Accordion>
 </AccordionGroup>
 
