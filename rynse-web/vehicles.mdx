@@ -136,7 +136,7 @@ For one-off situations, tick the checkbox on one or more rows and use the button
   </Card>
 
   <Card title="Change Facility" icon="building">
-    Reassign the selected vehicles to a different facility (e.g., after a depot move). Affects how their spend is bucketed on the dashboard and invoices.
+    Move vehicles to a different facility (e.g., after a depot move) — the ones you've selected, or a whole list at once by [uploading a CSV](#changing-facilities-in-bulk-from-a-csv). Affects how their spend is bucketed on the dashboard and invoices.
   </Card>
 
   <Card title="Archive Vehicle" icon="box-archive">
@@ -170,6 +170,32 @@ Closing a lot of cards at once — say, after a depot shuts down or a batch of c
 <Warning>
   Bulk close is just as permanent as closing one card. Double-check the match list before you confirm — if any of those cards might come back into service, freeze them instead.
 </Warning>
+
+### Changing facilities in bulk from a CSV
+
+Moving a lot of vehicles at once — after a depot move or a reorg — doesn't mean ticking every row. **Change Facility** also takes a CSV.
+
+<Steps>
+  <Step title="Click Change Facility">
+    Below the table. You don't need to select any rows first.
+  </Step>
+  <Step title="Pick a destination facility — or name one per row">
+    Choose the facility to move everything to. To send different vehicles to different facilities instead, skip this and add a **Facility** column to your CSV (next step) with the facility name or ID on each row.
+  </Step>
+  <Step title="Upload your CSV">
+    Under **Change facility from CSV**, upload a file of **VIN**, **license plate**, or **external ID** values. Rows with a **Facility** column go where that column says; any row without one falls back to the facility you picked above.
+  </Step>
+  <Step title="Review the matches">
+    Rynse matches your list to your vehicles and shows every move it's about to make — each vehicle's current and new facility, and which value it matched on. Anything it couldn't match, a facility name it couldn't pin down, or a vehicle that's already at the target facility is listed separately, with line numbers, so you can fix the file and re-upload.
+  </Step>
+  <Step title="Confirm">
+    Move the matched vehicles in one step. The new facility shows in the portal and on your invoices right away.
+  </Step>
+</Steps>
+
+<Note>
+  Changing a facility **only** changes the facility — it doesn't enroll a vehicle in a wash membership, cancel or change one, or request a card. Those still go through Rynse — email `support@gorynse.com`.
+</Note>
 
 ## A note on timing
 
