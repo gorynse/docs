@@ -14,17 +14,21 @@ Click **Request work order**, then work through three steps.
 <Steps>
   <Step title="Step 1 — Location & vehicles">
     1. Pick a **facility** from the dropdown. The facility's address shows underneath so you can confirm it.
-    2. Your fleet loads automatically in a table with **Vehicle**, **Asset ID**, **Plate**, and **Facility** columns. Use the **search box** to narrow it by make, model, plate, or asset ID. You can search for several things at once — each term you add becomes a chip and stays on, and the table shows every vehicle matching any of them, so you can tick a whole batch in one pass. Pasting adds a whole list at once: copy a column of plates or asset IDs from a spreadsheet and drop it in, and each value becomes its own chip. Any term that matches no vehicle is called out, so you can spot a mistyped or missing plate.
+    2. Your fleet loads automatically in a table with **Vehicle**, **VIN**, **Asset ID**, **Plate**, and **Facility** columns. Use the **search box** to narrow it by make, model, plate, or asset ID. You can search for several things at once — each term you add becomes a chip and stays on, and the table shows every vehicle matching any of them, so you can tick a whole batch in one pass. Pasting adds a whole list at once: copy a column of plates or asset IDs from a spreadsheet and drop it in, and each value becomes its own chip. Any term that matches no vehicle is called out, so you can spot a mistyped or missing plate.
     3. Tick the checkbox on each vehicle you want, or use **Select all** to add every vehicle in the table. The header shows a running count (for example, _"6 of 12 vehicles selected"_), and while a search is on it also shows how many vehicles are currently shown.
 
     <Note>
       The table lists your whole organization's fleet, not only the chosen facility's vehicles. Vehicles at the selected facility come first, then the rest of your fleet, and the **Facility** column shows where each one is assigned — so you can still find and add a vehicle that's filed under another location. Archived vehicles are left out — only active vehicles appear, so you can't request a wash for one you've retired.
     </Note>
+
+    <Tip>
+      **Need a vehicle that isn't in your fleet yet?** Click **Add a New Vehicle**, enter a **VIN**, **Licence plate**, or **Asset ID** (at least one — **Year**, **Make**, and **Model** are optional), then **Add vehicle**. It's saved to your account under the selected facility and added to this request, so pick the facility first. The same button is there in **Estimate vehicle count** mode, where the new vehicle gets the service you choose on the next step.
+    </Tip>
   </Step>
   <Step title="Location & vehicles">
     Pick the facility the crew should come to, then choose how to request:
 
-    - **Pick specific vehicles** — choose the exact vehicles from your fleet.
+    - **Pick Specific or Add New Vehicles** — choose the exact vehicles from your fleet, or add one that isn't in it yet.
     - **Estimate vehicle count** — give a number; the vehicles get assigned later.
 
     Need the crew at a different spot (a staging area or second gate)? Click **Edit** on the address and pick a new one. If the facility has no address saved, add one here before continuing.
@@ -69,6 +73,10 @@ Your request appears at the top of **Work Orders** as **Requested**. You can del
 <AccordionGroup>
   <Accordion title="Can one work order cover multiple facilities?">
     No — one facility per work order. Submit a separate request for each location.
+  </Accordion>
+
+  <Accordion title="Can I add a vehicle that isn't in my fleet yet?">
+    Yes. In **Pick Specific or Add New Vehicles**, click **Add a New Vehicle** and enter a VIN, licence plate, or asset ID (year, make, and model are optional). It's saved to your account under the selected facility and added to this request. The same button is available in **Estimate vehicle count** mode.
   </Accordion>
 
   <Accordion title="Can I request a wash for tomorrow?">
