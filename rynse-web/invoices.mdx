@@ -34,7 +34,9 @@ Almost always, the cause is the same: **your IT firewall is blocking the sender.
 
 ## The invoices table
 
-Each row is one monthly invoice. Click the **invoice number** to open its PDF. The other columns show who it's made out to, status, due date, the address it was sent to, the total, and the outstanding **Balance** (`$0.00` means paid).
+Each row is one invoice. Click the **invoice number** to open its PDF. The other columns show who it's **Directed To**, status, due date, **Recipients** (the addresses it was emailed to — click one to copy it), the total, and the outstanding **Balance** (`$0.00` means paid).
+
+If some of your locations are billed separately, their invoices appear in this same table — **Directed To** tells you which is which.
 
 Below the table, **Total for Period** sums every invoice in view — handy for reconciling a quarter or fiscal year.
 
@@ -65,6 +67,33 @@ Every invoice PDF offers two ways to pay:
 
 Use whichever fits your finance workflow. Questions about a charge, credit, or a payment that didn't post? Email <a href="mailto:billing@gorynse.com">billing@gorynse.com</a>.
 
+## Prefunded account credits
+
+If your account is prefunded, a **Prefunded Account Credits** section appears below the invoices table. Use it to put money on your Rynse account ahead of time — a deposit, a prepayment, or budget you've already set aside.
+
+<Note>
+  Don't see this section? Your account isn't set up for prefunding. Ask your account team if you'd like it turned on.
+</Note>
+
+### Add a credit
+
+1. Click **Add a Credit**.
+2. Enter the email addresses that should receive it (yours is filled in), an optional **Purchase Order** number, and the **Deposit Amount**.
+3. Click **Create**.
+
+Each recipient is emailed a prefunded invoice for the credit, with payment instructions. You can also pay it from the **Pay** link in the credits table. Once it's paid, the credit is applied to your invoices automatically until it's used up.
+
+### Track your credits
+
+Each row is one credit, newest first. Click the credit number to open its PDF. Two columns matter most:
+
+- **Balance** — what's still unpaid on the credit.
+- **Remaining** — credit you still have available to use.
+
+Use the pencil icon to change a credit's PO number, amount, or notes. The trash icon appears only on credits that haven't been paid or used.
+
+**Credit Balance**, below the table, totals the credit you have left — hover it for a per-credit breakdown. The same figure appears on your [Dashboard](/rynse-web/dashboard). For questions about a credit, email <a href="mailto:billing@gorynse.com">billing@gorynse.com</a>.
+
 ## Tracking spend against a budget or PO
 
 If you've set up a **Purchase Order or budget** under **Organization → Purchase Orders**, a **Budget Tracking** card appears at the top of this page and updates as new invoices and transactions roll in.
@@ -77,7 +106,7 @@ The card shows the budget **period**, how much has been spent (invoiced) against
 
 ### Switching budgets and facilities
 
-With more than one active budget, the **dropdown on the right** of the card switches between them — each tracks its own period and limit. A **Facility filter** narrows the tally to a single location, useful when departments allocate a slice of the budget per site.
+With more than one active budget, pick one from the menu on the right of the card — each tracks its own period and limit. A **Facility filter** narrows the tally to a single location, useful when departments allocate a slice of the budget per site.
 
 <Warning>
   At **80% utilization**, an email alert goes to the account contacts — early warning to reallocate funds, request a new PO, or pause spending before the cap. A second alert fires if the budget is exceeded.
@@ -108,6 +137,9 @@ Each invoice comes with a transaction-level breakdown — every wash, fuel charg
   </Accordion>
   <Accordion title="Do I need a PO to use the budget tracker?">
     No. A budget works with no PO attached — a simple monthly or quarterly spend cap, with the same 80% email alert. To track a single facility's draw, use the **Facility** filter on the Budget Tracking card.
+  </Accordion>
+  <Accordion title="Can I prepay or put a deposit on my account?">
+    Yes, if your account is set up for prefunding. Under **Prefunded Account Credits**, click **Add a Credit**, set the amount and recipients, and pay the prefunded invoice using the instructions on it. Paid credit is applied to your invoices automatically, and **Credit Balance** shows what you have left. To turn on prefunding, ask your account team; for billing questions, email <a href="mailto:billing@gorynse.com">billing@gorynse.com</a>.
   </Accordion>
 </AccordionGroup>
 

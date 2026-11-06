@@ -8,7 +8,7 @@ icon: "car"
 The **Organization → Vehicles** page at [app.gorynse.com](https://app.gorynse.com) is the source of truth for which vehicles are enrolled in your program. Use it to confirm what's in the fleet, spot vehicles missing a card, and check what each vehicle is approved to spend on.
 
 <Info>
-  **Most changes go through Rynse** — adding or archiving a vehicle, swapping a card between vehicles, ordering new cards, and changing memberships. See [Asking us to make changes](#asking-us-to-make-changes) below. Click any vehicle row to open its detail view, where you can edit the **External ID** directly. VIN, license plate, and make / model / year are read-only and managed by Rynse. You can also move any vehicle to a different facility yourself with **Change Facility** — see [Changing a vehicle's facility](#changing-a-vehicles-facility). Card actions (Freeze Card, Close Card, Change Facility, Archive Vehicle) are covered further down.
+  **Most changes go through Rynse** — archiving a vehicle, swapping a card between vehicles, ordering new cards, and changing memberships. See [Asking us to make changes](#asking-us-to-make-changes). A few things you can do yourself: edit a vehicle's **External ID** (click its row), [move vehicles to another facility](#changing-a-vehicles-facility), [freeze or close cards](#actions-you-can-take-from-this-page), and add a vehicle while [requesting a mobile wash](/mobile-wash/requesting-a-wash).
 </Info>
 
 ## How it's organized
@@ -28,7 +28,7 @@ The page opens on a table of every active vehicle, one row each. Click a row for
 
 ### Membership filter
 
-If any vehicles are enrolled in wash memberships, a **Membership** dropdown appears next to the tabs. Use it to narrow the list to a specific vendor and plan type — pay-as-you-go or unlimited (for example, "Quick Quack — Unlimited"). Pick **All** to clear it.
+If any vehicles are enrolled in wash memberships, a **Membership** filter appears next to the tabs. Use it to show only vehicles on one vendor and plan (for example, "Quick Quack - Unlimited"). Pick **All** to clear it.
 
 ## What the columns mean
 
@@ -37,21 +37,22 @@ Most columns are self-explanatory — **Created**, **Facility**, **Description**
 | Column | What it means |
 | --- | --- |
 | **External ID** | Your own asset number — shows on tables and invoices so you can reconcile to your records |
+| **RFID** | The vehicle's RFID tag, if your wash program uses RFID readers. Contact support to change it |
 | **Card** | Last 4 of the attached card. A red card icon means no card; a bank icon means an on-demand funding account |
 | **Name on Card** | The name embossed on the card. Many fleets use it as a department or account code |
 | **Spend Policy** | What this card can be used for — hover for details |
 | **Services** | Wash programs the vehicle is enrolled in — hover for the vendor list |
 
 <Note>
-  A **Memberships** column is hidden by default to keep the table readable. Click the columns icon above the header to toggle it on. The **Services** column shows the same thing at a glance.
+  A **Memberships** column is hidden by default to keep the table readable. Click the columns icon above the header to turn it on. The **Services** column shows the same thing at a glance.
 </Note>
 
 ### Spend Policy
 
-Hover the Spend Policy column for the rules on a card. A **padlock** means spend-category restrictions are configured (not that the card is frozen); a **clock** next to it means an active schedule. The tooltip covers up to four things:
+Hover the Spend Policy column for the rules on a card. A **padlock** means spend-category restrictions are configured (not that the card is frozen); a **clock** means an active schedule. A gray label instead of a policy name means an organization-wide rule applies because the vehicle has no policy of its own. Hovering shows up to four things:
 
 - **Policy** — the named spend policy and its rules (per-transaction cap, monthly cap, allowed merchants)
-- **Organization Rules** — rules that apply across your whole organization. A single gray label here means an org-level rule applies because the vehicle has no policy of its own
+- **Organization Rules** — rules that apply across your whole organization
 - **Merchant Rules** — approved spend categories (Car Wash, Fuel Gas, EV Charging, Preventative Maintenance)
 - **Schedule** — any time-of-day or day-of-week restrictions
 
@@ -59,11 +60,15 @@ See [Spend Controls](/rynse-web/spend-controls) for what each rule does.
 
 ### Services
 
-Icons show the wash programs a vehicle is enrolled in: **pay-as-you-go** (pay per wash), **unlimited** (flat monthly fee, unlimited washes at that vendor — charged only in months the vehicle actually washes), and **mobile wash** (on-site washes brought to your facility — see [Mobile Wash](/mobile-wash/overview)). Hover an icon for the vendors covered; a dash (`-`) means no wash program.
+Icons show the wash programs a vehicle is enrolled in: **pay-as-you-go** (pay per wash), **unlimited** (flat monthly fee, unlimited washes at that vendor — charged only in months the vehicle actually washes), and **mobile wash** (on-site washes brought to your facility — see [Mobile Wash](/mobile-wash/overview)). Hover an icon for the vendors covered; a dash (`-`) means no wash program. A **snowflake** marks a frozen card.
+
+### Duplicate license plate warnings
+
+Some wash vendors recognize vehicles by license plate. If the same plate is enrolled more than once on one of those plans, a red banner above the table names the plan and the duplicated plates, and flags any that belong to an **archived** vehicle. Duplicates can send a vehicle's washes to the wrong record, so email `support@gorynse.com` with the plates shown and we'll clean them up.
 
 ## Asking us to make changes
 
-Changes to the roster — adding a vehicle, editing details, swapping a card to another vehicle, archiving, or attaching or canceling a wash membership — all go through Rynse. We coordinate the vendor side so you don't have to. (Moving a vehicle to a different facility is the exception — you can do that yourself with [Change Facility](#changing-a-vehicles-facility).)
+Changes to the roster — adding a vehicle (unless you're adding it while [requesting a mobile wash](/mobile-wash/requesting-a-wash)), editing details, swapping a card to another vehicle, archiving, or attaching or canceling a wash membership — all go through Rynse. We coordinate the vendor side so you don't have to.
 
 <Steps>
   <Step title="Email support@gorynse.com">
@@ -86,7 +91,7 @@ Changes to the roster — adding a vehicle, editing details, swapping a card to 
 ### Fleetio customers
 
 <Note>
-  See a blue **Synced with Fleetio** banner above the table? Fleetio is your system of record — make vehicle changes in Fleetio, not by emailing support, and they flow into Rynse automatically. See the [Fleetio integration](/integrations/fleetio) for what syncing covers.
+  See a blue **Synced with Fleetio** banner above the table? Fleetio is your system of record — make vehicle changes in Fleetio, not by emailing support, and they flow into Rynse automatically. That includes facilities: each vehicle's facility follows its Fleetio **Group**, so **Change Facility** is turned off here. A vehicle's **External ID** is replaced with its Fleetio vehicle name at each sync, so rename vehicles in Fleetio. Freezing and closing cards still happen in Rynse. See the [Fleetio integration](/integrations/fleetio) for what syncing covers.
 </Note>
 
 ## What to expect after a request
@@ -118,50 +123,74 @@ Every wash, fuel stop, and visit is attached to the **vehicle**, not the card th
 
 ## Actions you can take from this page
 
-For one-off situations, tick the checkbox on one or more rows and use the buttons below the table. The key difference between the two card actions: _freezing_ is reversible (like asking your bank to pause a card), while _closing_ is permanent and requires a new card.
+Tick one or more rows and use the buttons below the table (hover a button to see its name). You can also freeze, unfreeze, or close a single card from a vehicle's detail view.
 
-<CardGroup cols={2}>
+<CardGroup cols={3}>
   <Card title="Freeze Card" icon="snowflake">
-    Temporarily disable the selected cards. Transactions are blocked until you unfreeze. Use when a vehicle is out of service or a card is misplaced.
+    Pause the selected cards. Transactions are blocked until you unfreeze them with the same button. Use when a vehicle is out of service or a card is misplaced.
   </Card>
 
   <Card title="Close Card" icon="ban">
-    Permanently close the selected cards. **A closed card can't be reopened** — a new one has to be issued. Use for confirmed lost, stolen, or compromised cards.
+    Permanently close the selected cards, or [a whole list from a CSV](#closing-cards-in-bulk-from-a-csv). Use for confirmed lost, stolen, or compromised cards.
   </Card>
 
   <Card title="Change Facility" icon="building">
-    Reassign the selected vehicles to a different facility (e.g., after a depot move). The new facility shows in the portal and on invoices. Doesn't change memberships or cards — see [Changing a vehicle's facility](#changing-a-vehicles-facility).
-  </Card>
-
-  <Card title="Archive Vehicle" icon="box-archive">
-    Decommission the selected vehicles. They move to the **Archived** tab, stop counting toward utilization, and stop being billed. Transaction history stays accessible.
+    Move vehicles to a different facility. See [Changing a vehicle's facility](#changing-a-vehicles-facility).
   </Card>
 </CardGroup>
 
 <Warning>
-  **Close Card is permanent.** If you're not sure a card is gone for good, freeze it first and email support — a frozen card can always be unfrozen; a closed one requires re-issuing.
+  **Close Card is permanent.** A closed card can't be reopened, and the vehicle needs a new card. If you're not sure a card is gone for good, freeze it instead and email support.
 </Warning>
 
-## Changing a vehicle's facility
-
-You can move any vehicle to a different facility yourself — no need to email support.
+### Closing cards in bulk from a CSV
 
 <Steps>
-  <Step title="Go to Organization → Vehicles">
-    Find the vehicle (or vehicles) you want to move.
+  <Step title="Click Close Card">
+    No need to select rows first.
   </Step>
-  <Step title="Select the vehicles">
-    Tick the checkbox on each row you want to reassign.
+  <Step title="Upload your CSV">
+    Under **Close from CSV**, upload a list of VINs, license plates, or External IDs — one per cell, or under a `VIN`, `License Plate`, or `External ID` header.
   </Step>
-  <Step title="Click Change Facility">
-    Below the table. Pick the destination facility and confirm.
+  <Step title="Review and confirm">
+    Rynse shows each matching vehicle with an active card, plus anything it couldn't find or that has no card. Check the list, then confirm to close them all.
   </Step>
 </Steps>
 
-Once saved, the selected facility is reflected in the portal and in your invoicing.
+## Changing a vehicle's facility
+
+You can move vehicles to a different facility yourself. The new facility shows in the portal and on your invoices.
+
+<Steps>
+  <Step title="Select the vehicles">
+    On **Organization → Vehicles**, tick the checkbox on each row you want to move.
+  </Step>
+  <Step title="Click Change Facility">
+    Below the table. Pick the new facility and click **Submit Change Facility**.
+  </Step>
+</Steps>
+
+To move a single vehicle, you can also click its row, pick a new **Facility**, and click **Save Changes**.
+
+### Changing facilities in bulk from a CSV
+
+<Steps>
+  <Step title="Click Change Facility">
+    No need to select rows first.
+  </Step>
+  <Step title="Choose where vehicles go">
+    Pick one facility for everyone, or add a **Facility** column to your CSV with the facility name on each row. Rows without a facility use the one you picked.
+  </Step>
+  <Step title="Upload your CSV">
+    Under **Change facility from CSV**, upload a list of VINs, license plates, or External IDs.
+  </Step>
+  <Step title="Review and confirm">
+    Rynse shows each vehicle's current and new facility. Rows it can't use (no match, unknown facility, or already there) are listed by line number so you can fix the file and re-upload. Click **Move** to finish.
+  </Step>
+</Steps>
 
 <Note>
-  **Changing a facility only changes the facility.** It doesn't enroll the vehicle in a wash membership, cancel or change an existing membership, or request a Rynse card. Membership changes and card requests still go through Rynse — email `support@gorynse.com` and we'll take care of it.
+  **Changing a facility only changes the facility.** It doesn't enroll the vehicle in a wash membership, change an existing membership, or request a Rynse card. For those, email `support@gorynse.com`.
 </Note>
 
 ## A note on timing
