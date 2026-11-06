@@ -49,7 +49,7 @@ You can manage everything on this page yourself: add one at a time, bulk-upload 
     | **Address Line 1** | Type-ahead suggests real addresses; picking one auto-fills city, state, zip, and country. |
     | **Address Line 2** | Suite, unit, or building number. |
     | **City** | |
-    | **State** | Dropdown of US state abbreviations (2-letter codes). |
+    | **State** | 2-letter US state code. |
     | **Zip** | Up to 5 digits. |
     | **Country** | Auto-fills to USA when you pick a suggested address. |
   </Step>
@@ -71,7 +71,7 @@ If you're rolling out across many sub-locations at once, upload a CSV instead of
     Next to **Add Facility**, the button with the city-building icon opens the **Bulk Add Facilities** dialog.
   </Step>
   <Step title="Grab the example CSV">
-    Click **Example CSV Download** in the dialog. The file lives at `/facilities.csv` and shows the exact column order.
+    Click **Example CSV Download** in the dialog. It shows the exact column order.
   </Step>
   <Step title="Format your file">
     Seven columns, in this order, with a header row:
@@ -129,8 +129,8 @@ Once archived:
 
 ## Need to change a vehicle's facility?
 
-Vehicle assignments live on the **Organization → Vehicles** page, not here. You can reassign vehicles yourself: select them on the Vehicles page and click **Change Facility**, or move a whole list at once by uploading a CSV. The new facility shows in the portal and on your invoices. See [Changing a vehicle's facility](/rynse-web/vehicles#changing-a-vehicles-facility) for details.
+Vehicle assignments live on the **Organization → Vehicles** page, not here. Select the vehicles and click **Change Facility**, or move a whole list at once from a CSV — see [Changing a vehicle's facility](/rynse-web/vehicles#changing-a-vehicles-facility). If your vehicles sync from Fleetio, change the vehicle's **Group** in Fleetio instead.
 
 <Note>
-  **Memberships and cards still go through Rynse.** Changing a vehicle's facility doesn't enroll it in a membership or request a Rynse card. If a vehicle needs a membership change, or you need to request Rynse cards, email `support@gorynse.com` and we'll take care of it.
+  Changing a facility doesn't change memberships or cards. For those, email `support@gorynse.com`.
 </Note>
