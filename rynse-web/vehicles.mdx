@@ -121,6 +121,8 @@ Changes to the roster — adding a vehicle (unless you're adding it while [reque
 
 Every wash, fuel stop, and visit is attached to the **vehicle**, not the card that paid. When a card is closed and reissued, the new card inherits the full history — so closing a card never loses it.
 
+To see it, click a vehicle and open the **Vehicle Transactions** tab. Card swipes, membership charges, and mobile washes are listed together, newest first.
+
 ## Actions you can take from this page
 
 Tick one or more rows and use the buttons below the table (hover a button to see its name). You can also freeze, unfreeze, or close a single card from a vehicle's detail view.
@@ -150,7 +152,7 @@ Tick one or more rows and use the buttons below the table (hover a button to see
     No need to select rows first.
   </Step>
   <Step title="Upload your CSV">
-    Under **Close from CSV**, upload a list of VINs, license plates, or External IDs — one per cell, or under a `VIN`, `License Plate`, or `External ID` header.
+    Under **Close from CSV**, upload a list of VINs, license plates, or External IDs. The dialog shows the column names to use in the first row: `VIN`, `License Plate`, `External ID`. Include any of those columns, or just put one identifier in each cell.
   </Step>
   <Step title="Review and confirm">
     Rynse shows each matching vehicle with an active card, plus anything it couldn't find or that has no card. Check the list, then confirm to close them all.
@@ -179,10 +181,10 @@ To move a single vehicle, you can also click its row, pick a new **Facility**, a
     No need to select rows first.
   </Step>
   <Step title="Choose where vehicles go">
-    Pick one facility for everyone, or add a **Facility** column to your CSV with the facility name on each row. Rows without a facility use the one you picked.
+    Pick one facility for everyone, or add a **Facility** column to your CSV with the facility name or ID on each row. Rows without a facility use the one you picked.
   </Step>
   <Step title="Upload your CSV">
-    Under **Change facility from CSV**, upload a list of VINs, license plates, or External IDs.
+    Under **Change facility from CSV**, upload your file. The dialog shows the column names to use in the first row: `VIN`, `License Plate`, `External ID`, `Facility`. Include at least one vehicle column, plus `Facility` if you're setting it per row.
   </Step>
   <Step title="Review and confirm">
     Rynse shows each vehicle's current and new facility. Rows it can't use (no match, unknown facility, or already there) are listed by line number so you can fix the file and re-upload. Click **Move** to finish.
